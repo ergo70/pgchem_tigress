@@ -1,0 +1,156 @@
+/************************************************************************
+ * cow_orker.c coworker functions
+ *  
+ * Copyright (c) 2004 by Ernst-G. Schmid
+ * Copyright (c) 2004 by Bayer Business Services GmbH
+ * for explicitly marked functions
+ *   
+ * This file is part of the xchem::tigress project.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * lesser GNU General Public License for more details.
+ ************************************************************************/
+
+#include "pgchem_config.h"
+#include "cow_orker.h"
+
+#ifdef WIN32
+inline cow_orker_info *
+spawn_cow_orker (const char *command, const char *mode, const char *datafile1,
+		 int32 datafile1_size, const char *datafile2,
+		 int32 datafile2_size)
+{
+  cow_orker_info *cw_info;
+  FILE *proc_handle;
+  FILE *tmp_file1;
+  FILE *tmp_file2;
+  char *cmdstring;
+  char *tmp_filename1;
+  char *tmp_filename2;
+
+  tmp_filename1 = tempnam (TDFILE_PATH, "pgn");
+  cw_info = palloc (sizeof (cow_orker_info));
+
+  if (datafile2 != NULL)
+    {
+
+      tmp_filename2 = tempnam (TDFILE_PATH, "pgh");
+
+      cmdstring =
+	(char *) palloc (strlen (command) + strlen (mode) +
+			 strlen (tmp_filename1) + strlen (tmp_filename2) + 4);
+
+      strcpy (cmdstring, command);
+
+      strncat (cmdstring, " ", 1);
+
+      strncat (cmdstring, mode, strlen (mode));
+
+      strncat (cmdstring, " ", 1);
+
+      strncat (cmdstring, tmp_filename1, strlen (tmp_filename1));
+
+      strncat (cmdstring, " ", 1);
+
+      strncat (cmdstring, tmp_filename2, strlen (tmp_filename2));
+
+
+      tmp_file1 = fopen (tmp_filename1, "w");
+      fwrite (datafile1, (int) datafile1_size, 1, tmp_file1);
+      fclose (tmp_file1);
+
+      tmp_file2 = fopen (tmp_filename2, "w");
+      fwrite (datafile2, (int) datafile2_size, 1, tmp_file2);
+      fclose (tmp_file2);
+
+      cw_info->tmp_filename1 = tmp_filename1;
+      cw_info->tmp_filename2 = tmp_filename2;
+
+    }
+  else
+    {
+      cmdstring =
+	(char *) palloc (strlen (command) + strlen (mode) +
+			 strlen (tmp_filename1) + 3);
+      strcpy (cmdstring, command);
+
+      strncat (cmdstring, " ", 1);
+
+      strncat (cmdstring, mode, strlen (mode));
+
+      strncat (cmdstring, " ", 1);
+
+      strncat (cmdstring, tmp_filename1, strlen (tmp_filename1));
+
+
+      tmp_file1 = fopen (tmp_filename1, "w");
+      fwrite (datafile1, (int) datafile1_size, 1, tmp_file1);
+      fclose (tmp_file1);
+
+      cw_info->tmp_filename1 = tmp_filename1;
+      cw_info->tmp_filename2 = NULL;
+
+    }
+
+  proc_handle = popen (cmdstring, "r");
+
+  cw_info->process = proc_handle;
+
+  pfree (cmdstring);
+  return cw_info;
+}
+#else
+inline cow_orker_info *
+spawn_cow_orker (const char *command, const char *mode, const char *datafile,
+		 int32 datafile_size)
+{
+  cow_orker_info *cw_info;
+  FILE *proc_handle;
+  char *cmdstring;
+  cw_info = palloc (sizeof (cow_orker_info));
+
+  cmdstring =
+    (char *) palloc (datafile_size + strlen (PGCHEM_INJECTOR) +
+		     strlen (command) + strlen (mode) + 6);
+
+  strcpy (cmdstring, PGCHEM_INJECTOR);
+  strncat (cmdstring, datafile, datafile_size);
+  strncat (cmdstring, "\"|", 2);
+  strncat (cmdstring, command, strlen (command));
+  strncat (cmdstring, " ", 1);
+  strncat (cmdstring, mode, strlen (mode));
+  strncat (cmdstring, " -", 2);
+
+  proc_handle = popen (cmdstring, "r");
+
+  cw_info->process = proc_handle;
+
+  pfree (cmdstring);
+  return cw_info;
+}
+#endif
+
+inline int
+cow_orker_cleanup (cow_orker_info * cw_info)
+{
+  int eno = pclose (cw_info->process);
+#ifdef WIN32
+  remove (cw_info->tmp_filename1);
+  free (cw_info->tmp_filename1);
+  if (cw_info->tmp_filename2 != NULL)
+    {
+      remove (cw_info->tmp_filename2);
+      free (cw_info->tmp_filename2);
+    }				//On win32, remove the tempfile(s)
+#endif
+
+  pfree (cw_info);
+
+  return eno;
+}

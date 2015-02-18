@@ -1,0 +1,44 @@
+/************************************************************************
+ * cow_orker.h coworker functions
+ *  
+ * Copyright (c) 2004 by Ernst-G. Schmid
+ * Copyright (c) 2004 by Bayer Business Services GmbH
+ * for explicitly marked functions
+ *   
+ * This file is part of the xchem::tigress project.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation version 2 of the License.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * lesser GNU General Public License for more details.
+ ************************************************************************/
+
+#include <postgres.h>
+#include <fmgr.h>
+
+#ifdef WIN32
+typedef struct
+{
+  FILE *process;
+  char *tmp_filename1;
+  char *tmp_filename2;
+} cow_orker_info;
+inline cow_orker_info *spawn_cow_orker (const char *command, const char *mode,
+					const char *datafile1,
+					int32 datafile1_size,
+					const char *datafile2,
+					int32 datafile2_size);
+#else
+typedef struct
+{
+  FILE *process;
+} cow_orker_info;
+inline cow_orker_info *spawn_cow_orker (const char *command, const char *mode,
+					const char *datafile,
+					int32 datafile_size);
+#endif
+inline int cow_orker_cleanup (cow_orker_info * cw_info);

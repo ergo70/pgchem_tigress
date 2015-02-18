@@ -1,0 +1,198 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Indigo &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../index.html" />
+    <link rel="next" title="Concepts" href="concepts/index.html" />
+    <link rel="prev" title="Indigo Project documentation" href="../index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="concepts/index.html" title="Concepts"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Indigo Project documentation"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../index.html">Indigo 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="indigo">
+<h1>Indigo<a class="headerlink" href="#indigo" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="concepts/index.html">Concepts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="concepts/mass.html">Different Mass Computation Methods</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="options/index.html">Options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="options/input-output-options.html">Generic options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/layout-options.html">Layout options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/rendering-options.html">Rendering options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/grid-rendering-options.html">Grid rendering options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/substructure-matching-options.html">Substructure matching options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/fingerprints.html">Fingerprints options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/deconvolution.html">Deconvolution options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/aromaticity.html">Aromaticity options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/timeout.html">Timeout options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/reaction-product-enumeration.html">Reaction Products Enumeration and Transformation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="options/inchi.html">InChI options</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples/index.html">Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="examples/atom-coloring.html">Atom Coloring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="examples/installation.html">SDK Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="release-notes/index.html">Release Notes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/1.1.12/indigo-1.1.12.html">Indigo 1.1.12</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/1.1.11/indigo-1.1.11.html">Indigo 1.1.11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release-notes/1.1.x/indigo-1.1.x.html">Previous Versions (before 1.1.11)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Indigo is a universal organic chemistry toolkit. It contains first-class tools for end users, as well as a documented API for developers.</dt>
+<dd>Indigo it is completely free and open-source, while also available on a commercial basis.</dd>
+</dl>
+<p>Indigo is based on a cheminformatics library that incorporates a number of unique algorithms developed by GGA, as well as
+some standard algorithms well-known in the cheminformatics world. Since the core part of Indigo is written in modern
+C++ with no third-party code or dependencies except the ubiquitous <a class="reference external" href="http://zlib.net">zlib</a> and <a class="reference external" href="http://cairographics.org">Cairo</a>,
+the toolkit provides outstanding performance and excellent portability.</p>
+<p>Indigo is used by many corporations and institutions. This includes some Indigo-based commercial tools developed exclusively for our clients. Also, our open-source chemical search engine Bingo is developed on top of the Indigo library.</p>
+<p>Indigo SDK does not make any restrictions for developers. Whatever your favorite platform is—Java, C#, or Python, not to mention plain C—you can easily integrate Indigo into your application. All problems you may be afraid of, such as loading binary modules appropriate for the system, or threading issues, or stack overflows, are already solved for you. Also, it is easy to start, as the interface is very neat. No data types besides the absolute minimum required for it to work. No internal data formats. No painful initialization procedures.</p>
+<p>Indigo SDK is highly configurable and extensible. You can write C/C++/C#/Java/Python plugins for it and distribute them independently.</p>
+<p>Indigo has got support from the cheminformatics community. Any question or comment you have, you can always post it publicly and get a timely reply from the developers&#8217; team.</p>
+<div class="section" id="features">
+<h3>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Input formats support: Molfiles/Rxnfiles v2000 and v3000, SDF, RDF, CML, SMILES, SMARTS.</li>
+<li>Portability: Pre-built binary packages are provided for Linux and Windows (both 32-bit and 64-bit), and also for Mac OS X systems (both 10.5 and 10.6).</li>
+<li>Molecule and reaction rendering. Best picture quality among all available products. Easy SVG support.</li>
+<li>Automatic layout for SMILES-represented molecules and reactions.</li>
+<li>Canonical (isomeric) SMILES computation.</li>
+<li>Exact matching, substructure matching, SMARTS matching.</li>
+<li>Matching of tautomers and resonance structures.</li>
+<li>Molecule fingerprinting, molecule similarity computation.</li>
+<li>Fast enumeration of SSSR rings, subtrees, and edge sugraphs.</li>
+<li>Molecular weight, molecular formula computation.</li>
+<li>R-Group deconvolution and scaffold detection. Pioneer work in computing the exact maximum common substructure for an arbitrary amount of input structures.</li>
+<li>Combinatorial chemistry</li>
+<li>Plugins support in the API. As a reference, please see the Renderer plugin distributed together with the Indigo API.</li>
+</ul>
+</div>
+<div class="section" id="portability">
+<h3>Portability<a class="headerlink" href="#portability" title="Permalink to this headline">¶</a></h3>
+<p>Indigo is written from scratch in portable C++ and supports Linux, Windows, and Mac OS X operating systems. The rendering
+is done via <a class="reference external" href="http://cairographics.org">Cairo</a> vector graphics library. <a class="reference external" href="http://zlib.net">zlib</a> and <a class="reference external" href="http://www.libpng.org">libpng</a>
+are needed for Cairo. <a class="reference external" href="http://www.grinninglizard.com/tinyxml/">TinyXML</a> is used to parse CML files. <a class="reference external" href="http://www.inchi-trust.org">InChI</a> library is used to generate and parse InChI strings.
+No other third-party components are used.</p>
+<p>Indigo exposes the C interface to applications. Java, Python, and .NET wrappers are available for all of the supported platforms.</p>
+<p>All of the the code of Indigo is thread-safe, and so its use does not present a problem in multi-threaded applications.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Indigo</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a><ul>
+<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#portability">Portability</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../index.html"
+                        title="previous chapter">Indigo Project documentation</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="concepts/index.html"
+                        title="next chapter">Concepts</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/indigo/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="concepts/index.html" title="Concepts"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Indigo Project documentation"
+             >previous</a> |</li>
+        <li><a href="../index.html">Indigo 1.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

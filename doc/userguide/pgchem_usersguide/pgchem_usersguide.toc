@@ -1,0 +1,24 @@
+\contentsline {part}{I\hspace {1em}Caveat}{4}
+\contentsline {part}{II\hspace {1em}Introduction to pgchem::tigress}{4}
+\contentsline {section}{\numberline {1}Overview}{4}
+\contentsline {section}{\numberline {2}Why PostgreSQL?}{4}
+\contentsline {part}{III\hspace {1em}Designing your schema}{4}
+\contentsline {section}{\numberline {3}The molecules table}{5}
+\contentsline {section}{\numberline {4}The functional groups table}{5}
+\contentsline {part}{IV\hspace {1em}Working with data}{5}
+\contentsline {section}{\numberline {5}Molecule searching}{6}
+\contentsline {section}{\numberline {6}Other molecule functions}{6}
+\contentsline {section}{\numberline {7}Calculating properties}{7}
+\contentsline {section}{\numberline {8}Conversions}{8}
+\contentsline {section}{\numberline {9}Depiction}{8}
+\contentsline {section}{\numberline {10}Manipulation}{9}
+\contentsline {section}{\numberline {11}The Lipinsky filter}{9}
+\contentsline {section}{\numberline {12}Helper functions}{9}
+\contentsline {part}{V\hspace {1em}Miscellaneous}{9}
+\contentsline {section}{\numberline {13}Rejecting duplicate molecules}{10}
+\contentsline {section}{\numberline {14}Tuning}{10}
+\contentsline {section}{\numberline {15}Security}{11}
+\contentsline {section}{\numberline {16}Limitations}{11}
+\contentsline {section}{\numberline {17}Links \& Things}{11}
+\contentsline {section}{\numberline {A}The checkmol/matchmol molecular keys format}{12}
+\contentsline {section}{\numberline {B}The operators}{12}

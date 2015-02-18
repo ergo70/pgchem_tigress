@@ -1,0 +1,1 @@
+#define OB_RFPSIZE (2*OB_FPSIZE2)

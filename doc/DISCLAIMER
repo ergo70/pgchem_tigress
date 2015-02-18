@@ -1,0 +1,3 @@
+pgchem::tigress is not exhaustively tested and may contain errors in functionality and code. Therefore it should not be used unconsidered and does not replace the advice of a trained chemist.
+
+Notably, pgchem::tigress was not designed to be used in GxP environments, for material safety systems and other safety critical environments.

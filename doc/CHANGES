@@ -1,0 +1,4 @@
+3.3 no Windows support anymore
+Now builds with vanilla OpenBabel 2.3.2.
+Changed palloc() to palloc0() where possible.
+New molecule -> PNG conversion function png(molecule, x, y).

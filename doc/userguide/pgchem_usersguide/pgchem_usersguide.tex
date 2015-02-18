@@ -1,0 +1,369 @@
+\documentclass[a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\floatstyle{boxed}
+\restylefloat{figure}
+\begin{document}
+\title{pgchem::tigress -- A chemoinformatics extension for PostgreSQL: User Guide}
+\author{Ernst-Georg Schmid}
+\date{v.3.2	-- Spring 2015}
+\maketitle%\newpage
+		%\includegraphics[width=5cm]{tigress.png}
+		%\includegraphics[width=5cm]{barsoi.png}
+		%\par The project tigress \copyright~Windhund 2004
+		%\par The barsoi accelerator logo \copyright~Windhund 2005
+\newpage
+\tableofcontents\newpage
+\part{Caveat}
+pgchem::tigress may contain errors in functionality and code. Therefore it should not be used unconsiderately and does not replace the advice of a trained chemist.
+Notably, pgchem::tigress was not designed to be used in GxP environments, for material safety systems and other safety critical environments.
+\part{Introduction to pgchem::tigress}
+\section{Overview}
+pgchem::tigress is a chemoinformatics extension to the PostgreSQL object-relational database management system. It enables PostgreSQL to handle chemical datatypes. Pgchem::tigress is basically a wrapper around the checkmol/matchmol molecular analyzer and the OpenBabel computational chemistry package, plus some database functions, datatypes, a GiST index and auxiliary tables to access their functionality purely through SQL statements.\par
+Pgchem::tigress supports exact and substructure searching on molecules, searching by functional groups, calculation of chemical properties like molecular formula and molecular weight and Tanimoto similarity searching.\par
+pgchem::tigress is \copyright~Ernst-Georg Schmid and released under the lesser GNU Public License 2.1.
+As of version 8.x of PostgreSQL, pgchem::tigress compiles and runs natively (at least) on Linux, OS X and Windows. 
+\section{Why PostgreSQL?}
+Because it is tried and tested, suitable for heavy-duty applications and has a clean interface for custom extensions. So far it has proven to be a good choice, but there are no reasons why there should not be a fbchem::tigress for Firebird or an orachem::tigress for Oracle in the future. Actually, mychem for MySQL has started at http://sourceforge.net/projects/mychem/.
+\part{Designing your schema}
+As of version 1.0 GiST, pgchem::tigress does not impose limits to your database design anymore. You can have as many molecules columns in as many tables as you need and have individual molecular indexes on each\footnote{An operator overwiew that shows which operators are GiST capable can be found in Table~\ref{tbl:mol_ops}.}.
+\section{The molecules table}
+The molecules table holds the molecules itself, but can be extended to store whatever additional information should be attached to those molecules. It consists of at least two columns, as shown in Figure~\ref{fig:basic_mol_table}.
+
+\begin{figure}[tb]
+\begin{verbatim}
+CREATE TABLE <moleculetable>
+(
+  <key> <type> NOT NULL,
+  <moleculecolumn> molecule NOT NULL,
+  CONSTRAINT pk_molecules PRIMARY KEY (<key>)
+) 
+\end{verbatim}
+\caption{A basic molecules table}
+	\label{fig:basic_mol_table}
+\end{figure}
+The actual name of the molecule column is unimportant for pgchem::tigress, choose it to your liking, but it has to be of type \itshape molecule\normalfont.
+\begin{figure}[tb]
+\begin{verbatim}
+CREATE INDEX <indexname> ON <moleculetable>
+USING GIST(<moleculecolumn>)
+\end{verbatim}
+\caption{Creating the GiST index}
+	\label{fig:crea_gist}
+\end{figure}
+After the table has been created, a GiST index can be attached to the molecule column as shown in Figure~\ref{fig:crea_gist}.
+%\section{The molecular keys and fingerprint tables}
+%Obsolete since 7.2 GiST.
+\section{The functional groups table}
+Optional since 1.0 GiST. It contains 0..n rows per molecule. As shown in Figure~\ref{fig:fgroups_table}, each row contains a code that indicates the presence of a specific functional group in this molecule.
+\begin{figure}[tb]
+\begin{verbatim}
+CREATE TABLE <molfgroupstable>
+(
+  <key> <type> NOT NULL,
+  code char(8) NOT NULL,
+  CONSTRAINT molfgroups_pkey PRIMARY KEY (<key>, code),
+  CONSTRAINT fk_mol FOREIGN KEY (<key>) REFERENCES
+  <moleculetable> (<key>)
+  ON UPDATE NO ACTION ON DELETE CASCADE
+)
+\end{verbatim}
+\caption{The functional groups table}
+	\label{fig:fgroups_table}
+\end{figure}
+Checkmol/matchmol currently detects 190 functional groups, thus does pgchem::tigress. This table can be used to directly search for molecules containing a given set of functional groups. See Part~\ref{part:wwd} about how to do this in SQL.
+%\section{The maintenance triggers}
+%Obsolete since 7.2 GiST.
+\part{Working with data}
+\label{part:wwd}
+If the Schema is set up correctly, start loading your molecules table by any means you like. The input to create a molecule is textual. The recognized formats are shown in Table~\ref{tbl:mol_inpf}.
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline 
+	\textbf{Input format} & \textbf{Coordinates}\\
+	\hline 
+  MDL V2000 molfile	& yes\\
+  \hline 
+  MDL V3000 molfile	& yes\\
+  \hline 
+  SMILES	& no\\
+  \hline 
+  InChI	& no\\
+  \hline 
+\end{tabular}
+\caption{The molecule input formats}
+\label{tbl:mol_inpf}
+\end{table}
+How loading code has to look like for a specific programming language/database driver combination is beyond the scope of this manual.
+\section{Molecule searching}
+Exact searching can be done by using the $=$ operator as shown in Figure~\ref{fig:exactmatch}.
+\begin{figure}[tb]
+\begin{verbatim}
+SELECT <moleculetable>.<key> FROM
+<moleculetable> WHERE <querymolecule> = <moleculecolumn>;
+\end{verbatim}
+\caption{Exact match}
+	\label{fig:exactmatch}
+\end{figure}
+Substructure searching is done using the $<=$ or $>=$ operators.
+\begin{figure}[tb]
+\begin{verbatim}
+SELECT <moleculetable>.<key> FROM
+<moleculetable> WHERE
+<querymolecule> <= <moleculecolumn>;
+\end{verbatim}
+\caption{Substructure match}
+	\label{fig:substruct}
+\end{figure}
+Figure~\ref{fig:substruct} contains an example how to perform such a search.
+To search for molecules containing one or more functional groups, just select the desired functional group codes from the functional groups table and join it with the molecules table. The example scripts that come with pgchem::tigress contain a lookup table, containing all known codes with their english names. This can be used to search by names instead of codes.
+\par
+Tanimoto similarity searching is done by the @ operator, which takes two molecules and returns their Tanimoto coefficient (Figure~\ref{fig:tsim}). 
+\begin{figure}[tb]
+\begin{verbatim}
+SELECT <moleculetable>.<key> FROM
+<moleculetable> WHERE
+<querymolecule> @ <moleculecolumn>) >= 0.9\end{verbatim}
+\caption{Similarity search}
+	\label{fig:tsim}
+\end{figure}
+\section{Other molecule functions}
+\begin{itemize}
+\item\textit{SMARTSmatch(text,molecule)} takes a query SMARTS, a molecule to substructure match the query against. A return value of TRUE indicates a match. This function can be used as a postprocessor to the search operators to further refine your queries.
+\item\textit{SMARTSmatch\_count(text,molecule)} takes a query SMARTS, a molecule to substructure match the query against. The integer return value indicates how many unique matches were found in the target molecule. This function can be used as a postprocessor to the search operators to further refine your queries.
+\item\textit{molkeys\_long(molecule,bool,bool,bool)} takes a molecule and returns its fingerprint in long form. Long means, that for every column a name/value pair \textit{name:value;} is generated. The first flag toggles strict checking of charges, the second flag toggles strict checking of isotopes and the the third flag toggles strict checking of radicals.
+\item\textit{fgroup\_codes(molecule)} takes a molecule and returns its functional group codes. This can be used to obtain the codes for a functional group search by drawn example.
+\item\textit{fpmaccsstring(molecule)} takes a molecule and returns its binary MACCS fingerprint.
+\end{itemize}
+\section{Calculating properties}
+\begin{itemize}
+\item\textit{molweight(molecule)} takes a molecule and returns the standard molar mass given by IUPAC atomic masses, including all implicit hydrogens.
+\item\textit{exactmass(molecule)} takes a molecule and returns the the mass given by isotopes (or most abundant isotope, if not specified), including all implicit hydrogens .
+\item\textit{total\_charge(molecule)} takes a molecule and returns the total charge (0=neutral), including all implicit hydrogens.
+\item\textit{number\_of\_atoms(molecule)} takes a molecule and returns the number of atoms, including all implicit hydrogens.
+\item\textit{number\_of\_heavytoms(molecule)} takes a molecule and returns the number of heavy atoms. This also counts Deuterium an Tritium!
+\item\textit{number\_of\_bonds(molecule)} takes a molecule and returns the number of bonds, including all implicit hydrogens.
+\item\textit{number\_of\_rotatable\_bonds(molecule)} takes a molecule and returns the number of rotatable bonds\footnote{Any non-ring bond with hybridization of sp2 or sp3 is considered a potentially rotatable bond. There is no special bond-typing, e.g. for amide C-N bonds with their high rotational energy barrier.}.
+\item\textit{is\_chiral(molecule)} takes a molecule and tries to perceive its chirality.
+\item\textit{is\_2D(molecule)} takes a molecule and returns true if 2D coordinates are present.
+\item\textit{is\_3D(molecule)} takes a molecule and returns true if 3D coordinates are present.
+\item\textit{molformula(molecule)} takes a molecule and returns the molformula.
+\item\textit{logP(molecule)} takes a molecule and returns the predicted log P value.
+\item\textit{MR(molecule)} takes a molecule and returns the predicted molar refractivity.
+\item\textit{PSA(molecule)} takes a molecule and returns the predicted polar surface area.
+\end{itemize}
+\section{Conversions}
+\begin{itemize}
+\item\textit{migrate\_molecule(bytea)} migrates a $<$ 1.0 GiST molecule to $>=$ 1.0 GiST.
+\item\textit{v3000(molecule)} takes a molecule and converts it to a V3000 molfile.
+\item\textit{smiles(molecule,bool)} takes a molecule and converts it to a SMILES string. Parameter two controls if all isotopic or chiral markings shall be omitted.
+\item\textit{canonical\_smiles(molecule)} takes a molecule and converts it to a canonical SMILES string.
+\item\textit{inchi(molecule)} takes a molecule and converts it to a IUPAC InChI string.
+\item\textit{inchikey(molecule)} takes a molecule and converts it to a IUPAC InChI-key string.
+\end{itemize}
+\section{Depiction}
+Since so many molecular imaging code is unpredictable in it's behaviour, tends to allocate large memory blocks, requires many external libraries and sometimes even depends on specific operating system contextes being available, and, above all, is subject to user opinion how a chemical depiction should look like -- so there are no depiction functions in pgchem::tigress by design. There are enough external options available to generate depictions if needed.
+\section{Manipulation}
+\begin{itemize}
+\item\textit{strip\_salts(molecule,bool)} takes a molecule and strips all atoms except for the largest contiguous fragment. If the second parameter is true, the charge(s) of the result are neutralized.
+\item\textit{add\_hydrogens(molecule,bool,bool)} takes a molecule and adds hydrogens. Parameter one controls if  all or only polar hydrogens are added and parameter two if a correction for PH=7.4 shall be done.
+\item\textit{remove\_hydrogens(molecule,bool)} takes a molecule and removes hydrogens. Parameter two controls if all or only non-polar hydrogens (true) shall be removed. This also removes Deuterium and Tritium.
+\end{itemize}
+\section{The Lipinsky filter}
+The Lipinsky filter function \textit{lipinsky(molecule)} checks a molecule against the Lipinsky criteria.
+
+\begin{table}[h]
+\begin{tabular}{|l|l|}
+\hline 
+	\textbf{Criterion match} & \textbf{Output letter}\\
+	\hline 
+  none	& empty string\\
+  \hline 
+  H donors $>$ 5	& A\\
+  \hline 
+  molecular weight $>$ 500	& B\\
+  \hline 
+  log P $>$ 5.0	& C\\
+  \hline 
+  H acceptors $>$ 10	& D\\
+  \hline 
+\end{tabular}
+\caption{The Lipinsky function output format}
+\label{tbl:lipinsky_output}
+\end{table}
+The output is either a string consisting of any combination of the letters A, B, C and D or an empty string, as shown in Table~\ref{tbl:lipinsky_output}.
+
+\section{Helper functions}
+\begin{itemize}
+\item\textit{validate\_cas\_no(varchar)} takes a CAS-No. and checks its validity with the official CAS checksum algorithm, including the 10 digit CAS-Numbers introduced in 2008.
+\item\textit{is\_nostruct(molecule)} checks if a molecule is a MDL NoStruct.
+\item\textit{disconnected(molecule)} checks if a molecule is disconnected.
+\item\textit{pgchem\_version()} returns the pgchem::tigress version identifier.
+\item\textit{pgchem\_barsoi\_version()} returns the barsoi version identifier.
+\end{itemize}
+\part{Miscellaneous}
+\section{Rejecting duplicate molecules}
+In order to emulate a unique constraint on molecules, a row level \texttt{INSERT} and \texttt{UPDATE} trigger can be used. First create a trigger function like that in Figure~\ref{fig:unique_trig_func}. As the exact search in this function is dependent on the name and layout of the specific molecules table, do not put this in the public schema. Then attach a trigger like Figure~\ref{fig:unique_trig} to that molecule table. Every new molecule will now be compared to those already in the table and rejected if it is a duplicate.
+\begin{figure}[tb]
+\begin{verbatim}
+CREATE OR REPLACE FUNCTION example.t_is_molecule_unique()
+  RETURNS "trigger" AS
+$BODY$
+DECLARE is_not_unique bool;
+BEGIN
+
+is_not_unique:=false;
+
+IF TG_OP='INSERT' OR TG_OP='UPDATE' THEN
+
+is_not_unique := EXISTS (SELECT <key> FROM <moleculetable> WHERE
+NEW.<moleculecolumn> = <moleculecolumn>);
+
+  IF is_not_unique THEN  RAISE EXCEPTION 'MOLECULE IS NOT
+  UNIQUE!'; END IF;
+
+ELSE
+
+  RAISE EXCEPTION 'PGCHEM IS-MOLECULE-UNIQUE TRIGGER CALLED
+  OUTSIDE INSERT OR UPDATE!';
+
+END IF;
+RETURN NEW;
+END;
+$BODY$
+LANGUAGE 'plpgsql' VOLATILE;
+\end{verbatim}
+\caption{The unique molecules trigger function}
+	\label{fig:unique_trig_func}
+\end{figure}
+\begin{figure}[tb]
+\begin{verbatim}
+CREATE TRIGGER is_molecule_unique
+  BEFORE INSERT OR UPDATE
+  ON <moleculetable>
+  FOR EACH ROW
+  EXECUTE PROCEDURE example.t_is_molecule_unique();
+\end{verbatim}
+\caption{The unique molecules trigger}
+	\label{fig:unique_trig}
+\end{figure}
+\section{Tuning}
+\begin{itemize}
+\item Put GiST indexes on the molecule columns.
+\item Frequently update the statistics on the tables.
+\item Configure PostgreSQL correctly for your type and size of application.
+\item Query the database as precise as possible, especially for substructure searches, e.g. avoid to search for Benzene or Naphthalene as substructures without further constraints.
+\item Use the LIMIT option for PostgreSQL queries if you want to limit the number of hits returned. LIMIT kills the entire query at once when the specified result set limit has been reached, effectively reducing the workload for high-yield queries. LIMIT does not work together with SELECT COUNT.
+\item Pgchem::tigress is generally a bit faster on UN*X than on Win32.
+\end{itemize}
+\section{Security}
+\begin{itemize}
+\item Whitelist-validating all data in an application on input and output is always a good idea.
+\item pgchem::tigress and barsoi have be hardened against classical buffer overflows, but may not be immune.
+\end{itemize}
+\section{Limitations}
+\begin{itemize}
+\item MDL NoStructs are very weakly supported. Avoid them if you can. The concept of a special non-structure is grotesque anyway when you can use NULL.
+\item Disconnected structures cannot be used as query structures. However, they can be search targets.
+\end{itemize}
+\section{Links \& Things}
+\begin{itemize}
+\item checkmol/matchmol: http://merian.pch.univie.ac.at/$\sim$nhaider/cheminf/cmmm.html
+\item OpenBabel: http://openbabel.sourceforge.net/
+\item PostgreSQL: http://www.postgresql.org/
+\item pgchem::tigress + barsoi: http://pgfoundry.org/projects/pgchem/
+\end{itemize}
+\appendix
+\section{The checkmol/matchmol molecular keys format}
+See Table~\ref{tbl:fp_format}.
+\begin{table}[tbp]
+\begin{tabular}{|l|p{8cm}|}
+\hline 
+	\textbf{Field(s)} & \textbf{Descriptor}\\
+	\hline 
+   ntoms, n\_bonds, n\_rings	& number of atoms, bonds, rings\\
+   \hline 
+   n\_QA, n\_QB, n\_chg	& number of query atoms, query bonds, charges\\
+   \hline 
+   n\_C1, n\_C2, n\_C
+  & number of sp, sp2 hybridized, and total no. of carbons\\
+  \hline 
+   n\_CHB1p, n\_CHB2p, n\_CHB3p, n\_CHB4
+  & number of C atoms with at least 1, 2, 3 hetero bonds\\
+  \hline 
+   n\_O2, n\_O3		& number of sp2 and sp3 oxygens\\
+   \hline 
+   n\_N1, n\_N2, n\_N3		& number of sp, sp2, and sp3 nitrogens\\
+   \hline 
+   n\_S, n\_SeTe
+  & number of sulfur atoms and selenium/tellurium atoms\\
+  \hline 
+   n\_F, n\_Cl, n\_Br, n\_I
+  & number of fluorine, chlorine, bromine, iodine atoms\\
+  \hline 
+   n\_P, n\_B			& number of phosphorus and boron atoms\\
+   \hline 
+   n\_Met, n\_X
+  & number of metal and "other" atoms (not listed elsewhere)\\
+  \hline 
+   n\_b1, n\_b2, n\_b3, n\_bar
+  & number single, double, triple, and aromatic bonds\\
+  \hline 
+   n\_C1O, n\_C2O, n\_CN, n\_XY
+  & number of C-O single bonds, C=O double bonds, CN bonds (any type), hetero/hetero bonds\\
+  \hline 
+   n\_r3, n\_r4, n\_r5, n\_r6, n\_r7, n\_r8
+  & number of 3-, 4-, 5-, 6-, 7-, and 8-membered rings\\
+  \hline 
+   n\_r9, n\_r10, n\_r11, n\_r12, n\_r13p
+  & number of 9-, 10-, 11-, 12-, and 13plus-membered rings\\
+  \hline 
+   n\_rN, n\_rN1, n\_rN2, n\_rN3p
+  & number of rings containing N (any number), 1 N, 2 N, and 3 N or more\\
+  \hline 
+   n\_rO, n\_rO1, n\_rO2p
+  & number of rings containing O (any number), 1 O, and 2 O or more\\
+  \hline 
+   n\_rS, n\_rX, n\_rAr, n\_rBz
+  & number of rings containing S (any number), any heteroatom (any number), number of aromatic rings, number of benzene rings\\
+  \hline 
+   n\_br2p			& number of bonds belonging to more than one ring\\
+   \hline 
+   n\_psg01, n\_psg02, n\_psg13, n\_psg14
+  & number of atoms belonging to elements of group 1, 2, etc.\\
+  \hline 
+   n\_psg15, n\_psg16, n\_psg17, n\_psg18
+  & number of atoms belonging to elements of group 15, 16, etc.\\
+  \hline 
+   n\_pstm, n\_psla
+  & number of transition metals, lanthanides/actinides\\
+  \hline 
+   n\_iso, n\_rad
+  & number of isotopes, radicals\\
+  \hline
+\end{tabular}
+\caption{The checkmol/matchmol molecular keys format, all descriptors are integers}
+\label{tbl:fp_format}
+\end{table}
+\section{The operators}
+See Table~\ref{tbl:mol_ops}.
+\begin{table}[tbp]
+\begin{tabular}{|l|l|l|l|}
+\hline 
+	\textbf{Operator} & \textbf{Description} & \textbf{GiST acceleration} & \textbf{Return type}\\
+	\hline 
+  A $<=$ B	& A contained in B & yes & boolean\\
+  \hline 
+  A $>=$ B	& A contains B & yes & boolean\\
+  \hline 
+  A $=$ B	& A equals B & yes & boolean\\
+  \hline 
+  A @ B	& Tanimoto coefficient of A and B & no & double\\
+  \hline 
+\end{tabular}
+\caption{The available operators for the molecule datatype}
+\label{tbl:mol_ops}
+\end{table}
+
+\end{document}

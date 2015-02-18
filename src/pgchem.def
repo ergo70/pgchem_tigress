@@ -1,0 +1,995 @@
+; dlltool --export-all --output-def pgchem.def reaction/reaction_op.o reaction/reaction_gist.o reaction/reaction_io.o molecule/molecule_op.o molecule/molecule_gist.o molecule/molecule_io.o obwrapper.o functions.o openbabel-2.2.3/src/fingerprints/fingerpc8.o openbabel-2.2.3/src/fingerprints/finger2.o openbabel-2.2.3/src/fingerprints/finger3.o openbabel-2.2.3/src/formats/inchiformat.o openbabel-2.2.3/src/vf2.o
+EXPORTS
+	Pg_magic_func @ 1
+;	guard variable for OpenBabel::PatternCountFP::Description()::desc
+	_ZGVZN9OpenBabel14PatternCountFP11DescriptionEvE4desc @ 2 DATA
+;	guard variable for OpenBabel::OBFormat::FormatsMIMEMap()::m
+	_ZGVZN9OpenBabel8OBFormat14FormatsMIMEMapEvE1m @ 3 DATA
+;	guard variable for OpenBabel::OBPlugin::PluginMap()::m
+	_ZGVZN9OpenBabel8OBPlugin9PluginMapEvE1m @ 4 DATA
+;	guard variable for OpenBabel::PatternFP::Description()::desc
+	_ZGVZN9OpenBabel9PatternFP11DescriptionEvE4desc @ 5 DATA
+;	ARGraph_impl::CompatibleEdge(void*, void*)
+	_ZN12ARGraph_impl14CompatibleEdgeEPvS0_ @ 6
+;	ARGraph_impl::CompatibleNode(void*, void*)
+	_ZN12ARGraph_impl14CompatibleNodeEPvS0_ @ 7
+;	AttrComparator::~AttrComparator()
+	_ZN14AttrComparatorD0Ev @ 8
+;	AttrComparator::~AttrComparator()
+	_ZN14AttrComparatorD1Ev @ 9
+;	ARGraph<OpenBabel::OBAtom*, OpenBabel::OBBond*>::~ARGraph()
+	_ZN7ARGraphIPN9OpenBabel6OBAtomEPNS0_6OBBondEED0Ev @ 10
+;	ARGraph<OpenBabel::OBAtom*, OpenBabel::OBBond*>::~ARGraph()
+	_ZN7ARGraphIPN9OpenBabel6OBAtomEPNS0_6OBBondEED1Ev @ 11
+;	OpenBabel::FastSearch::~FastSearch()
+	_ZN9OpenBabel10FastSearchD0Ev @ 12
+;	OpenBabel::FastSearch::~FastSearch()
+	_ZN9OpenBabel10FastSearchD1Ev @ 13
+;	OpenBabel::OBPairData::~OBPairData()
+	_ZN9OpenBabel10OBPairDataD0Ev @ 14
+;	OpenBabel::OBPairData::~OBPairData()
+	_ZN9OpenBabel10OBPairDataD1Ev @ 15
+;	OpenBabel::OBUnitCell::~OBUnitCell()
+	_ZN9OpenBabel10OBUnitCellD0Ev @ 16
+;	OpenBabel::OBUnitCell::~OBUnitCell()
+	_ZN9OpenBabel10OBUnitCellD1Ev @ 17
+;	OpenBabel::TestFormat::Description()
+	_ZN9OpenBabel10TestFormat11DescriptionEv @ 18
+;	OpenBabel::TestFormat::WriteMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel10TestFormat13WriteMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 19
+;	OpenBabel::TestFormat::Flags()
+	_ZN9OpenBabel10TestFormat5FlagsEv @ 20
+;	OpenBabel::TestFormat::~TestFormat()
+	_ZN9OpenBabel10TestFormatD0Ev @ 21
+;	OpenBabel::TestFormat::~TestFormat()
+	_ZN9OpenBabel10TestFormatD1Ev @ 22
+;	OpenBabel::InChIFormat::Description()
+	_ZN9OpenBabel11InChIFormat11DescriptionEv @ 23
+;	OpenBabel::InChIFormat::SkipObjects(int, OpenBabel::OBConversion*)
+	_ZN9OpenBabel11InChIFormat11SkipObjectsEiPNS_12OBConversionE @ 24
+;	OpenBabel::InChIFormat::CompareInchi(char const*, char const*)
+	_ZN9OpenBabel11InChIFormat12CompareInchiEPKcS2_ @ 25
+;	OpenBabel::InChIFormat::ReadMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel11InChIFormat12ReadMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 26
+;	OpenBabel::InChIFormat::GetCommonAtom(OpenBabel::OBBond*, OpenBabel::OBBond*)
+	_ZN9OpenBabel11InChIFormat13GetCommonAtomEPNS_6OBBondES2_ @ 27
+;	OpenBabel::InChIFormat::WriteMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel11InChIFormat13WriteMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 28
+;	OpenBabel::InChIFormat::GetInChIOptions(OpenBabel::OBConversion*, bool)
+	_ZN9OpenBabel11InChIFormat15GetInChIOptionsEPNS_12OBConversionEb @ 29
+;	OpenBabel::InChIFormat::SpecificationURL()
+	_ZN9OpenBabel11InChIFormat16SpecificationURLEv @ 30
+;	OpenBabel::InChIFormat::InChIErrorMessage(char)
+	_ZN9OpenBabel11InChIFormat17InChIErrorMessageEc @ 31
+;	OpenBabel::InChIFormat::InChIFormat()
+	_ZN9OpenBabel11InChIFormatC1Ev @ 32
+;	OpenBabel::InChIFormat::~InChIFormat()
+	_ZN9OpenBabel11InChIFormatD0Ev @ 33
+;	OpenBabel::InChIFormat::~InChIFormat()
+	_ZN9OpenBabel11InChIFormatD1Ev @ 34
+;	OpenBabel::OBAngleData::~OBAngleData()
+	_ZN9OpenBabel11OBAngleDataD0Ev @ 35
+;	OpenBabel::OBAngleData::~OBAngleData()
+	_ZN9OpenBabel11OBAngleDataD1Ev @ 36
+;	OpenBabel::FP3PatternFP
+	_ZN9OpenBabel12FP3PatternFPE @ 37 DATA
+;	OpenBabel::FP4PatternFP
+	_ZN9OpenBabel12FP4PatternFPE @ 38 DATA
+;	OpenBabel::OBChiralData::~OBChiralData()
+	_ZN9OpenBabel12OBChiralDataD0Ev @ 39
+;	OpenBabel::OBChiralData::~OBChiralData()
+	_ZN9OpenBabel12OBChiralDataD1Ev @ 40
+;	OpenBabel::OBDescriptor::Default()
+	_ZN9OpenBabel12OBDescriptor7DefaultEv @ 41
+;	OpenBabel::OBMatrixData::~OBMatrixData()
+	_ZN9OpenBabel12OBMatrixDataD0Ev @ 42
+;	OpenBabel::OBMatrixData::~OBMatrixData()
+	_ZN9OpenBabel12OBMatrixDataD1Ev @ 43
+;	OpenBabel::OBVectorData::~OBVectorData()
+	_ZN9OpenBabel12OBVectorDataD0Ev @ 44
+;	OpenBabel::OBVectorData::~OBVectorData()
+	_ZN9OpenBabel12OBVectorDataD1Ev @ 45
+;	OpenBabel::evoPatternFP
+	_ZN9OpenBabel12evoPatternFPE @ 46 DATA
+;	OpenBabel::fingerprint2::DoReverses()
+	_ZN9OpenBabel12fingerprint210DoReversesEv @ 47
+;	OpenBabel::fingerprint2::Description()
+	_ZN9OpenBabel12fingerprint211DescriptionEv @ 48
+;	OpenBabel::fingerprint2::getFragments(std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >, int, OpenBabel::OBAtom*, OpenBabel::OBBond*)
+	_ZN9OpenBabel12fingerprint212getFragmentsESt6vectorIiSaIiEES3_iPNS_6OBAtomEPNS_6OBBondE @ 49
+;	OpenBabel::fingerprint2::GetFingerprint(OpenBabel::OBBase*, std::vector<unsigned int, std::allocator<unsigned int> >&, int)
+	_ZN9OpenBabel12fingerprint214GetFingerprintEPNS_6OBBaseERSt6vectorIjSaIjEEi @ 50
+;	OpenBabel::fingerprint2::DoRings()
+	_ZN9OpenBabel12fingerprint27DoRingsEv @ 51
+;	OpenBabel::fingerprint2::CalcHash(std::vector<int, std::allocator<int> > const&)
+	_ZN9OpenBabel12fingerprint28CalcHashERKSt6vectorIiSaIiEE @ 52
+;	OpenBabel::fingerprint2::PrintFpt(std::vector<int, std::allocator<int> >&, int)
+	_ZN9OpenBabel12fingerprint28PrintFptERSt6vectorIiSaIiEEi @ 53
+;	OpenBabel::fingerprint2::~fingerprint2()
+	_ZN9OpenBabel12fingerprint2D0Ev @ 54
+;	OpenBabel::fingerprint2::~fingerprint2()
+	_ZN9OpenBabel12fingerprint2D1Ev @ 55
+;	OpenBabel::OBCommentData::~OBCommentData()
+	_ZN9OpenBabel13OBCommentDataD0Ev @ 56
+;	OpenBabel::OBCommentData::~OBCommentData()
+	_ZN9OpenBabel13OBCommentDataD1Ev @ 57
+;	OpenBabel::OBFingerprint::DescribeBits(std::vector<unsigned int, std::allocator<unsigned int> >, bool)
+	_ZN9OpenBabel13OBFingerprint12DescribeBitsESt6vectorIjSaIjEEb @ 58
+;	OpenBabel::OBFingerprint::Flags()
+	_ZN9OpenBabel13OBFingerprint5FlagsEv @ 59
+;	OpenBabel::OBFingerprint::Default()
+	_ZN9OpenBabel13OBFingerprint7DefaultEv @ 60
+;	OpenBabel::OBFingerprint::~OBFingerprint()
+	_ZN9OpenBabel13OBFingerprintD0Ev @ 61
+;	OpenBabel::OBFingerprint::~OBFingerprint()
+	_ZN9OpenBabel13OBFingerprintD1Ev @ 62
+;	OpenBabel::OBGenericData::~OBGenericData()
+	_ZN9OpenBabel13OBGenericDataD0Ev @ 63
+;	OpenBabel::OBGenericData::~OBGenericData()
+	_ZN9OpenBabel13OBGenericDataD1Ev @ 64
+;	OpenBabel::OBGenericData::~OBGenericData()
+	_ZN9OpenBabel13OBGenericDataD2Ev @ 65
+;	OpenBabel::OBTorsionData::~OBTorsionData()
+	_ZN9OpenBabel13OBTorsionDataD0Ev @ 66
+;	OpenBabel::OBTorsionData::~OBTorsionData()
+	_ZN9OpenBabel13OBTorsionDataD1Ev @ 67
+;	OpenBabel::OBVirtualBond::~OBVirtualBond()
+	_ZN9OpenBabel13OBVirtualBondD0Ev @ 68
+;	OpenBabel::OBVirtualBond::~OBVirtualBond()
+	_ZN9OpenBabel13OBVirtualBondD1Ev @ 69
+;	OpenBabel::theTestFormat
+	_ZN9OpenBabel13theTestFormatE @ 70 DATA
+;	OpenBabel::OBGroupContrib::~OBGroupContrib()
+	_ZN9OpenBabel14OBGroupContribD1Ev @ 71
+;	OpenBabel::OBRotationData::~OBRotationData()
+	_ZN9OpenBabel14OBRotationDataD0Ev @ 72
+;	OpenBabel::OBRotationData::~OBRotationData()
+	_ZN9OpenBabel14OBRotationDataD1Ev @ 73
+;	OpenBabel::OBSymmetryData::~OBSymmetryData()
+	_ZN9OpenBabel14OBSymmetryDataD0Ev @ 74
+;	OpenBabel::OBSymmetryData::~OBSymmetryData()
+	_ZN9OpenBabel14OBSymmetryDataD1Ev @ 75
+;	OpenBabel::PatternCountFP::Description()
+	_ZN9OpenBabel14PatternCountFP11DescriptionEv @ 76
+;	OpenBabel::PatternCountFP::DescribeBits(std::vector<unsigned int, std::allocator<unsigned int> >, bool)
+	_ZN9OpenBabel14PatternCountFP12DescribeBitsESt6vectorIjSaIjEEb @ 77
+;	OpenBabel::PatternCountFP::GetFingerprint(OpenBabel::OBBase*, std::vector<unsigned int, std::allocator<unsigned int> >&, int)
+	_ZN9OpenBabel14PatternCountFP14GetFingerprintEPNS_6OBBaseERSt6vectorIjSaIjEEi @ 78
+;	OpenBabel::PatternCountFP::ReadPatternFile(std::string const&, std::vector<std::string, std::allocator<std::string> >&)
+	_ZN9OpenBabel14PatternCountFP15ReadPatternFileERKSsRSt6vectorISsSaISsEE @ 79
+;	OpenBabel::PatternCountFP::Flags()
+	_ZN9OpenBabel14PatternCountFP5FlagsEv @ 80
+;	OpenBabel::PatternCountFP::~PatternCountFP()
+	_ZN9OpenBabel14PatternCountFPD0Ev @ 81
+;	OpenBabel::PatternCountFP::~PatternCountFP()
+	_ZN9OpenBabel14PatternCountFPD1Ev @ 82
+;	OpenBabel::theInChIFormat
+	_ZN9OpenBabel14theInChIFormatE @ 83 DATA
+;	OpenBabel::OBConformerData::~OBConformerData()
+	_ZN9OpenBabel15OBConformerDataD0Ev @ 84
+;	OpenBabel::OBConformerData::~OBConformerData()
+	_ZN9OpenBabel15OBConformerDataD1Ev @ 85
+;	OpenBabel::OBVibrationData::~OBVibrationData()
+	_ZN9OpenBabel15OBVibrationDataD0Ev @ 86
+;	OpenBabel::OBVibrationData::~OBVibrationData()
+	_ZN9OpenBabel15OBVibrationDataD1Ev @ 87
+;	OpenBabel::thefingerprint2
+	_ZN9OpenBabel15thefingerprint2E @ 88 DATA
+;	OpenBabel::OBGlobalDataBase::GetSize()
+	_ZN9OpenBabel16OBGlobalDataBase7GetSizeEv @ 89
+;	OpenBabel::OBGlobalDataBase::ParseLine(char const*)
+	_ZN9OpenBabel16OBGlobalDataBase9ParseLineEPKc @ 90
+;	OpenBabel::OBGlobalDataBase::~OBGlobalDataBase()
+	_ZN9OpenBabel16OBGlobalDataBaseD0Ev @ 91
+;	OpenBabel::OBGlobalDataBase::~OBGlobalDataBase()
+	_ZN9OpenBabel16OBGlobalDataBaseD1Ev @ 92
+;	OpenBabel::OBMoleculeFormat::ReadChemObject(OpenBabel::OBConversion*)
+	_ZN9OpenBabel16OBMoleculeFormat14ReadChemObjectEPNS_12OBConversionE @ 93
+;	OpenBabel::OBMoleculeFormat::WriteChemObject(OpenBabel::OBConversion*)
+	_ZN9OpenBabel16OBMoleculeFormat15WriteChemObjectEPNS_12OBConversionE @ 94
+;	OpenBabel::OBMoleculeFormat::GetType()
+	_ZN9OpenBabel16OBMoleculeFormat7GetTypeEv @ 95
+;	OpenBabel::OBMoleculeFormat::OBMoleculeFormat()
+	_ZN9OpenBabel16OBMoleculeFormatC2Ev @ 96
+;	OpenBabel::OBMoleculeFormat::~OBMoleculeFormat()
+	_ZN9OpenBabel16OBMoleculeFormatD0Ev @ 97
+;	OpenBabel::OBMoleculeFormat::~OBMoleculeFormat()
+	_ZN9OpenBabel16OBMoleculeFormatD1Ev @ 98
+;	OpenBabel::_OBAtomComparator::compatible(void*, void*)
+	_ZN9OpenBabel17_OBAtomComparator10compatibleEPvS1_ @ 99
+;	OpenBabel::_OBAtomComparator::~_OBAtomComparator()
+	_ZN9OpenBabel17_OBAtomComparatorD0Ev @ 100
+;	OpenBabel::_OBAtomComparator::~_OBAtomComparator()
+	_ZN9OpenBabel17_OBAtomComparatorD1Ev @ 101
+;	OpenBabel::_OBBondComparator::compatible(void*, void*)
+	_ZN9OpenBabel17_OBBondComparator10compatibleEPvS1_ @ 102
+;	OpenBabel::_OBBondComparator::~_OBBondComparator()
+	_ZN9OpenBabel17_OBBondComparatorD0Ev @ 103
+;	OpenBabel::_OBBondComparator::~_OBBondComparator()
+	_ZN9OpenBabel17_OBBondComparatorD1Ev @ 104
+;	OpenBabel::InChICompareFormat::Description()
+	_ZN9OpenBabel18InChICompareFormat11DescriptionEv @ 105
+;	OpenBabel::InChICompareFormat::WriteMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel18InChICompareFormat13WriteMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 106
+;	OpenBabel::InChICompareFormat::Flags()
+	_ZN9OpenBabel18InChICompareFormat5FlagsEv @ 107
+;	OpenBabel::InChICompareFormat::~InChICompareFormat()
+	_ZN9OpenBabel18InChICompareFormatD0Ev @ 108
+;	OpenBabel::InChICompareFormat::~InChICompareFormat()
+	_ZN9OpenBabel18InChICompareFormatD1Ev @ 109
+;	OpenBabel::OBExternalBondData::~OBExternalBondData()
+	_ZN9OpenBabel18OBExternalBondDataD0Ev @ 110
+;	OpenBabel::OBExternalBondData::~OBExternalBondData()
+	_ZN9OpenBabel18OBExternalBondDataD1Ev @ 111
+;	OpenBabel::_OBAtomComparatorEx::compatible(void*, void*)
+	_ZN9OpenBabel19_OBAtomComparatorEx10compatibleEPvS1_ @ 112
+;	OpenBabel::_OBAtomComparatorEx::~_OBAtomComparatorEx()
+	_ZN9OpenBabel19_OBAtomComparatorExD0Ev @ 113
+;	OpenBabel::_OBAtomComparatorEx::~_OBAtomComparatorEx()
+	_ZN9OpenBabel19_OBAtomComparatorExD1Ev @ 114
+;	OpenBabel::_OBBondComparatorEx::compatible(void*, void*)
+	_ZN9OpenBabel19_OBBondComparatorEx10compatibleEPvS1_ @ 115
+;	OpenBabel::_OBBondComparatorEx::~_OBBondComparatorEx()
+	_ZN9OpenBabel19_OBBondComparatorExD0Ev @ 116
+;	OpenBabel::_OBBondComparatorEx::~_OBBondComparatorEx()
+	_ZN9OpenBabel19_OBBondComparatorExD1Ev @ 117
+;	OpenBabel::theInChICompareFormat
+	_ZN9OpenBabel21theInChICompareFormatE @ 118 DATA
+;	OpenBabel::VF2::ExactMatch(OpenBabel::OBMol&, OpenBabel::OBMol&)
+	_ZN9OpenBabel3VF210ExactMatchERNS_5OBMolES2_ @ 119
+;	OpenBabel::VF2::Match(OpenBabel::OBMol&, OpenBabel::OBMol&)
+	_ZN9OpenBabel3VF25MatchERNS_5OBMolES2_ @ 120
+;	OpenBabel::VF2::VF2()
+	_ZN9OpenBabel3VF2C1Ev @ 121
+;	OpenBabel::VF2::VF2()
+	_ZN9OpenBabel3VF2C2Ev @ 122
+;	OpenBabel::OBFormat::SkipObjects(int, OpenBabel::OBConversion*)
+	_ZN9OpenBabel8OBFormat11SkipObjectsEiPNS_12OBConversionE @ 123
+;	OpenBabel::OBFormat::ReadMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel8OBFormat12ReadMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 124
+;	OpenBabel::OBFormat::WriteMolecule(OpenBabel::OBBase*, OpenBabel::OBConversion*)
+	_ZN9OpenBabel8OBFormat13WriteMoleculeEPNS_6OBBaseEPNS_12OBConversionE @ 125
+;	OpenBabel::OBFormat::MakeNewInstance()
+	_ZN9OpenBabel8OBFormat15MakeNewInstanceEv @ 126
+;	OpenBabel::OBFormat::SpecificationURL()
+	_ZN9OpenBabel8OBFormat16SpecificationURLEv @ 127
+;	OpenBabel::OBFormat::Flags()
+	_ZN9OpenBabel8OBFormat5FlagsEv @ 128
+;	OpenBabel::OBPlugin::Description()
+	_ZN9OpenBabel8OBPlugin11DescriptionEv @ 129
+;	OpenBabel::OBPlugin::MakeInstance(std::vector<std::string, std::allocator<std::string> > const&)
+	_ZN9OpenBabel8OBPlugin12MakeInstanceERKSt6vectorISsSaISsEE @ 130
+;	OpenBabel::OBPlugin::PluginMap()
+	_ZN9OpenBabel8OBPlugin9PluginMapEv @ 131
+;	OpenBabel::obLogBuf::sync()
+	_ZN9OpenBabel8obLogBuf4syncEv @ 132
+;	OpenBabel::obLogBuf::~obLogBuf()
+	_ZN9OpenBabel8obLogBufD0Ev @ 133
+;	OpenBabel::obLogBuf::~obLogBuf()
+	_ZN9OpenBabel8obLogBufD1Ev @ 134
+;	OpenBabel::OBSetData::~OBSetData()
+	_ZN9OpenBabel9OBSetDataD0Ev @ 135
+;	OpenBabel::OBSetData::~OBSetData()
+	_ZN9OpenBabel9OBSetDataD1Ev @ 136
+;	OpenBabel::PatternFP::Description()
+	_ZN9OpenBabel9PatternFP11DescriptionEv @ 137
+;	OpenBabel::PatternFP::DescribeBits(std::vector<unsigned int, std::allocator<unsigned int> >, bool)
+	_ZN9OpenBabel9PatternFP12DescribeBitsESt6vectorIjSaIjEEb @ 138
+;	OpenBabel::PatternFP::MakeInstance(std::vector<std::string, std::allocator<std::string> > const&)
+	_ZN9OpenBabel9PatternFP12MakeInstanceERKSt6vectorISsSaISsEE @ 139
+;	OpenBabel::PatternFP::GetFingerprint(OpenBabel::OBBase*, std::vector<unsigned int, std::allocator<unsigned int> >&, int)
+	_ZN9OpenBabel9PatternFP14GetFingerprintEPNS_6OBBaseERSt6vectorIjSaIjEEi @ 140
+;	OpenBabel::PatternFP::ReadPatternFile()
+	_ZN9OpenBabel9PatternFP15ReadPatternFileEv @ 141
+;	OpenBabel::PatternFP::Flags()
+	_ZN9OpenBabel9PatternFP5FlagsEv @ 142
+;	OpenBabel::PatternFP::pattern::pattern(OpenBabel::PatternFP::pattern const&)
+	_ZN9OpenBabel9PatternFP7patternC1ERKS1_ @ 143
+;	OpenBabel::PatternFP::pattern::~pattern()
+	_ZN9OpenBabel9PatternFP7patternD1Ev @ 144
+;	OpenBabel::PatternFP::PatternFP(char const*, char const*, bool)
+	_ZN9OpenBabel9PatternFPC1EPKcS2_b @ 145
+;	OpenBabel::PatternFP::~PatternFP()
+	_ZN9OpenBabel9PatternFPD0Ev @ 146
+;	OpenBabel::PatternFP::~PatternFP()
+	_ZN9OpenBabel9PatternFPD1Ev @ 147
+;	OpenBabel::OBPairData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel10OBPairData5CloneEPNS_6OBBaseE @ 148
+;	OpenBabel::OBPairData::GetValue() const
+	_ZNK9OpenBabel10OBPairData8GetValueEv @ 149
+;	OpenBabel::OBUnitCell::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel10OBUnitCell5CloneEPNS_6OBBaseE @ 150
+;	OpenBabel::InChIFormat::InchiLess::operator()(std::string const&, std::string const&) const
+	_ZNK9OpenBabel11InChIFormat9InchiLessclERKSsS3_ @ 151
+;	OpenBabel::OBAngleData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel11OBAngleData5CloneEPNS_6OBBaseE @ 152
+;	OpenBabel::OBChiralData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel12OBChiralData5CloneEPNS_6OBBaseE @ 153
+;	OpenBabel::OBMatrixData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel12OBMatrixData5CloneEPNS_6OBBaseE @ 154
+;	OpenBabel::OBVectorData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel12OBVectorData5CloneEPNS_6OBBaseE @ 155
+;	OpenBabel::OBCommentData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel13OBCommentData5CloneEPNS_6OBBaseE @ 156
+;	OpenBabel::OBCommentData::GetValue() const
+	_ZNK9OpenBabel13OBCommentData8GetValueEv @ 157
+;	OpenBabel::OBFingerprint::GetMap() const
+	_ZNK9OpenBabel13OBFingerprint6GetMapEv @ 158
+;	OpenBabel::OBGenericData::GetAttribute() const
+	_ZNK9OpenBabel13OBGenericData12GetAttributeEv @ 159
+;	OpenBabel::OBGenericData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel13OBGenericData5CloneEPNS_6OBBaseE @ 160
+;	OpenBabel::OBGenericData::GetValue() const
+	_ZNK9OpenBabel13OBGenericData8GetValueEv @ 161
+;	OpenBabel::OBGenericData::GetOrigin() const
+	_ZNK9OpenBabel13OBGenericData9GetOriginEv @ 162
+;	OpenBabel::OBTorsionData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel13OBTorsionData5CloneEPNS_6OBBaseE @ 163
+;	OpenBabel::OBVirtualBond::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel13OBVirtualBond5CloneEPNS_6OBBaseE @ 164
+;	OpenBabel::OBRotationData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel14OBRotationData5CloneEPNS_6OBBaseE @ 165
+;	OpenBabel::OBSymmetryData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel14OBSymmetryData5CloneEPNS_6OBBaseE @ 166
+;	OpenBabel::OBConformerData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel15OBConformerData5CloneEPNS_6OBBaseE @ 167
+;	OpenBabel::OBVibrationData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel15OBVibrationData5CloneEPNS_6OBBaseE @ 168
+;	OpenBabel::OBExternalBondData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel18OBExternalBondData5CloneEPNS_6OBBaseE @ 169
+;	OpenBabel::OBFormat::GetMap() const
+	_ZNK9OpenBabel8OBFormat6GetMapEv @ 170
+;	OpenBabel::OBSetData::Clone(OpenBabel::OBBase*) const
+	_ZNK9OpenBabel9OBSetData5CloneEPNS_6OBBaseE @ 171
+;	OpenBabel::OBSetData::GetData() const
+	_ZNK9OpenBabel9OBSetData7GetDataEv @ 172
+;	int* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<int>(int const*, int const*, int*)
+	_ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIiEEPT_PKS3_S6_S4_ @ 173
+;	std::basic_stringbuf<char, std::char_traits<char>, std::allocator<char> >::~basic_stringbuf()
+	_ZNSt15basic_stringbufIcSt11char_traitsIcESaIcEED2Ev @ 174
+;	std::map<char const*, OpenBabel::OBPlugin*, OpenBabel::CharPtrLess, std::allocator<std::pair<char const* const, OpenBabel::OBPlugin*> > >::operator[](char const* const&)
+	_ZNSt3mapIPKcPN9OpenBabel8OBPluginENS2_11CharPtrLessESaISt4pairIKS1_S4_EEEixERS7_ @ 175
+;	std::set<std::string, OpenBabel::InChIFormat::InchiLess, std::allocator<std::string> >::insert(std::string const&)
+	_ZNSt3setISsN9OpenBabel11InChIFormat9InchiLessESaISsEE6insertERKSs @ 176
+;	std::set<std::string, OpenBabel::InChIFormat::InchiLess, std::allocator<std::string> >::~set()
+	_ZNSt3setISsN9OpenBabel11InChIFormat9InchiLessESaISsEED1Ev @ 177
+;	std::set<std::vector<int, std::allocator<int> >, std::less<std::vector<int, std::allocator<int> > >, std::allocator<std::vector<int, std::allocator<int> > > >::insert(std::vector<int, std::allocator<int> > const&)
+	_ZNSt3setISt6vectorIiSaIiEESt4lessIS2_ESaIS2_EE6insertERKS2_ @ 178
+;	std::set<std::vector<int, std::allocator<int> >, std::less<std::vector<int, std::allocator<int> > >, std::allocator<std::vector<int, std::allocator<int> > > >::~set()
+	_ZNSt3setISt6vectorIiSaIiEESt4lessIS2_ESaIS2_EED1Ev @ 179
+;	std::vector<tagINCHIStereo0D, std::allocator<tagINCHIStereo0D> >::_M_insert_aux(__gnu_cxx::__normal_iterator<tagINCHIStereo0D*, std::vector<tagINCHIStereo0D, std::allocator<tagINCHIStereo0D> > >, tagINCHIStereo0D const&)
+	_ZNSt6vectorI16tagINCHIStereo0DSaIS0_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS0_S2_EERKS0_ @ 180
+;	std::vector<OpenBabel::OBMol, std::allocator<OpenBabel::OBMol> >::~vector()
+	_ZNSt6vectorIN9OpenBabel5OBMolESaIS1_EED1Ev @ 181
+;	std::vector<OpenBabel::OBMol, std::allocator<OpenBabel::OBMol> >::operator=(std::vector<OpenBabel::OBMol, std::allocator<OpenBabel::OBMol> > const&)
+	_ZNSt6vectorIN9OpenBabel5OBMolESaIS1_EEaSERKS3_ @ 182
+;	std::vector<OpenBabel::PatternFP::pattern, std::allocator<OpenBabel::PatternFP::pattern> >::_M_insert_aux(__gnu_cxx::__normal_iterator<OpenBabel::PatternFP::pattern*, std::vector<OpenBabel::PatternFP::pattern, std::allocator<OpenBabel::PatternFP::pattern> > >, OpenBabel::PatternFP::pattern const&)
+	_ZNSt6vectorIN9OpenBabel9PatternFP7patternESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_ @ 183
+;	std::vector<OpenBabel::PatternFP::pattern, std::allocator<OpenBabel::PatternFP::pattern> >::~vector()
+	_ZNSt6vectorIN9OpenBabel9PatternFP7patternESaIS2_EED1Ev @ 184
+;	std::vector<OpenBabel::OBGenericData*, std::allocator<OpenBabel::OBGenericData*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<OpenBabel::OBGenericData**, std::vector<OpenBabel::OBGenericData*, std::allocator<OpenBabel::OBGenericData*> > >, OpenBabel::OBGenericData* const&)
+	_ZNSt6vectorIPN9OpenBabel13OBGenericDataESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_ @ 185
+;	std::vector<OpenBabel::OBAtom*, std::allocator<OpenBabel::OBAtom*> >::reserve(unsigned int)
+	_ZNSt6vectorIPN9OpenBabel6OBAtomESaIS2_EE7reserveEj @ 186
+;	std::vector<OpenBabel::OBBond*, std::allocator<OpenBabel::OBBond*> >::_M_insert_aux(__gnu_cxx::__normal_iterator<OpenBabel::OBBond**, std::vector<OpenBabel::OBBond*, std::allocator<OpenBabel::OBBond*> > >, OpenBabel::OBBond* const&)
+	_ZNSt6vectorIPN9OpenBabel6OBBondESaIS2_EE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPS2_S4_EERKS2_ @ 187
+;	std::vector<std::vector<OpenBabel::vector3, std::allocator<OpenBabel::vector3> >, std::allocator<std::vector<OpenBabel::vector3, std::allocator<OpenBabel::vector3> > > >::~vector()
+	_ZNSt6vectorIS_IN9OpenBabel7vector3ESaIS1_EESaIS3_EED1Ev @ 188
+;	std::vector<std::vector<int, std::allocator<int> >, std::allocator<std::vector<int, std::allocator<int> > > >::~vector()
+	_ZNSt6vectorIS_IiSaIiEESaIS1_EED1Ev @ 189
+;	std::vector<std::string, std::allocator<std::string> >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::string*, std::vector<std::string, std::allocator<std::string> > >, std::string const&)
+	_ZNSt6vectorISsSaISsEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPSsS1_EERKSs @ 190
+;	std::vector<std::string, std::allocator<std::string> >::push_back(std::string const&)
+	_ZNSt6vectorISsSaISsEE9push_backERKSs @ 191
+;	std::vector<std::string, std::allocator<std::string> >::~vector()
+	_ZNSt6vectorISsSaISsEED1Ev @ 192
+;	std::vector<double, std::allocator<double> >::vector(std::vector<double, std::allocator<double> > const&)
+	_ZNSt6vectorIdSaIdEEC1ERKS1_ @ 193
+;	std::vector<double, std::allocator<double> >::~vector()
+	_ZNSt6vectorIdSaIdEED1Ev @ 194
+;	std::vector<int, std::allocator<int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, int const&)
+	_ZNSt6vectorIiSaIiEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPiS1_EERKi @ 195
+;	std::vector<int, std::allocator<int> >::vector(std::vector<int, std::allocator<int> > const&)
+	_ZNSt6vectorIiSaIiEEC1ERKS1_ @ 196
+;	std::vector<int, std::allocator<int> >::~vector()
+	_ZNSt6vectorIiSaIiEED1Ev @ 197
+;	std::vector<int, std::allocator<int> >::operator=(std::vector<int, std::allocator<int> > const&)
+	_ZNSt6vectorIiSaIiEEaSERKS1_ @ 198
+;	std::vector<unsigned int, std::allocator<unsigned int> >::_M_insert_aux(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int const&)
+	_ZNSt6vectorIjSaIjEE13_M_insert_auxEN9__gnu_cxx17__normal_iteratorIPjS1_EERKj @ 199
+;	std::vector<unsigned int, std::allocator<unsigned int> >::_M_fill_insert(__gnu_cxx::__normal_iterator<unsigned int*, std::vector<unsigned int, std::allocator<unsigned int> > >, unsigned int, unsigned int const&)
+	_ZNSt6vectorIjSaIjEE14_M_fill_insertEN9__gnu_cxx17__normal_iteratorIPjS1_EEjRKj @ 200
+;	std::vector<unsigned int, std::allocator<unsigned int> >::~vector()
+	_ZNSt6vectorIjSaIjEED1Ev @ 201
+;	std::_Rb_tree<char const*, std::pair<char const* const, OpenBabel::OBPlugin*>, std::_Select1st<std::pair<char const* const, OpenBabel::OBPlugin*> >, OpenBabel::CharPtrLess, std::allocator<std::pair<char const* const, OpenBabel::OBPlugin*> > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<char const* const, OpenBabel::OBPlugin*> const&)
+	_ZNSt8_Rb_treeIPKcSt4pairIKS1_PN9OpenBabel8OBPluginEESt10_Select1stIS7_ENS4_11CharPtrLessESaIS7_EE10_M_insert_EPKSt18_Rb_tree_node_baseSF_RKS7_ @ 202
+;	std::_Rb_tree<char const*, std::pair<char const* const, OpenBabel::OBPlugin*>, std::_Select1st<std::pair<char const* const, OpenBabel::OBPlugin*> >, OpenBabel::CharPtrLess, std::allocator<std::pair<char const* const, OpenBabel::OBPlugin*> > >::_M_insert_unique(std::pair<char const* const, OpenBabel::OBPlugin*> const&)
+	_ZNSt8_Rb_treeIPKcSt4pairIKS1_PN9OpenBabel8OBPluginEESt10_Select1stIS7_ENS4_11CharPtrLessESaIS7_EE16_M_insert_uniqueERKS7_ @ 203
+;	std::_Rb_tree<char const*, std::pair<char const* const, OpenBabel::OBPlugin*>, std::_Select1st<std::pair<char const* const, OpenBabel::OBPlugin*> >, OpenBabel::CharPtrLess, std::allocator<std::pair<char const* const, OpenBabel::OBPlugin*> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<char const* const, OpenBabel::OBPlugin*> >, std::pair<char const* const, OpenBabel::OBPlugin*> const&)
+	_ZNSt8_Rb_treeIPKcSt4pairIKS1_PN9OpenBabel8OBPluginEESt10_Select1stIS7_ENS4_11CharPtrLessESaIS7_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS7_ERKS7_ @ 204
+;	std::_Rb_tree<char const*, std::pair<char const* const, OpenBabel::OBPlugin*>, std::_Select1st<std::pair<char const* const, OpenBabel::OBPlugin*> >, OpenBabel::CharPtrLess, std::allocator<std::pair<char const* const, OpenBabel::OBPlugin*> > >::_M_erase(std::_Rb_tree_node<std::pair<char const* const, OpenBabel::OBPlugin*> >*)
+	_ZNSt8_Rb_treeIPKcSt4pairIKS1_PN9OpenBabel8OBPluginEESt10_Select1stIS7_ENS4_11CharPtrLessESaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E @ 205
+;	std::_Rb_tree<OpenBabel::OBAtom*, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*>, std::_Select1st<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >, std::less<OpenBabel::OBAtom*>, std::allocator<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> const&)
+	_ZNSt8_Rb_treeIPN9OpenBabel6OBAtomESt4pairIKS2_PNS0_12OBChiralDataEESt10_Select1stIS7_ESt4lessIS2_ESaIS7_EE10_M_insert_EPKSt18_Rb_tree_node_baseSG_RKS7_ @ 206
+;	std::_Rb_tree<OpenBabel::OBAtom*, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*>, std::_Select1st<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >, std::less<OpenBabel::OBAtom*>, std::allocator<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> > >::_M_insert_unique(std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> const&)
+	_ZNSt8_Rb_treeIPN9OpenBabel6OBAtomESt4pairIKS2_PNS0_12OBChiralDataEESt10_Select1stIS7_ESt4lessIS2_ESaIS7_EE16_M_insert_uniqueERKS7_ @ 207
+;	std::_Rb_tree<OpenBabel::OBAtom*, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*>, std::_Select1st<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >, std::less<OpenBabel::OBAtom*>, std::allocator<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> > >::_M_insert_unique_(std::_Rb_tree_const_iterator<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> const&)
+	_ZNSt8_Rb_treeIPN9OpenBabel6OBAtomESt4pairIKS2_PNS0_12OBChiralDataEESt10_Select1stIS7_ESt4lessIS2_ESaIS7_EE17_M_insert_unique_ESt23_Rb_tree_const_iteratorIS7_ERKS7_ @ 208
+;	std::_Rb_tree<OpenBabel::OBAtom*, std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*>, std::_Select1st<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >, std::less<OpenBabel::OBAtom*>, std::allocator<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> > >::_M_erase(std::_Rb_tree_node<std::pair<OpenBabel::OBAtom* const, OpenBabel::OBChiralData*> >*)
+	_ZNSt8_Rb_treeIPN9OpenBabel6OBAtomESt4pairIKS2_PNS0_12OBChiralDataEESt10_Select1stIS7_ESt4lessIS2_ESaIS7_EE8_M_eraseEPSt13_Rb_tree_nodeIS7_E @ 209
+;	std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, OpenBabel::InChIFormat::InchiLess, std::allocator<std::string> >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::string const&)
+	_ZNSt8_Rb_treeISsSsSt9_IdentityISsEN9OpenBabel11InChIFormat9InchiLessESaISsEE10_M_insert_EPKSt18_Rb_tree_node_baseS9_RKSs @ 210
+;	std::_Rb_tree<std::string, std::string, std::_Identity<std::string>, OpenBabel::InChIFormat::InchiLess, std::allocator<std::string> >::_M_erase(std::_Rb_tree_node<std::string>*)
+	_ZNSt8_Rb_treeISsSsSt9_IdentityISsEN9OpenBabel11InChIFormat9InchiLessESaISsEE8_M_eraseEPSt13_Rb_tree_nodeISsE @ 211
+;	std::_Rb_tree<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >, std::_Identity<std::vector<int, std::allocator<int> > >, std::less<std::vector<int, std::allocator<int> > >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_insert_(std::_Rb_tree_node_base const*, std::_Rb_tree_node_base const*, std::vector<int, std::allocator<int> > const&)
+	_ZNSt8_Rb_treeISt6vectorIiSaIiEES2_St9_IdentityIS2_ESt4lessIS2_ESaIS2_EE10_M_insert_EPKSt18_Rb_tree_node_baseSB_RKS2_ @ 212
+;	std::_Rb_tree<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >, std::_Identity<std::vector<int, std::allocator<int> > >, std::less<std::vector<int, std::allocator<int> > >, std::allocator<std::vector<int, std::allocator<int> > > >::erase(std::vector<int, std::allocator<int> > const&)
+	_ZNSt8_Rb_treeISt6vectorIiSaIiEES2_St9_IdentityIS2_ESt4lessIS2_ESaIS2_EE5eraseERKS2_ @ 213
+;	std::_Rb_tree<std::vector<int, std::allocator<int> >, std::vector<int, std::allocator<int> >, std::_Identity<std::vector<int, std::allocator<int> > >, std::less<std::vector<int, std::allocator<int> > >, std::allocator<std::vector<int, std::allocator<int> > > >::_M_erase(std::_Rb_tree_node<std::vector<int, std::allocator<int> > >*)
+	_ZNSt8_Rb_treeISt6vectorIiSaIiEES2_St9_IdentityIS2_ESt4lessIS2_ESaIS2_EE8_M_eraseEPSt13_Rb_tree_nodeIS2_E @ 214
+;	OpenBabel::PatternFP::pattern* std::__uninitialized_move_a<OpenBabel::PatternFP::pattern*, OpenBabel::PatternFP::pattern*, std::allocator<OpenBabel::PatternFP::pattern> >(OpenBabel::PatternFP::pattern*, OpenBabel::PatternFP::pattern*, OpenBabel::PatternFP::pattern*, std::allocator<OpenBabel::PatternFP::pattern>&)
+	_ZSt22__uninitialized_move_aIPN9OpenBabel9PatternFP7patternES3_SaIS2_EET0_T_S6_S5_RT1_ @ 215
+;	std::string* std::__uninitialized_move_a<std::string*, std::string*, std::allocator<std::string> >(std::string*, std::string*, std::string*, std::allocator<std::string>&)
+	_ZSt22__uninitialized_move_aIPSsS0_SaISsEET0_T_S3_S2_RT1_ @ 216
+;	unsigned int* std::__uninitialized_move_a<unsigned int*, unsigned int*, std::allocator<unsigned int> >(unsigned int*, unsigned int*, unsigned int*, std::allocator<unsigned int>&)
+	_ZSt22__uninitialized_move_aIPjS0_SaIjEET0_T_S3_S2_RT1_ @ 217
+;	void std::__rotate<__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > > >(__gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, __gnu_cxx::__normal_iterator<int*, std::vector<int, std::allocator<int> > >, std::random_access_iterator_tag)
+	_ZSt8__rotateIN9__gnu_cxx17__normal_iteratorIPiSt6vectorIiSaIiEEEEEvT_S7_S7_St26random_access_iterator_tag @ 218
+;	bool std::operator< <int, std::allocator<int> >(std::vector<int, std::allocator<int> > const&, std::vector<int, std::allocator<int> > const&)
+	_ZStltIiSaIiEEbRKSt6vectorIT_T0_ES6_ @ 219
+;	std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_EPKS3_RKS6_ @ 220
+;	std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)
+	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_PKS3_ @ 221
+;	std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)
+	_ZStplIcSt11char_traitsIcESaIcEESbIT_T0_T1_ERKS6_S8_ @ 222
+;	typeinfo for ARGraph_impl
+	_ZTI12ARGraph_impl @ 223 DATA
+;	typeinfo for AttrComparator
+	_ZTI14AttrComparator @ 224 DATA
+;	typeinfo for ARGraph<OpenBabel::OBAtom*, OpenBabel::OBBond*>
+	_ZTI7ARGraphIPN9OpenBabel6OBAtomEPNS0_6OBBondEE @ 225 DATA
+;	typeinfo for OpenBabel::FastSearch
+	_ZTIN9OpenBabel10FastSearchE @ 226 DATA
+;	typeinfo for OpenBabel::OBPairData
+	_ZTIN9OpenBabel10OBPairDataE @ 227 DATA
+;	typeinfo for OpenBabel::OBRingData
+	_ZTIN9OpenBabel10OBRingDataE @ 228 DATA
+;	typeinfo for OpenBabel::OBUnitCell
+	_ZTIN9OpenBabel10OBUnitCellE @ 229 DATA
+;	typeinfo for OpenBabel::TestFormat
+	_ZTIN9OpenBabel10TestFormatE @ 230 DATA
+;	typeinfo for OpenBabel::InChIFormat
+	_ZTIN9OpenBabel11InChIFormatE @ 231 DATA
+;	typeinfo for OpenBabel::OBAngleData
+	_ZTIN9OpenBabel11OBAngleDataE @ 232 DATA
+;	typeinfo for OpenBabel::OBAtomTyper
+	_ZTIN9OpenBabel11OBAtomTyperE @ 233 DATA
+;	typeinfo for OpenBabel::OBRingTyper
+	_ZTIN9OpenBabel11OBRingTyperE @ 234 DATA
+;	typeinfo for OpenBabel::OBTypeTable
+	_ZTIN9OpenBabel11OBTypeTableE @ 235 DATA
+;	typeinfo for OpenBabel::OBChiralData
+	_ZTIN9OpenBabel12OBChiralDataE @ 236 DATA
+;	typeinfo for OpenBabel::OBConversion
+	_ZTIN9OpenBabel12OBConversionE @ 237 DATA
+;	typeinfo for OpenBabel::OBDescriptor
+	_ZTIN9OpenBabel12OBDescriptorE @ 238 DATA
+;	typeinfo for OpenBabel::OBMatrixData
+	_ZTIN9OpenBabel12OBMatrixDataE @ 239 DATA
+;	typeinfo for OpenBabel::OBVectorData
+	_ZTIN9OpenBabel12OBVectorDataE @ 240 DATA
+;	typeinfo for OpenBabel::fingerprint2
+	_ZTIN9OpenBabel12fingerprint2E @ 241 DATA
+;	typeinfo for OpenBabel::OBCommentData
+	_ZTIN9OpenBabel13OBCommentDataE @ 242 DATA
+;	typeinfo for OpenBabel::OBFingerprint
+	_ZTIN9OpenBabel13OBFingerprintE @ 243 DATA
+;	typeinfo for OpenBabel::OBGenericData
+	_ZTIN9OpenBabel13OBGenericDataE @ 244 DATA
+;	typeinfo for OpenBabel::OBResidueData
+	_ZTIN9OpenBabel13OBResidueDataE @ 245 DATA
+;	typeinfo for OpenBabel::OBTorsionData
+	_ZTIN9OpenBabel13OBTorsionDataE @ 246 DATA
+;	typeinfo for OpenBabel::OBVirtualBond
+	_ZTIN9OpenBabel13OBVirtualBondE @ 247 DATA
+;	typeinfo for OpenBabel::OBElementTable
+	_ZTIN9OpenBabel14OBElementTableE @ 248 DATA
+;	typeinfo for OpenBabel::OBIsotopeTable
+	_ZTIN9OpenBabel14OBIsotopeTableE @ 249 DATA
+;	typeinfo for OpenBabel::OBRotationData
+	_ZTIN9OpenBabel14OBRotationDataE @ 250 DATA
+;	typeinfo for OpenBabel::OBSymmetryData
+	_ZTIN9OpenBabel14OBSymmetryDataE @ 251 DATA
+;	typeinfo for OpenBabel::PatternCountFP
+	_ZTIN9OpenBabel14PatternCountFPE @ 252 DATA
+;	typeinfo for OpenBabel::OBAromaticTyper
+	_ZTIN9OpenBabel15OBAromaticTyperE @ 253 DATA
+;	typeinfo for OpenBabel::OBConformerData
+	_ZTIN9OpenBabel15OBConformerDataE @ 254 DATA
+;	typeinfo for OpenBabel::OBSmartsPattern
+	_ZTIN9OpenBabel15OBSmartsPatternE @ 255 DATA
+;	typeinfo for OpenBabel::OBVibrationData
+	_ZTIN9OpenBabel15OBVibrationDataE @ 256 DATA
+;	typeinfo for OpenBabel::OBGlobalDataBase
+	_ZTIN9OpenBabel16OBGlobalDataBaseE @ 257 DATA
+;	typeinfo for OpenBabel::OBMoleculeFormat
+	_ZTIN9OpenBabel16OBMoleculeFormatE @ 258 DATA
+;	typeinfo for OpenBabel::_OBAtomComparator
+	_ZTIN9OpenBabel17_OBAtomComparatorE @ 259 DATA
+;	typeinfo for OpenBabel::_OBBondComparator
+	_ZTIN9OpenBabel17_OBBondComparatorE @ 260 DATA
+;	typeinfo for OpenBabel::InChICompareFormat
+	_ZTIN9OpenBabel18InChICompareFormatE @ 261 DATA
+;	typeinfo for OpenBabel::OBExternalBondData
+	_ZTIN9OpenBabel18OBExternalBondDataE @ 262 DATA
+;	typeinfo for OpenBabel::_OBAtomComparatorEx
+	_ZTIN9OpenBabel19_OBAtomComparatorExE @ 263 DATA
+;	typeinfo for OpenBabel::_OBBondComparatorEx
+	_ZTIN9OpenBabel19_OBBondComparatorExE @ 264 DATA
+;	typeinfo for OpenBabel::OBMol
+	_ZTIN9OpenBabel5OBMolE @ 265 DATA
+;	typeinfo for OpenBabel::OBAtom
+	_ZTIN9OpenBabel6OBAtomE @ 266 DATA
+;	typeinfo for OpenBabel::OBBase
+	_ZTIN9OpenBabel6OBBaseE @ 267 DATA
+;	typeinfo for OpenBabel::OBBond
+	_ZTIN9OpenBabel6OBBondE @ 268 DATA
+;	typeinfo for OpenBabel::OBFormat
+	_ZTIN9OpenBabel8OBFormatE @ 269 DATA
+;	typeinfo for OpenBabel::OBPlugin
+	_ZTIN9OpenBabel8OBPluginE @ 270 DATA
+;	typeinfo for OpenBabel::obLogBuf
+	_ZTIN9OpenBabel8obLogBufE @ 271 DATA
+;	typeinfo for OpenBabel::OBResidue
+	_ZTIN9OpenBabel9OBResidueE @ 272 DATA
+;	typeinfo for OpenBabel::OBSetData
+	_ZTIN9OpenBabel9OBSetDataE @ 273 DATA
+;	typeinfo for OpenBabel::PatternFP
+	_ZTIN9OpenBabel9PatternFPE @ 274 DATA
+;	typeinfo for std::locale::facet
+	_ZTINSt6locale5facetE @ 275 DATA
+;	typeinfo for OpenBabel::OBMol*
+	_ZTIPN9OpenBabel5OBMolE @ 276 DATA
+;	typeinfo for std::ctype_base
+	_ZTISt10ctype_base @ 277 DATA
+;	typeinfo for std::codecvt_base
+	_ZTISt12codecvt_base @ 278 DATA
+;	typeinfo for std::__codecvt_abstract_base<char, char, int>
+	_ZTISt23__codecvt_abstract_baseIcciE @ 279 DATA
+;	typeinfo for std::ctype<char>
+	_ZTISt5ctypeIcE @ 280 DATA
+;	typeinfo for std::codecvt<char, char, int>
+	_ZTISt7codecvtIcciE @ 281 DATA
+;	typeinfo name for ARGraph_impl
+	_ZTS12ARGraph_impl @ 282 DATA
+;	typeinfo name for AttrComparator
+	_ZTS14AttrComparator @ 283 DATA
+;	typeinfo name for ARGraph<OpenBabel::OBAtom*, OpenBabel::OBBond*>
+	_ZTS7ARGraphIPN9OpenBabel6OBAtomEPNS0_6OBBondEE @ 284 DATA
+;	typeinfo name for OpenBabel::FastSearch
+	_ZTSN9OpenBabel10FastSearchE @ 285 DATA
+;	typeinfo name for OpenBabel::OBPairData
+	_ZTSN9OpenBabel10OBPairDataE @ 286 DATA
+;	typeinfo name for OpenBabel::OBRingData
+	_ZTSN9OpenBabel10OBRingDataE @ 287 DATA
+;	typeinfo name for OpenBabel::OBUnitCell
+	_ZTSN9OpenBabel10OBUnitCellE @ 288 DATA
+;	typeinfo name for OpenBabel::TestFormat
+	_ZTSN9OpenBabel10TestFormatE @ 289 DATA
+;	typeinfo name for OpenBabel::InChIFormat
+	_ZTSN9OpenBabel11InChIFormatE @ 290 DATA
+;	typeinfo name for OpenBabel::OBAngleData
+	_ZTSN9OpenBabel11OBAngleDataE @ 291 DATA
+;	typeinfo name for OpenBabel::OBAtomTyper
+	_ZTSN9OpenBabel11OBAtomTyperE @ 292 DATA
+;	typeinfo name for OpenBabel::OBRingTyper
+	_ZTSN9OpenBabel11OBRingTyperE @ 293 DATA
+;	typeinfo name for OpenBabel::OBTypeTable
+	_ZTSN9OpenBabel11OBTypeTableE @ 294 DATA
+;	typeinfo name for OpenBabel::OBChiralData
+	_ZTSN9OpenBabel12OBChiralDataE @ 295 DATA
+;	typeinfo name for OpenBabel::OBConversion
+	_ZTSN9OpenBabel12OBConversionE @ 296 DATA
+;	typeinfo name for OpenBabel::OBDescriptor
+	_ZTSN9OpenBabel12OBDescriptorE @ 297 DATA
+;	typeinfo name for OpenBabel::OBMatrixData
+	_ZTSN9OpenBabel12OBMatrixDataE @ 298 DATA
+;	typeinfo name for OpenBabel::OBVectorData
+	_ZTSN9OpenBabel12OBVectorDataE @ 299 DATA
+;	typeinfo name for OpenBabel::fingerprint2
+	_ZTSN9OpenBabel12fingerprint2E @ 300 DATA
+;	typeinfo name for OpenBabel::OBCommentData
+	_ZTSN9OpenBabel13OBCommentDataE @ 301 DATA
+;	typeinfo name for OpenBabel::OBFingerprint
+	_ZTSN9OpenBabel13OBFingerprintE @ 302 DATA
+;	typeinfo name for OpenBabel::OBGenericData
+	_ZTSN9OpenBabel13OBGenericDataE @ 303 DATA
+;	typeinfo name for OpenBabel::OBResidueData
+	_ZTSN9OpenBabel13OBResidueDataE @ 304 DATA
+;	typeinfo name for OpenBabel::OBTorsionData
+	_ZTSN9OpenBabel13OBTorsionDataE @ 305 DATA
+;	typeinfo name for OpenBabel::OBVirtualBond
+	_ZTSN9OpenBabel13OBVirtualBondE @ 306 DATA
+;	typeinfo name for OpenBabel::OBElementTable
+	_ZTSN9OpenBabel14OBElementTableE @ 307 DATA
+;	typeinfo name for OpenBabel::OBIsotopeTable
+	_ZTSN9OpenBabel14OBIsotopeTableE @ 308 DATA
+;	typeinfo name for OpenBabel::OBRotationData
+	_ZTSN9OpenBabel14OBRotationDataE @ 309 DATA
+;	typeinfo name for OpenBabel::OBSymmetryData
+	_ZTSN9OpenBabel14OBSymmetryDataE @ 310 DATA
+;	typeinfo name for OpenBabel::PatternCountFP
+	_ZTSN9OpenBabel14PatternCountFPE @ 311 DATA
+;	typeinfo name for OpenBabel::OBAromaticTyper
+	_ZTSN9OpenBabel15OBAromaticTyperE @ 312 DATA
+;	typeinfo name for OpenBabel::OBConformerData
+	_ZTSN9OpenBabel15OBConformerDataE @ 313 DATA
+;	typeinfo name for OpenBabel::OBSmartsPattern
+	_ZTSN9OpenBabel15OBSmartsPatternE @ 314 DATA
+;	typeinfo name for OpenBabel::OBVibrationData
+	_ZTSN9OpenBabel15OBVibrationDataE @ 315 DATA
+;	typeinfo name for OpenBabel::OBGlobalDataBase
+	_ZTSN9OpenBabel16OBGlobalDataBaseE @ 316 DATA
+;	typeinfo name for OpenBabel::OBMoleculeFormat
+	_ZTSN9OpenBabel16OBMoleculeFormatE @ 317 DATA
+;	typeinfo name for OpenBabel::_OBAtomComparator
+	_ZTSN9OpenBabel17_OBAtomComparatorE @ 318 DATA
+;	typeinfo name for OpenBabel::_OBBondComparator
+	_ZTSN9OpenBabel17_OBBondComparatorE @ 319 DATA
+;	typeinfo name for OpenBabel::InChICompareFormat
+	_ZTSN9OpenBabel18InChICompareFormatE @ 320 DATA
+;	typeinfo name for OpenBabel::OBExternalBondData
+	_ZTSN9OpenBabel18OBExternalBondDataE @ 321 DATA
+;	typeinfo name for OpenBabel::_OBAtomComparatorEx
+	_ZTSN9OpenBabel19_OBAtomComparatorExE @ 322 DATA
+;	typeinfo name for OpenBabel::_OBBondComparatorEx
+	_ZTSN9OpenBabel19_OBBondComparatorExE @ 323 DATA
+;	typeinfo name for OpenBabel::OBMol
+	_ZTSN9OpenBabel5OBMolE @ 324 DATA
+;	typeinfo name for OpenBabel::OBAtom
+	_ZTSN9OpenBabel6OBAtomE @ 325 DATA
+;	typeinfo name for OpenBabel::OBBase
+	_ZTSN9OpenBabel6OBBaseE @ 326 DATA
+;	typeinfo name for OpenBabel::OBBond
+	_ZTSN9OpenBabel6OBBondE @ 327 DATA
+;	typeinfo name for OpenBabel::OBFormat
+	_ZTSN9OpenBabel8OBFormatE @ 328 DATA
+;	typeinfo name for OpenBabel::OBPlugin
+	_ZTSN9OpenBabel8OBPluginE @ 329 DATA
+;	typeinfo name for OpenBabel::obLogBuf
+	_ZTSN9OpenBabel8obLogBufE @ 330 DATA
+;	typeinfo name for OpenBabel::OBResidue
+	_ZTSN9OpenBabel9OBResidueE @ 331 DATA
+;	typeinfo name for OpenBabel::OBSetData
+	_ZTSN9OpenBabel9OBSetDataE @ 332 DATA
+;	typeinfo name for OpenBabel::PatternFP
+	_ZTSN9OpenBabel9PatternFPE @ 333 DATA
+;	typeinfo name for std::locale::facet
+	_ZTSNSt6locale5facetE @ 334 DATA
+;	typeinfo name for OpenBabel::OBMol*
+	_ZTSPN9OpenBabel5OBMolE @ 335 DATA
+;	typeinfo name for std::ctype_base
+	_ZTSSt10ctype_base @ 336 DATA
+;	typeinfo name for std::codecvt_base
+	_ZTSSt12codecvt_base @ 337 DATA
+;	typeinfo name for std::__codecvt_abstract_base<char, char, int>
+	_ZTSSt23__codecvt_abstract_baseIcciE @ 338 DATA
+;	typeinfo name for std::ctype<char>
+	_ZTSSt5ctypeIcE @ 339 DATA
+;	typeinfo name for std::codecvt<char, char, int>
+	_ZTSSt7codecvtIcciE @ 340 DATA
+;	vtable for AttrComparator
+	_ZTV14AttrComparator @ 341 DATA
+;	vtable for ARGraph<OpenBabel::OBAtom*, OpenBabel::OBBond*>
+	_ZTV7ARGraphIPN9OpenBabel6OBAtomEPNS0_6OBBondEE @ 342 DATA
+;	vtable for OpenBabel::FastSearch
+	_ZTVN9OpenBabel10FastSearchE @ 343 DATA
+;	vtable for OpenBabel::OBPairData
+	_ZTVN9OpenBabel10OBPairDataE @ 344 DATA
+;	vtable for OpenBabel::OBUnitCell
+	_ZTVN9OpenBabel10OBUnitCellE @ 345 DATA
+;	vtable for OpenBabel::TestFormat
+	_ZTVN9OpenBabel10TestFormatE @ 346 DATA
+;	vtable for OpenBabel::InChIFormat
+	_ZTVN9OpenBabel11InChIFormatE @ 347 DATA
+;	vtable for OpenBabel::OBAngleData
+	_ZTVN9OpenBabel11OBAngleDataE @ 348 DATA
+;	vtable for OpenBabel::OBChiralData
+	_ZTVN9OpenBabel12OBChiralDataE @ 349 DATA
+;	vtable for OpenBabel::OBMatrixData
+	_ZTVN9OpenBabel12OBMatrixDataE @ 350 DATA
+;	vtable for OpenBabel::OBVectorData
+	_ZTVN9OpenBabel12OBVectorDataE @ 351 DATA
+;	vtable for OpenBabel::fingerprint2
+	_ZTVN9OpenBabel12fingerprint2E @ 352 DATA
+;	vtable for OpenBabel::OBCommentData
+	_ZTVN9OpenBabel13OBCommentDataE @ 353 DATA
+;	vtable for OpenBabel::OBFingerprint
+	_ZTVN9OpenBabel13OBFingerprintE @ 354 DATA
+;	vtable for OpenBabel::OBGenericData
+	_ZTVN9OpenBabel13OBGenericDataE @ 355 DATA
+;	vtable for OpenBabel::OBTorsionData
+	_ZTVN9OpenBabel13OBTorsionDataE @ 356 DATA
+;	vtable for OpenBabel::OBVirtualBond
+	_ZTVN9OpenBabel13OBVirtualBondE @ 357 DATA
+;	vtable for OpenBabel::OBRotationData
+	_ZTVN9OpenBabel14OBRotationDataE @ 358 DATA
+;	vtable for OpenBabel::OBSymmetryData
+	_ZTVN9OpenBabel14OBSymmetryDataE @ 359 DATA
+;	vtable for OpenBabel::PatternCountFP
+	_ZTVN9OpenBabel14PatternCountFPE @ 360 DATA
+;	vtable for OpenBabel::OBConformerData
+	_ZTVN9OpenBabel15OBConformerDataE @ 361 DATA
+;	vtable for OpenBabel::OBVibrationData
+	_ZTVN9OpenBabel15OBVibrationDataE @ 362 DATA
+;	vtable for OpenBabel::OBGlobalDataBase
+	_ZTVN9OpenBabel16OBGlobalDataBaseE @ 363 DATA
+;	vtable for OpenBabel::OBMoleculeFormat
+	_ZTVN9OpenBabel16OBMoleculeFormatE @ 364 DATA
+;	vtable for OpenBabel::_OBAtomComparator
+	_ZTVN9OpenBabel17_OBAtomComparatorE @ 365 DATA
+;	vtable for OpenBabel::_OBBondComparator
+	_ZTVN9OpenBabel17_OBBondComparatorE @ 366 DATA
+;	vtable for OpenBabel::InChICompareFormat
+	_ZTVN9OpenBabel18InChICompareFormatE @ 367 DATA
+;	vtable for OpenBabel::OBExternalBondData
+	_ZTVN9OpenBabel18OBExternalBondDataE @ 368 DATA
+;	vtable for OpenBabel::_OBAtomComparatorEx
+	_ZTVN9OpenBabel19_OBAtomComparatorExE @ 369 DATA
+;	vtable for OpenBabel::_OBBondComparatorEx
+	_ZTVN9OpenBabel19_OBBondComparatorExE @ 370 DATA
+;	vtable for OpenBabel::obLogBuf
+	_ZTVN9OpenBabel8obLogBufE @ 371 DATA
+;	vtable for OpenBabel::OBSetData
+	_ZTVN9OpenBabel9OBSetDataE @ 372 DATA
+;	vtable for OpenBabel::PatternFP
+	_ZTVN9OpenBabel9PatternFPE @ 373 DATA
+;	OpenBabel::OBDescriptor::Default()::d
+	_ZZN9OpenBabel12OBDescriptor7DefaultEvE1d @ 374 DATA
+;	OpenBabel::OBFingerprint::Default()::d
+	_ZZN9OpenBabel13OBFingerprint7DefaultEvE1d @ 375 DATA
+;	OpenBabel::PatternCountFP::Description()::desc
+	_ZZN9OpenBabel14PatternCountFP11DescriptionEvE4desc @ 376 DATA
+;	OpenBabel::OBPlugin::PluginMap()::m
+	_ZZN9OpenBabel8OBPlugin9PluginMapEvE1m @ 377 DATA
+;	OpenBabel::PatternFP::Description()::desc
+	_ZZN9OpenBabel9PatternFP11DescriptionEvE4desc @ 378 DATA
+	molecule_alwaystrue @ 379
+	molecule_contained_in @ 380
+	molecule_contains @ 381
+	molecule_equals @ 382
+	molecule_in @ 383
+	molecule_in_bytea @ 384
+	molecule_in_text @ 385
+	molecule_in_varchar @ 386
+	molecule_out @ 387
+	molecule_recv @ 388
+	molecule_send @ 389
+	molecule_similarity @ 390
+	molecule_similarity_gist @ 391
+	molfp_compress @ 392
+	molfp_consistent @ 393
+	molfp_decompress @ 394
+	molfp_in @ 395
+	molfp_out @ 396
+	molfp_penalty @ 397
+	molfp_picksplit @ 398
+	molfp_same @ 399
+	molfp_union @ 400
+	new_molecule @ 401
+	ob_2D @ 402
+	ob_3D @ 403
+	ob_ESS_VF2_bin @ 404
+	ob_MR @ 405
+	ob_PSA @ 406
+	ob_SSS_SMARTS_native @ 407
+	ob_SSS_SMARTS_native_bin @ 408
+	ob_SSS_SMARTS_native_count @ 409
+	ob_SSS_SMARTS_native_count_bin @ 410
+	ob_SSS_VF2 @ 411
+	ob_SSS_VF2_bin @ 412
+	ob_V3000_to_mol @ 413
+	ob_add_hydrogens @ 414
+	ob_delete_hydrogens @ 415
+	ob_exactmass @ 416
+	ob_fp2 @ 417
+	ob_fp3 @ 418
+	ob_fp3_bin @ 419
+	ob_fp_MACCS @ 420
+	ob_fp_MACCS_bin @ 421
+	ob_fp_bin @ 422
+	ob_hillformula @ 423
+	ob_inchi_to_mol @ 424
+	ob_is_chiral @ 425
+	ob_is_nostruct @ 426
+	ob_logP @ 427
+	ob_lyophilize_molecule @ 428
+	ob_mol_to_V2000 @ 429
+	ob_mol_to_V3000 @ 430
+	ob_mol_to_canonical_smiles @ 431
+	ob_mol_to_smiles @ 432
+	ob_molfile_to_inchikey @ 433
+	ob_molweight @ 434
+	ob_num_H_acceptors @ 435
+	ob_num_H_donors @ 436
+	ob_num_atoms @ 437
+	ob_num_bonds @ 438
+	ob_num_heavy_atoms @ 439
+	ob_num_rotatable_bonds @ 440
+	ob_popcount @ 441
+	ob_smiles_to_inchi @ 442
+	ob_smiles_to_inchikey @ 443
+	ob_smiles_to_mol @ 444
+	ob_strip_salts @ 445
+	ob_tanimoto @ 446
+	ob_total_charge @ 447
+	ob_tversky @ 448
+	pg_finfo_molecule_alwaystrue @ 449
+	pg_finfo_molecule_contained_in @ 450
+	pg_finfo_molecule_contains @ 451
+	pg_finfo_molecule_equals @ 452
+	pg_finfo_molecule_in @ 453
+	pg_finfo_molecule_in_bytea @ 454
+	pg_finfo_molecule_in_text @ 455
+	pg_finfo_molecule_in_varchar @ 456
+	pg_finfo_molecule_out @ 457
+	pg_finfo_molecule_recv @ 458
+	pg_finfo_molecule_send @ 459
+	pg_finfo_molecule_similarity @ 460
+	pg_finfo_molecule_similarity_gist @ 461
+	pg_finfo_molfp_compress @ 462
+	pg_finfo_molfp_consistent @ 463
+	pg_finfo_molfp_decompress @ 464
+	pg_finfo_molfp_in @ 465
+	pg_finfo_molfp_out @ 466
+	pg_finfo_molfp_penalty @ 467
+	pg_finfo_molfp_picksplit @ 468
+	pg_finfo_molfp_same @ 469
+	pg_finfo_molfp_union @ 470
+	pg_finfo_pgchem_2D @ 471
+	pg_finfo_pgchem_3D @ 472
+	pg_finfo_pgchem_MR @ 473
+	pg_finfo_pgchem_PSA @ 474
+	pg_finfo_pgchem_VF2 @ 475
+	pg_finfo_pgchem_add_hydrogens @ 476
+	pg_finfo_pgchem_barsoi_version @ 477
+	pg_finfo_pgchem_blank_fp @ 478
+	pg_finfo_pgchem_disconnected @ 479
+	pg_finfo_pgchem_exactmass @ 480
+	pg_finfo_pgchem_fgroup_codes_a @ 481
+	pg_finfo_pgchem_fp_MACCS @ 482
+	pg_finfo_pgchem_fp_out @ 483
+	pg_finfo_pgchem_hillformula @ 484
+	pg_finfo_pgchem_is_chiral @ 485
+	pg_finfo_pgchem_is_nostruct @ 486
+	pg_finfo_pgchem_logP @ 487
+	pg_finfo_pgchem_molecule_to_V3000 @ 488
+	pg_finfo_pgchem_molecule_to_canonical_smiles @ 489
+	pg_finfo_pgchem_molecule_to_inchi @ 490
+	pg_finfo_pgchem_molecule_to_inchikey @ 491
+	pg_finfo_pgchem_molecule_to_molfile @ 492
+	pg_finfo_pgchem_molecule_to_new_molecule @ 493
+	pg_finfo_pgchem_molecule_to_smiles @ 494
+	pg_finfo_pgchem_molweight @ 495
+	pg_finfo_pgchem_ms_fingerprint_long_a @ 496
+	pg_finfo_pgchem_ms_fingerprint_short_a @ 497
+	pg_finfo_pgchem_mutate_fp @ 498
+	pg_finfo_pgchem_nbits_set @ 499
+	pg_finfo_pgchem_num_H_acceptors @ 500
+	pg_finfo_pgchem_num_H_donors @ 501
+	pg_finfo_pgchem_num_atoms @ 502
+	pg_finfo_pgchem_num_bonds @ 503
+	pg_finfo_pgchem_num_heavy_atoms @ 504
+	pg_finfo_pgchem_num_rotatable_bonds @ 505
+	pg_finfo_pgchem_r_fp_out @ 506
+	pg_finfo_pgchem_r_molecule_at @ 507
+	pg_finfo_pgchem_r_num_products @ 508
+	pg_finfo_pgchem_r_num_reactants @ 509
+	pg_finfo_pgchem_r_reaction_to_smiles @ 510
+	pg_finfo_pgchem_reaction_mol_strip_rxninfo @ 511
+	pg_finfo_pgchem_remove_hydrogens @ 512
+	pg_finfo_pgchem_smartsfilter @ 513
+	pg_finfo_pgchem_smartsfilter_count @ 514
+	pg_finfo_pgchem_strip_salts @ 515
+	pg_finfo_pgchem_total_charge @ 516
+	pg_finfo_pgchem_tversky @ 517
+	pg_finfo_pgchem_version @ 518
+	pg_finfo_reaction_alwaystrue @ 519
+	pg_finfo_reaction_contained_in @ 520
+	pg_finfo_reaction_contains @ 521
+	pg_finfo_reaction_equals @ 522
+	pg_finfo_reaction_equals_exact @ 523
+	pg_finfo_reaction_equals_products_exact @ 524
+	pg_finfo_reaction_in @ 525
+	pg_finfo_reaction_in_bytea @ 526
+	pg_finfo_reaction_in_text @ 527
+	pg_finfo_reaction_in_varchar @ 528
+	pg_finfo_reaction_out @ 529
+	pg_finfo_reaction_recv @ 530
+	pg_finfo_reaction_send @ 531
+	pg_finfo_reaction_similarity @ 532
+	pg_finfo_reaction_similarity_products @ 533
+	pg_finfo_reaction_similarity_reactants @ 534
+	pg_finfo_rxnfp_compress @ 535
+	pg_finfo_rxnfp_consistent @ 536
+	pg_finfo_rxnfp_decompress @ 537
+	pg_finfo_rxnfp_in @ 538
+	pg_finfo_rxnfp_out @ 539
+	pg_finfo_rxnfp_penalty @ 540
+	pg_finfo_rxnfp_picksplit @ 541
+	pg_finfo_rxnfp_same @ 542
+	pg_finfo_rxnfp_union @ 543
+	pgchem_2D @ 544
+	pgchem_3D @ 545
+	pgchem_MR @ 546
+	pgchem_PSA @ 547
+	pgchem_VF2 @ 548
+	pgchem_add_hydrogens @ 549
+	pgchem_barsoi_version @ 550
+	pgchem_blank_fp @ 551
+	pgchem_disconnected @ 552
+	pgchem_exactmass @ 553
+	pgchem_fgroup_codes_a @ 554
+	pgchem_fp_MACCS @ 555
+	pgchem_fp_out @ 556
+	pgchem_hillformula @ 557
+	pgchem_is_chiral @ 558
+	pgchem_is_nostruct @ 559
+	pgchem_logP @ 560
+	pgchem_molecule_to_V3000 @ 561
+	pgchem_molecule_to_canonical_smiles @ 562
+	pgchem_molecule_to_inchi @ 563
+	pgchem_molecule_to_inchikey @ 564
+	pgchem_molecule_to_molfile @ 565
+	pgchem_molecule_to_new_molecule @ 566
+	pgchem_molecule_to_smiles @ 567
+	pgchem_molweight @ 568
+	pgchem_ms_fingerprint_long_a @ 569
+	pgchem_ms_fingerprint_short_a @ 570
+	pgchem_mutate_fp @ 571
+	pgchem_nbits_set @ 572
+	pgchem_num_H_acceptors @ 573
+	pgchem_num_H_donors @ 574
+	pgchem_num_atoms @ 575
+	pgchem_num_bonds @ 576
+	pgchem_num_heavy_atoms @ 577
+	pgchem_num_rotatable_bonds @ 578
+	pgchem_r_fp_out @ 579
+	pgchem_r_molecule_at @ 580
+	pgchem_r_num_products @ 581
+	pgchem_r_num_reactants @ 582
+	pgchem_r_reaction_to_smiles @ 583
+	pgchem_reaction_mol_strip_rxninfo @ 584
+	pgchem_remove_hydrogens @ 585
+	pgchem_smartsfilter @ 586
+	pgchem_smartsfilter_count @ 587
+	pgchem_strip_salts @ 588
+	pgchem_total_charge @ 589
+	pgchem_tversky @ 590
+	pgchem_version @ 591
+	reaction_alwaystrue @ 592
+	reaction_contained_in @ 593
+	reaction_contains @ 594
+	reaction_equals @ 595
+	reaction_equals_exact @ 596
+	reaction_equals_products_exact @ 597
+	reaction_in @ 598
+	reaction_in_bytea @ 599
+	reaction_in_text @ 600
+	reaction_in_varchar @ 601
+	reaction_out @ 602
+	reaction_recv @ 603
+	reaction_send @ 604
+	reaction_similarity @ 605
+	reaction_similarity_products @ 606
+	reaction_similarity_reactants @ 607
+	rxnfp_compress @ 608
+	rxnfp_consistent @ 609
+	rxnfp_decompress @ 610
+	rxnfp_in @ 611
+	rxnfp_out @ 612
+	rxnfp_penalty @ 613
+	rxnfp_picksplit @ 614
+	rxnfp_same @ 615
+	rxnfp_union @ 616

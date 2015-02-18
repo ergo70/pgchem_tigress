@@ -1,0 +1,112 @@
+CREATE TABLE chembank.fgroups_lookup
+(
+  name text,
+  code varchar(8) NOT NULL,
+  CONSTRAINT fgroups_lookup_pkey PRIMARY KEY (code)
+) WITHOUT OIDS;
+
+CREATE TABLE chembank.molfgroups
+(
+  iiid int4 NOT NULL,
+  code char(8) NOT NULL,
+  CONSTRAINT molfgroups_pkey PRIMARY KEY (iiid, code),
+  CONSTRAINT fk_mol FOREIGN KEY (iiid) REFERENCES chembank.bioactives (iiid) ON UPDATE NO ACTION ON DELETE CASCADE
+) WITHOUT OIDS;
+
+CREATE TABLE chembank.molfingerprints
+(
+  iiid integer NOT NULL,
+  fp2bitmap bytea NOT NULL,
+  CONSTRAINT molsimilarity_pkey PRIMARY KEY (iiid),
+  CONSTRAINT fk_id FOREIGN KEY (iiid)
+      REFERENCES chembank.bioactives (iiid) MATCH SIMPLE
+      ON UPDATE RESTRICT ON DELETE CASCADE
+) 
+WITHOUT OIDS;
+
+CREATE TABLE chembank.molkeys
+(
+  iiid integer NOT NULL DEFAULT 0,
+  n_atoms smallint NOT NULL DEFAULT 0,
+  n_bonds smallint NOT NULL DEFAULT 0,
+  n_rings smallint NOT NULL DEFAULT 0,
+  n_qa smallint NOT NULL DEFAULT 0,
+  n_qb smallint NOT NULL DEFAULT 0,
+  n_chg smallint NOT NULL DEFAULT 0,
+  n_c1 smallint NOT NULL DEFAULT 0,
+  n_c2 smallint NOT NULL DEFAULT 0,
+  n_c smallint NOT NULL DEFAULT 0,
+  n_chb1p smallint NOT NULL DEFAULT 0,
+  n_chb2p smallint NOT NULL DEFAULT 0,
+  n_chb3p smallint NOT NULL DEFAULT 0,
+  n_chb4 smallint NOT NULL DEFAULT 0,
+  n_o2 smallint NOT NULL DEFAULT 0,
+  n_o3 smallint NOT NULL DEFAULT 0,
+  n_n1 smallint NOT NULL DEFAULT 0,
+  n_n2 smallint NOT NULL DEFAULT 0,
+  n_n3 smallint NOT NULL DEFAULT 0,
+  n_s smallint NOT NULL DEFAULT 0,
+  n_sete smallint NOT NULL DEFAULT 0,
+  n_f smallint NOT NULL DEFAULT 0,
+  n_cl smallint NOT NULL DEFAULT 0,
+  n_br smallint NOT NULL DEFAULT 0,
+  n_i smallint NOT NULL DEFAULT 0,
+  n_p smallint NOT NULL DEFAULT 0,
+  n_b smallint NOT NULL DEFAULT 0,
+  n_met smallint NOT NULL DEFAULT 0,
+  n_x smallint NOT NULL DEFAULT 0,
+  n_b1 smallint NOT NULL DEFAULT 0,
+  n_b2 smallint NOT NULL DEFAULT 0,
+  n_b3 smallint NOT NULL DEFAULT 0,
+  n_bar smallint NOT NULL DEFAULT 0,
+  n_c1o smallint NOT NULL DEFAULT 0,
+  n_c2o smallint NOT NULL DEFAULT 0,
+  n_cn smallint NOT NULL DEFAULT 0,
+  n_xy smallint NOT NULL DEFAULT 0,
+  n_r3 smallint NOT NULL DEFAULT 0,
+  n_r4 smallint NOT NULL DEFAULT 0,
+  n_r5 smallint NOT NULL DEFAULT 0,
+  n_r6 smallint NOT NULL DEFAULT 0,
+  n_r7 smallint NOT NULL DEFAULT 0,
+  n_r8 smallint NOT NULL DEFAULT 0,
+  n_r9 smallint NOT NULL DEFAULT 0,
+  n_r10 smallint NOT NULL DEFAULT 0,
+  n_r11 smallint NOT NULL DEFAULT 0,
+  n_r12 smallint NOT NULL DEFAULT 0,
+  n_r13p smallint NOT NULL DEFAULT 0,
+  n_rn smallint NOT NULL DEFAULT 0,
+  n_rn1 smallint NOT NULL DEFAULT 0,
+  n_rn2 smallint NOT NULL DEFAULT 0,
+  n_rn3p smallint NOT NULL DEFAULT 0,
+  n_ro smallint NOT NULL DEFAULT 0,
+  n_ro1 smallint NOT NULL DEFAULT 0,
+  n_ro2p smallint NOT NULL DEFAULT 0,
+  n_rs smallint NOT NULL DEFAULT 0,
+  n_rx smallint NOT NULL DEFAULT 0,
+  n_rar smallint NOT NULL DEFAULT 0,
+  n_rbz smallint NOT NULL DEFAULT 0,
+  n_br2p smallint NOT NULL DEFAULT 0,
+  n_psg01 smallint NOT NULL DEFAULT 0,
+  n_psg02 smallint NOT NULL DEFAULT 0,
+  n_psg13 smallint NOT NULL DEFAULT 0,
+  n_psg14 smallint NOT NULL DEFAULT 0,
+  n_psg15 smallint NOT NULL DEFAULT 0,
+  n_psg16 smallint NOT NULL DEFAULT 0,
+  n_psg17 smallint NOT NULL DEFAULT 0,
+  n_psg18 smallint NOT NULL DEFAULT 0,
+  n_pstm smallint NOT NULL DEFAULT 0,
+  n_psla smallint NOT NULL DEFAULT 0,
+  n_iso smallint NOT NULL DEFAULT 0,
+  n_rad smallint NOT NULL DEFAULT 0,
+  CONSTRAINT molstatistics_pkey PRIMARY KEY (iiid),
+  CONSTRAINT fk_compound FOREIGN KEY (iiid)
+      REFERENCES chembank.bioactives (iiid) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE CASCADE
+) 
+WITHOUT OIDS;
+
+CREATE OR REPLACE VIEW chembank.molscreen AS 
+ SELECT mst.iiid, mst.n_atoms, mst.n_bonds, mst.n_rings, mst.n_qa, mst.n_qb, mst.n_chg, mst.n_c1, mst.n_c2, mst.n_c, mst.n_chb1p, mst.n_chb2p, mst.n_chb3p, mst.n_chb4, mst.n_o2, mst.n_o3, mst.n_n1, mst.n_n2, mst.n_n3, mst.n_s, mst.n_sete, mst.n_f, mst.n_cl, mst.n_br, mst.n_i, mst.n_p, mst.n_b, mst.n_met, mst.n_x, mst.n_b1, mst.n_b2, mst.n_b3, mst.n_bar, mst.n_c1o, mst.n_c2o, mst.n_cn, mst.n_xy, mst.n_r3, mst.n_r4, mst.n_r5, mst.n_r6, mst.n_r7, mst.n_r8, mst.n_r9, mst.n_r10, mst.n_r11, mst.n_r12, mst.n_r13p, mst.n_rn, mst.n_rn1, mst.n_rn2, mst.n_rn3p, mst.n_ro, mst.n_ro1, mst.n_ro2p, mst.n_rs, mst.n_rx, mst.n_rar, mst.n_rbz, mst.n_br2p, mst.n_psg01, mst.n_psg02, mst.n_psg13, mst.n_psg14, mst.n_psg15, mst.n_psg16, mst.n_psg17, mst.n_psg18, mst.n_pstm, mst.n_psla, mst.n_iso, mst.n_rad, msi.fp2bitmap
+   FROM chembank.molkeys mst, chembank.molfingerprints msi
+  WHERE mst.iiid = msi.iiid;
+

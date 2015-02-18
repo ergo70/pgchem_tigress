@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Rendering options &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Options" href="index.html" />
+    <link rel="next" title="Grid rendering options" href="grid-rendering-options.html" />
+    <link rel="prev" title="Layout options" href="layout-options.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="grid-rendering-options.html" title="Grid rendering options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="layout-options.html" title="Layout options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Options</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rendering-options">
+<h1>Rendering options<a class="headerlink" href="#rendering-options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="render-output-format">
+<span id="indigo-option-0"></span><h2>render-output-format = automatic<a class="headerlink" href="#render-output-format" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">automatic</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Image file format.</td>
+</tr>
+</tbody>
+</table>
+<p>If this option is not set, then Indigo deduces image format from the file extension.
+Supported formats:</p>
+<ul class="simple">
+<li>png</li>
+<li>pdf</li>
+<li>svg</li>
+<li>emf (windows)</li>
+<li>cdxml (not all options are supported)</li>
+</ul>
+</div>
+<div class="section" id="render-image-size">
+<span id="indigo-option-1"></span><h2>render-image-size = auto<a class="headerlink" href="#render-image-size" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">size</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Width and height of target image.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>If not set, is calculated automatically according to <tt class="docutils literal"><span class="pre">render-bond-length</span></tt>. To reset this setting, you can set the values of width and height to -1. This options defines both width and height that can be set independently via <tt class="docutils literal"><span class="pre">render-image-width</span></tt> and <tt class="docutils literal"><span class="pre">render-image-height</span></tt> options.</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_3b6f47e04f2f3db16f067afecdbe92a5997ad0d60.svg"><img src="../../_images/indigorenderer_3b6f47e04f2f3db16f067afecdbe92a5997ad0d60.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_3b6f47e04f2f3db16f067afecdbe92a5997ad0d61.svg"><img src="../../_images/indigorenderer_3b6f47e04f2f3db16f067afecdbe92a5997ad0d61.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-bond-length">
+<span id="indigo-option-2"></span><h2>render-bond-length = 100<a class="headerlink" href="#render-bond-length" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">100</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Desired average bond length in pixels</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>The actual average bond length may be less if the <tt class="docutils literal"><span class="pre">render-image-size</span></tt> option is set. To reset this setting, you can set its value to -1. This option scales label size as well.</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea0.svg"><img src="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea1.svg"><img src="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea2.svg"><img src="../../_images/indigorenderer_f7be387e6db7f616aa9ba3ab3958a118e3313dea2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-relative-thickness">
+<span id="indigo-option-3"></span><h2>render-relative-thickness = 1.0<a class="headerlink" href="#render-relative-thickness" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">float</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">1.0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Set the thickness of bonds and atom labels to X/30 of the average bond length.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc570.svg"><img src="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc570.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc571.svg"><img src="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc571.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc572.svg"><img src="../../_images/indigorenderer_a07a656adc406186148b2958a3995aaeef6abc572.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-image-width">
+<span id="indigo-option-4"></span><h2>render-image-width = auto<a class="headerlink" href="#render-image-width" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Image width</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-image-height">
+<span id="indigo-option-5"></span><h2>render-image-height = auto<a class="headerlink" href="#render-image-height" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Image height</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-image-max-width">
+<span id="indigo-option-6"></span><h2>render-image-max-width = auto<a class="headerlink" href="#render-image-max-width" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Maximum image width</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-image-max-height">
+<span id="indigo-option-7"></span><h2>render-image-max-height = auto<a class="headerlink" href="#render-image-max-height" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Maximum image height</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-margins">
+<span id="indigo-option-8"></span><h2>render-margins = auto<a class="headerlink" href="#render-margins" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">size</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">auto</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Horizontal and vertical margins around the image, in pixels.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-coloring">
+<span id="indigo-option-9"></span><h2>render-coloring = false<a class="headerlink" href="#render-coloring" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Turn on atom coloring, e.g. nitrogen is blue, oxygen is red, etc.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_4c2f2f8b5b88aaa0cde640208fc5f2006c87a4c80.svg"><img src="../../_images/indigorenderer_4c2f2f8b5b88aaa0cde640208fc5f2006c87a4c80.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_4c2f2f8b5b88aaa0cde640208fc5f2006c87a4c81.svg"><img src="../../_images/indigorenderer_4c2f2f8b5b88aaa0cde640208fc5f2006c87a4c81.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-base-color">
+<span id="indigo-option-10"></span><h2>render-base-color = black (0, 0, 0)<a class="headerlink" href="#render-base-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">coloring</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">black (0, 0, 0)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">The default color for atoms and bonds.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_217893bd7c00aa95187cef8027eebbc6d77030ce0.svg"><img src="../../_images/indigorenderer_217893bd7c00aa95187cef8027eebbc6d77030ce0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_217893bd7c00aa95187cef8027eebbc6d77030ce1.svg"><img src="../../_images/indigorenderer_217893bd7c00aa95187cef8027eebbc6d77030ce1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-background-color">
+<span id="indigo-option-11"></span><h2>render-background-color = transparent<a class="headerlink" href="#render-background-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">color</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">transparent</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Background color.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_dfbba4ab12e62b149d2d445a353832a6d4bd28d60.svg"><img src="../../_images/indigorenderer_dfbba4ab12e62b149d2d445a353832a6d4bd28d60.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_dfbba4ab12e62b149d2d445a353832a6d4bd28d61.svg"><img src="../../_images/indigorenderer_dfbba4ab12e62b149d2d445a353832a6d4bd28d61.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+<p>Combination of both <tt class="docutils literal"><span class="pre">render-background-color</span></tt> and <tt class="docutils literal"><span class="pre">render-base-color</span></tt> can be used to get negative:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMoleculeFromFile</span><span class="p">(</span><span class="s">&#39;data/render_example1.mol&#39;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-background-color&quot;</span><span class="p">,</span> <span class="s">&quot;0, 0, 0&quot;</span><span class="p">)</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-base-color&quot;</span><span class="p">,</span> <span class="s">&quot;1, 1, 1&quot;</span><span class="p">)</span>
+
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_5afc363772e39448d1cd4d5adbf562adbc786795.svg"><img src="../../_images/indigorenderer_5afc363772e39448d1cd4d5adbf562adbc786795.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+</div>
+<div class="section" id="render-label-mode">
+<span id="indigo-option-12"></span><h2>render-label-mode = terminal-hetero<a class="headerlink" href="#render-label-mode" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">terminal-hetero</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Atom label rendering mode</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>all</strong></dt>
+<dd>show all atoms</dd>
+<dt><strong>terminal-hetero</strong></dt>
+<dd>show heteroatoms, terminal atoms, atoms with radical, charge, isotope, explicit valence, and atoms having two adjacent bonds in a line</dd>
+<dt><strong>hetero</strong></dt>
+<dd>the same as terminal-hetero, but without terminal atoms</dd>
+<dt><strong>none</strong></dt>
+<dd>hide all labels, show only bonds</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb30.svg"><img src="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb30.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb31.svg"><img src="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb31.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb32.svg"><img src="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb32.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb33.svg"><img src="../../_images/indigorenderer_56e221e816798873127eae5ff474f83b47516fb33.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-implicit-hydrogens-visible">
+<span id="indigo-option-13"></span><h2>render-implicit-hydrogens-visible = True<a class="headerlink" href="#render-implicit-hydrogens-visible" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">True</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Show implicit hydrogens on visible atoms.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_bb170c86f5ee1dc585166e5390269a0d475c29bf0.svg"><img src="../../_images/indigorenderer_bb170c86f5ee1dc585166e5390269a0d475c29bf0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_bb170c86f5ee1dc585166e5390269a0d475c29bf1.svg"><img src="../../_images/indigorenderer_bb170c86f5ee1dc585166e5390269a0d475c29bf1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment">
+<span id="indigo-option-14"></span><h2>render-comment = None<a class="headerlink" href="#render-comment" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">None</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Put a comment at the top or bottom of the image</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>If the image size is set explicitly, it must not be smaller than the size of the comment bounding box.</p>
+<p>All the examples on this page contain comment with option value.</p>
+<p>Comment can have multiple line:</p>
+</div></blockquote>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_bd0d6512e3230e62589572a289adf0ba004904ac0.svg"><img src="../../_images/indigorenderer_bd0d6512e3230e62589572a289adf0ba004904ac0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment-font-size">
+<span id="indigo-option-15"></span><h2>render-comment-font-size = 20<a class="headerlink" href="#render-comment-font-size" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">20</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Font size for the comment in absolute units, roughly equal to the height in pixels.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd0.svg"><img src="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd1.svg"><img src="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd2.svg"><img src="../../_images/indigorenderer_466f5b8ed55a03de5496ec9ad39de337c9b72cbd2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment-alignment">
+<span id="indigo-option-16"></span><h2>render-comment-alignment = center<a class="headerlink" href="#render-comment-alignment" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">center</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Comment alignment</td>
+</tr>
+</tbody>
+</table>
+<p>Supported values: left, right, center, center-left</p>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d0.svg"><img src="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d1.svg"><img src="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d2.svg"><img src="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d3.svg"><img src="../../_images/indigorenderer_d85affdde4f867d5960bde527951095797c1d58d3.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment-color">
+<span id="indigo-option-17"></span><h2>render-comment-color = black<a class="headerlink" href="#render-comment-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">color</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">black</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Color to use for the comment.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_fb119fbd66421752aca14a7c74518a6781b6133b0.svg"><img src="../../_images/indigorenderer_fb119fbd66421752aca14a7c74518a6781b6133b0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_fb119fbd66421752aca14a7c74518a6781b6133b1.svg"><img src="../../_images/indigorenderer_fb119fbd66421752aca14a7c74518a6781b6133b1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-bond-line-width">
+<span id="indigo-option-18"></span><h2>render-bond-line-width = 1.0<a class="headerlink" href="#render-bond-line-width" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">float</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">1.0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Relative bond line width</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f00.svg"><img src="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f00.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f01.svg"><img src="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f01.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f02.svg"><img src="../../_images/indigorenderer_76584355aaca4915a4e67d873c0b81ab9ce6b5f02.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment-position">
+<span id="indigo-option-19"></span><h2>render-comment-position = bottom<a class="headerlink" href="#render-comment-position" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">bottom</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">top or bottom.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_720c541ef1469ab19d2838f359b7d5e75f9ef98e0.svg"><img src="../../_images/indigorenderer_720c541ef1469ab19d2838f359b7d5e75f9ef98e0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_720c541ef1469ab19d2838f359b7d5e75f9ef98e1.svg"><img src="../../_images/indigorenderer_720c541ef1469ab19d2838f359b7d5e75f9ef98e1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-comment-offset">
+<span id="indigo-option-20"></span><h2>render-comment-offset = 0<a class="headerlink" href="#render-comment-offset" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Vertical space (in pixels) between the comment and the rendered structure or reaction.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a580.svg"><img src="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a580.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a581.svg"><img src="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a581.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a582.svg"><img src="../../_images/indigorenderer_a29812dee01a7255f847acd27a8db84445731a582.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-atom-ids-visible">
+<span id="indigo-option-21"></span><h2>render-atom-ids-visible = False<a class="headerlink" href="#render-atom-ids-visible" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Show atom numbers (for debugging purposes only).</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_6f053b6acb6a81d303b625911c85a649227eac310.svg"><img src="../../_images/indigorenderer_6f053b6acb6a81d303b625911c85a649227eac310.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_6f053b6acb6a81d303b625911c85a649227eac311.svg"><img src="../../_images/indigorenderer_6f053b6acb6a81d303b625911c85a649227eac311.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-bond-ids-visible">
+<span id="indigo-option-22"></span><h2>render-bond-ids-visible = False<a class="headerlink" href="#render-bond-ids-visible" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Show bond numbers (for debugging purposes only).</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a7b5ecc20c2aab239e409dc68c7c3ec162cd0b2e0.svg"><img src="../../_images/indigorenderer_a7b5ecc20c2aab239e409dc68c7c3ec162cd0b2e0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_a7b5ecc20c2aab239e409dc68c7c3ec162cd0b2e1.svg"><img src="../../_images/indigorenderer_a7b5ecc20c2aab239e409dc68c7c3ec162cd0b2e1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-atom-bond-ids-from-one">
+<span id="indigo-option-23"></span><h2>render-atom-bond-ids-from-one = False<a class="headerlink" href="#render-atom-bond-ids-from-one" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Show atom and bond numbers starting from one, not from zero.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="render-aam-color">
+<span id="indigo-option-24"></span><h2>render-aam-color = black<a class="headerlink" href="#render-aam-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">color</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">black</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Atom-by-atom mapping indices color in reactions.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_2d4b51b4095d744294e0a4b18dd40230c8e664f30.svg"><img src="../../_images/indigorenderer_2d4b51b4095d744294e0a4b18dd40230c8e664f30.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-atom-color-property">
+<span id="indigo-option-25"></span><h2>render-atom-color-property = none<a class="headerlink" href="#render-atom-color-property" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">none</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">S-group name for atom colors</td>
+</tr>
+</tbody>
+</table>
+<p>Indigo can use a specified color for each atom and interpolate these colors for bond rendering.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># Load structure</span>
+<span class="n">m</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMolecule</span><span class="p">(</span><span class="s">&#39;CC(=C)C1=C(C)C(C)=CC(O)=C1NCCCCC=O&#39;</span><span class="p">)</span>
+
+<span class="c"># Add data sgroups with &#39;color&#39; description</span>
+<span class="n">m</span><span class="o">.</span><span class="n">addDataSGroup</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[],</span> <span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="s">&quot;0.155, 0.55, 0.955&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">addDataSGroup</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">],</span> <span class="p">[],</span> <span class="s">&quot;color&quot;</span><span class="p">,</span> <span class="s">&quot;0.955, 0.155, 0.155&quot;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-atom-color-property&quot;</span><span class="p">,</span> <span class="s">&quot;color&quot;</span><span class="p">)</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&#39;render-coloring&#39;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&#39;result.png&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_bfb81f9acd9910b65776d216ac99637f46e02283.svg"><img src="../../_images/indigorenderer_bfb81f9acd9910b65776d216ac99637f46e02283.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<p>See <a class="reference internal" href="../examples/atom-coloring.html#indigo-example-atom-coloring"><em>Atom Coloring</em></a> for a larger example.</p>
+</div>
+<div class="section" id="render-bold-bond-detection">
+<span id="indigo-option-26"></span><h2>render-bold-bond-detection = true<a class="headerlink" href="#render-bold-bond-detection" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">true</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Detect and draw bold bond for Haworth projection</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_1bc28b16c239ff2c4e4bd87858d8743f2b4a13cd0.svg"><img src="../../_images/indigorenderer_1bc28b16c239ff2c4e4bd87858d8743f2b4a13cd0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_1bc28b16c239ff2c4e4bd87858d8743f2b4a13cd1.svg"><img src="../../_images/indigorenderer_1bc28b16c239ff2c4e4bd87858d8743f2b4a13cd1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/bold-bond.mol"><tt class="docutils literal"><span class="pre">data/bold-bond.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-catalysts-placement">
+<span id="indigo-option-27"></span><h2>render-catalysts-placement = above-and-below<a class="headerlink" href="#render-catalysts-placement" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">above-and-below</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Reaction catalysts place relative to the reaction arrow</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_b6c60f30bd0cc1572a0865431b90994855115fa80.svg"><img src="../../_images/indigorenderer_b6c60f30bd0cc1572a0865431b90994855115fa80.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_b6c60f30bd0cc1572a0865431b90994855115fa81.svg"><img src="../../_images/indigorenderer_b6c60f30bd0cc1572a0865431b90994855115fa81.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/catalysts3000.rxn"><tt class="docutils literal"><span class="pre">data/catalysts3000.rxn</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-center-double-bond-when-stereo-adjacent">
+<span id="indigo-option-28"></span><h2>render-center-double-bond-when-stereo-adjacent = false<a class="headerlink" href="#render-center-double-bond-when-stereo-adjacent" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Center double done if there is an attached stereobond</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e40818900fba8c7e8b4bf18e05a6552c536ce6a10.svg"><img src="../../_images/indigorenderer_e40818900fba8c7e8b4bf18e05a6552c536ce6a10.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e40818900fba8c7e8b4bf18e05a6552c536ce6a11.svg"><img src="../../_images/indigorenderer_e40818900fba8c7e8b4bf18e05a6552c536ce6a11.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-data-sgroup-color">
+<span id="indigo-option-29"></span><h2>render-data-sgroup-color = black<a class="headerlink" href="#render-data-sgroup-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">color</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">black</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Color for data-sgroups</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e18eb2e98d5eea2b76442abaa014b5f81ef12eb80.svg"><img src="../../_images/indigorenderer_e18eb2e98d5eea2b76442abaa014b5f81ef12eb80.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e18eb2e98d5eea2b76442abaa014b5f81ef12eb81.svg"><img src="../../_images/indigorenderer_e18eb2e98d5eea2b76442abaa014b5f81ef12eb81.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/render_example-sgroup.mol"><tt class="docutils literal"><span class="pre">data/render_example-sgroup.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-hdc-offset">
+<span id="indigo-option-30"></span><h2>render-hdc-offset = 0, 0<a class="headerlink" href="#render-hdc-offset" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">0, 0</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Offset for the rendering area</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_5f464c2e2487526b06b2a1470d133836ea5045a80.svg"><img src="../../_images/indigorenderer_5f464c2e2487526b06b2a1470d133836ea5045a80.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_5f464c2e2487526b06b2a1470d133836ea5045a81.svg"><img src="../../_images/indigorenderer_5f464c2e2487526b06b2a1470d133836ea5045a81.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-stereo-style">
+<span id="indigo-option-31"></span><h2>render-stereo-style = old<a class="headerlink" href="#render-stereo-style" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum (old, ext, none)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">old</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Stereocenters rendering mode</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>old</strong>:</dt>
+<dd>Only display the &#8220;Chiral&#8221; sign when appropriate.</dd>
+<dt><strong>ext</strong>:</dt>
+<dd>Display &#8220;abs&#8221;, &#8220;and&#8221;, &#8220;or&#8221; labels near each stereocenter.</dd>
+<dt><strong>none</strong>:</dt>
+<dd>Hide all the information about the stereogroups.</dd>
+</dl>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe0.svg"><img src="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe1.svg"><img src="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe2.svg"><img src="../../_images/indigorenderer_45bbf8dc3fd3f1a657d113e5f8290004b699a5fe2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/stereo-chiral.mol"><tt class="docutils literal"><span class="pre">data/stereo-chiral.mol</span></tt></a>     <div class="line"><br /></div>
+<p><cite>Old</cite> style of rendering is used only with ordinary stereocenters, and enhanced stereocenters with <cite>and</cite> and <cite>or</cite> groups are rendered the same in the <cite>old</cite> and <cite>ext</cite> mode:</p>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a0.svg"><img src="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a1.svg"><img src="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a2.svg"><img src="../../_images/indigorenderer_2ffd17f6774edd33a8e5c7622aa0a8180955981a2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/stereo-chiral2.mol"><tt class="docutils literal"><span class="pre">data/stereo-chiral2.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-superatom-mode">
+<span id="indigo-option-32"></span><h2>render-superatom-mode = expand<a class="headerlink" href="#render-superatom-mode" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum (expand, collapse)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">expand</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Supertatoms rendering mode</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_47ecde5d4f564604570713bf01f4aa9513aee8a80.svg"><img src="../../_images/indigorenderer_47ecde5d4f564604570713bf01f4aa9513aee8a80.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_47ecde5d4f564604570713bf01f4aa9513aee8a81.svg"><img src="../../_images/indigorenderer_47ecde5d4f564604570713bf01f4aa9513aee8a81.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/abbr.mol"><tt class="docutils literal"><span class="pre">data/abbr.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-valences-visible">
+<span id="indigo-option-33"></span><h2>render-valences-visible = true<a class="headerlink" href="#render-valences-visible" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">true</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Render explicit valences</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_0353c45c93208719837a25cd05e68583a4e2a73f0.svg"><img src="../../_images/indigorenderer_0353c45c93208719837a25cd05e68583a4e2a73f0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_0353c45c93208719837a25cd05e68583a4e2a73f1.svg"><img src="../../_images/indigorenderer_0353c45c93208719837a25cd05e68583a4e2a73f1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+</div>
+<div class="section" id="render-highlight-color">
+<span id="indigo-option-34"></span><h2>render-highlight-color = red<a class="headerlink" href="#render-highlight-color" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">color</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">red</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">The color to be used for highlighting.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e905816881c8d623ce00c9e36c772bfd193700890.svg"><img src="../../_images/indigorenderer_e905816881c8d623ce00c9e36c772bfd193700890.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_e905816881c8d623ce00c9e36c772bfd193700891.svg"><img src="../../_images/indigorenderer_e905816881c8d623ce00c9e36c772bfd193700891.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/highlighting.mol"><tt class="docutils literal"><span class="pre">data/highlighting.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-highlight-color-enabled">
+<span id="indigo-option-35"></span><h2>render-highlight-color-enabled = true<a class="headerlink" href="#render-highlight-color-enabled" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">true</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Enable highlighting with color.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_3d437ca521688ef7272f242d9f7139493fec3f110.svg"><img src="../../_images/indigorenderer_3d437ca521688ef7272f242d9f7139493fec3f110.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_3d437ca521688ef7272f242d9f7139493fec3f111.svg"><img src="../../_images/indigorenderer_3d437ca521688ef7272f242d9f7139493fec3f111.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/highlighting.mol"><tt class="docutils literal"><span class="pre">data/highlighting.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-highlight-thickness-enabled">
+<span id="indigo-option-36"></span><h2>render-highlight-thickness-enabled = false<a class="headerlink" href="#render-highlight-thickness-enabled" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Enable highlighting with thick bonds and bold atom labels.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_c31cb16e30c5cc90f32e10593163cb2a0448691d0.svg"><img src="../../_images/indigorenderer_c31cb16e30c5cc90f32e10593163cb2a0448691d0.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_c31cb16e30c5cc90f32e10593163cb2a0448691d1.svg"><img src="../../_images/indigorenderer_c31cb16e30c5cc90f32e10593163cb2a0448691d1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/highlighting.mol"><tt class="docutils literal"><span class="pre">data/highlighting.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+<div class="section" id="render-highlighted-labels-visible">
+<span id="indigo-option-37"></span><h2>render-highlighted-labels-visible = False<a class="headerlink" href="#render-highlighted-labels-visible" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">False</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Always show labels of highlighted atoms.</td>
+</tr>
+</tbody>
+</table>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_684946bb4d432e3399d9428862c423b9e7e9e1580.svg"><img src="../../_images/indigorenderer_684946bb4d432e3399d9428862c423b9e7e9e1580.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_684946bb4d432e3399d9428862c423b9e7e9e1581.svg"><img src="../../_images/indigorenderer_684946bb4d432e3399d9428862c423b9e7e9e1581.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+Input:     <a class="reference download internal" href="../../_downloads/highlighting.mol"><tt class="docutils literal"><span class="pre">data/highlighting.mol</span></tt></a>     <div class="line"><br /></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Rendering options</a><ul>
+<li><a class="reference internal" href="#render-output-format">render-output-format = automatic</a></li>
+<li><a class="reference internal" href="#render-image-size">render-image-size = auto</a></li>
+<li><a class="reference internal" href="#render-bond-length">render-bond-length = 100</a></li>
+<li><a class="reference internal" href="#render-relative-thickness">render-relative-thickness = 1.0</a></li>
+<li><a class="reference internal" href="#render-image-width">render-image-width = auto</a></li>
+<li><a class="reference internal" href="#render-image-height">render-image-height = auto</a></li>
+<li><a class="reference internal" href="#render-image-max-width">render-image-max-width = auto</a></li>
+<li><a class="reference internal" href="#render-image-max-height">render-image-max-height = auto</a></li>
+<li><a class="reference internal" href="#render-margins">render-margins = auto</a></li>
+<li><a class="reference internal" href="#render-coloring">render-coloring = false</a></li>
+<li><a class="reference internal" href="#render-base-color">render-base-color = black (0, 0, 0)</a></li>
+<li><a class="reference internal" href="#render-background-color">render-background-color = transparent</a></li>
+<li><a class="reference internal" href="#render-label-mode">render-label-mode = terminal-hetero</a></li>
+<li><a class="reference internal" href="#render-implicit-hydrogens-visible">render-implicit-hydrogens-visible = True</a></li>
+<li><a class="reference internal" href="#render-comment">render-comment = None</a></li>
+<li><a class="reference internal" href="#render-comment-font-size">render-comment-font-size = 20</a></li>
+<li><a class="reference internal" href="#render-comment-alignment">render-comment-alignment = center</a></li>
+<li><a class="reference internal" href="#render-comment-color">render-comment-color = black</a></li>
+<li><a class="reference internal" href="#render-bond-line-width">render-bond-line-width = 1.0</a></li>
+<li><a class="reference internal" href="#render-comment-position">render-comment-position = bottom</a></li>
+<li><a class="reference internal" href="#render-comment-offset">render-comment-offset = 0</a></li>
+<li><a class="reference internal" href="#render-atom-ids-visible">render-atom-ids-visible = False</a></li>
+<li><a class="reference internal" href="#render-bond-ids-visible">render-bond-ids-visible = False</a></li>
+<li><a class="reference internal" href="#render-atom-bond-ids-from-one">render-atom-bond-ids-from-one = False</a></li>
+<li><a class="reference internal" href="#render-aam-color">render-aam-color = black</a></li>
+<li><a class="reference internal" href="#render-atom-color-property">render-atom-color-property = none</a></li>
+<li><a class="reference internal" href="#render-bold-bond-detection">render-bold-bond-detection = true</a></li>
+<li><a class="reference internal" href="#render-catalysts-placement">render-catalysts-placement = above-and-below</a></li>
+<li><a class="reference internal" href="#render-center-double-bond-when-stereo-adjacent">render-center-double-bond-when-stereo-adjacent = false</a></li>
+<li><a class="reference internal" href="#render-data-sgroup-color">render-data-sgroup-color = black</a></li>
+<li><a class="reference internal" href="#render-hdc-offset">render-hdc-offset = 0, 0</a></li>
+<li><a class="reference internal" href="#render-stereo-style">render-stereo-style = old</a></li>
+<li><a class="reference internal" href="#render-superatom-mode">render-superatom-mode = expand</a></li>
+<li><a class="reference internal" href="#render-valences-visible">render-valences-visible = true</a></li>
+<li><a class="reference internal" href="#render-highlight-color">render-highlight-color = red</a></li>
+<li><a class="reference internal" href="#render-highlight-color-enabled">render-highlight-color-enabled = true</a></li>
+<li><a class="reference internal" href="#render-highlight-thickness-enabled">render-highlight-thickness-enabled = false</a></li>
+<li><a class="reference internal" href="#render-highlighted-labels-visible">render-highlighted-labels-visible = False</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="layout-options.html"
+                        title="previous chapter">Layout options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="grid-rendering-options.html"
+                        title="next chapter">Grid rendering options</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/options/rendering-options.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="grid-rendering-options.html" title="Grid rendering options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="layout-options.html" title="Layout options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" >Options</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

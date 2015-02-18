@@ -1,0 +1,201 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.12.2)  18 FEB 2015 13:06
+entering extended mode
+**pgchem_usersguide.tex
+(C:\Temp\pgchem_tigress\doc\userguide\pgchem_usersguide\pgchem_usersguide.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+(c:\miktex\tex\latex\base\article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
+(c:\miktex\tex\latex\base\size10.clo
+File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (c:\miktex\tex\latex\base\inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(c:\miktex\tex\latex\base\latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
+))
+(c:\miktex\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(c:\miktex\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(c:\miktex\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(c:\miktex\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(c:\miktex\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(c:\miktex\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(c:\miktex\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(c:\miktex\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(c:\miktex\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count88
+\float@exts=\toks17
+\float@box=\box26
+\@float@everytoks=\toks18
+\@floatcapt=\box27
+)
+\@float@every@figure=\toks19
+
+(C:\Temp\pgchem_tigress\doc\userguide\pgchem_usersguide\pgchem_usersguide.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+
+(c:\miktex\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count89
+\scratchdimen=\dimen105
+\scratchbox=\box28
+\nofMPsegments=\count90
+\nofMParguments=\count91
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count92
+\MPscratchDim=\dimen106
+\MPnumerator=\count93
+\makeMPintoPDFobject=\count94
+\everyMPtoPDFconversion=\toks21
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 11.
+ [1
+
+{C:/Users/imseg/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+(C:\Temp\pgchem_tigress\doc\userguide\pgchem_usersguide\pgchem_usersguide.toc)
+\tf@toc=\write3
+
+[2] [3]
+Overfull \hbox (14.61064pt too wide) in paragraph at lines 23--23
+\OT1/cmr/m/n/10 pgchem::tigress is a chemoin-for-mat-ics ex-ten-sion to the Pos
+t-greSQL object-relational
+ []
+
+
+Overfull \hbox (15.2681pt too wide) in paragraph at lines 23--23
+\OT1/cmr/m/n/10 database man-age-ment sys-tem. It en-ables Post-greSQL to han-d
+le chem-i-cal datatypes.
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 25.
+(c:\miktex\tex\latex\base\omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 25.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 30.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 30.
+ [4] [5] [6]
+Overfull \hbox (6.9047pt too wide) in paragraph at lines 143--144
+[]\OT1/cmr/m/it/10 total[]charge(molecule) \OT1/cmr/m/n/10 takes a molecule and
+ re-turns the to-tal charge (0=neu-
+ []
+
+
+Overfull \hbox (2.68639pt too wide) in paragraph at lines 147--148
+[]\OT1/cmr/m/it/10 number[]of[]rotatable[]bonds(molecule) \OT1/cmr/m/n/10 takes
+ a molecule and re-turns the num-
+ []
+
+[7] [8] [9] [10]
+Overfull \hbox (49.22314pt too wide) in paragraph at lines 272--273
+[]\OT1/cmr/m/n/10 checkmol/matchmol: http://merian.pch.univie.ac.at/$\OMS/cmsy/
+m/n/10 $\OT1/cmr/m/n/10 nhaider/cheminf/cmmm.html 
+ []
+
+
+Underfull \hbox (badness 1354) in paragraph at lines 300--301
+[]\OT1/cmr/m/n/10 number of sul-fur atoms and se-le-nium/tellurium
+ []
+
+
+Overfull \hbox (85.4669pt too wide) in paragraph at lines 281--346
+[][] 
+ []
+
+[11]
+Overfull \hbox (41.65207pt too wide) in paragraph at lines 352--365
+[][] 
+ []
+
+[12] [13]
+(C:\Temp\pgchem_tigress\doc\userguide\pgchem_usersguide\pgchem_usersguide.aux) 
+) 
+Here is how much of TeX's memory you used:
+ 1277 strings out of 493921
+ 16706 string characters out of 3154500
+ 78605 words of memory out of 3000000
+ 4595 multiletter control sequences out of 15000+200000
+ 8716 words of font info for 31 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 27i,10n,19p,578b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+<c:/miktex/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/miktex/fonts/type1/pu
+blic/amsfonts/cm/cmbx12.pfb><c:/miktex/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><c:/miktex/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/miktex/fonts/type1/pu
+blic/amsfonts/cm/cmr12.pfb><c:/miktex/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+<c:/miktex/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/miktex/fonts/type1/publi
+c/amsfonts/cm/cmr7.pfb><c:/miktex/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/m
+iktex/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/miktex/fonts/type1/public/a
+msfonts/cm/cmti10.pfb><c:/miktex/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on pgchem_usersguide.pdf (13 pages, 196746 bytes).
+PDF statistics:
+ 93 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

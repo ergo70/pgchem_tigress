@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Fingerprints options &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Options" href="index.html" />
+    <link rel="next" title="Deconvolution options" href="deconvolution.html" />
+    <link rel="prev" title="Substructure matching options" href="substructure-matching-options.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="deconvolution.html" title="Deconvolution options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="substructure-matching-options.html" title="Substructure matching options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Options</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="fingerprints-options">
+<h1>Fingerprints options<a class="headerlink" href="#fingerprints-options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="fp-ord-qwords">
+<span id="indigo-option-0"></span><h2>fp-ord-qwords = 25<a class="headerlink" href="#fp-ord-qwords" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">25</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Size of &#8220;ordinary&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fp-sim-qwords">
+<span id="indigo-option-1"></span><h2>fp-sim-qwords = 8<a class="headerlink" href="#fp-sim-qwords" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">8</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Size of &#8220;similarity&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fp-any-qwords">
+<span id="indigo-option-2"></span><h2>fp-any-qwords = 15<a class="headerlink" href="#fp-any-qwords" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">15</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Size of &#8220;any&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fp-tau-qwords">
+<span id="indigo-option-3"></span><h2>fp-tau-qwords = 25<a class="headerlink" href="#fp-tau-qwords" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">integer</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">25</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Size of &#8220;tautomer&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="fp-ext-enabled">
+<span id="indigo-option-4"></span><h2>fp-ext-enabled = true<a class="headerlink" href="#fp-ext-enabled" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">true</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Sets whether to include or not 3-byte &#8220;EXT&#8221; part of the fingerprint.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Fingerprints options</a><ul>
+<li><a class="reference internal" href="#fp-ord-qwords">fp-ord-qwords = 25</a></li>
+<li><a class="reference internal" href="#fp-sim-qwords">fp-sim-qwords = 8</a></li>
+<li><a class="reference internal" href="#fp-any-qwords">fp-any-qwords = 15</a></li>
+<li><a class="reference internal" href="#fp-tau-qwords">fp-tau-qwords = 25</a></li>
+<li><a class="reference internal" href="#fp-ext-enabled">fp-ext-enabled = true</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="substructure-matching-options.html"
+                        title="previous chapter">Substructure matching options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="deconvolution.html"
+                        title="next chapter">Deconvolution options</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/options/fingerprints.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="deconvolution.html" title="Deconvolution options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="substructure-matching-options.html" title="Substructure matching options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" >Options</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

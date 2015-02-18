@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Reaction Products Enumeration and Transformation &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Options" href="index.html" />
+    <link rel="next" title="InChI options" href="inchi.html" />
+    <link rel="prev" title="Timeout options" href="timeout.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="inchi.html" title="InChI options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="timeout.html" title="Timeout options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Options</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="reaction-products-enumeration-and-transformation">
+<h1>Reaction Products Enumeration and Transformation<a class="headerlink" href="#reaction-products-enumeration-and-transformation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="rpe-multistep-reactions">
+<span id="indigo-option-0"></span><h2>rpe-multistep-reactions = false<a class="headerlink" href="#rpe-multistep-reactions" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Enable multistep reactions</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rpe-mode">
+<span id="indigo-option-1"></span><h2>rpe-mode = grid<a class="headerlink" href="#rpe-mode" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum (grid, one-tube)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">grid</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Monomers mixing mode</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt><strong>grid:</strong></dt>
+<dd>different sets of monomers react in different tubes</dd>
+<dt><strong>one-tube:</strong></dt>
+<dd>reactions take place in one tube</dd>
+</dl>
+</div>
+<div class="section" id="rpe-self-reaction">
+<span id="indigo-option-2"></span><h2>rpe-self-reaction = false<a class="headerlink" href="#rpe-self-reaction" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Enable intramolecular reactions, where one molecule of monomers can play role of two (or more) reactants</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rpe-max-depth">
+<span id="indigo-option-3"></span><h2>rpe-max-depth = 2<a class="headerlink" href="#rpe-max-depth" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">2</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Maximum level of representing product like a monomer (works only with ``rpe-multistep-reactions enabled``).</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="rpe-max-products-count">
+<span id="indigo-option-4"></span><h2>rpe-max-products-count = 1000<a class="headerlink" href="#rpe-max-products-count" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">int</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">1000</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Maximum amount of generated products.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Reaction Products Enumeration and Transformation</a><ul>
+<li><a class="reference internal" href="#rpe-multistep-reactions">rpe-multistep-reactions = false</a></li>
+<li><a class="reference internal" href="#rpe-mode">rpe-mode = grid</a></li>
+<li><a class="reference internal" href="#rpe-self-reaction">rpe-self-reaction = false</a></li>
+<li><a class="reference internal" href="#rpe-max-depth">rpe-max-depth = 2</a></li>
+<li><a class="reference internal" href="#rpe-max-products-count">rpe-max-products-count = 1000</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="timeout.html"
+                        title="previous chapter">Timeout options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="inchi.html"
+                        title="next chapter">InChI options</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/options/reaction-product-enumeration.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="inchi.html" title="InChI options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="timeout.html" title="Timeout options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" >Options</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

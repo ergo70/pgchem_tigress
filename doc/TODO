@@ -1,0 +1,5 @@
+1. Documentation
+2. Use the strlx() family of functions for string operations to keep flawfinder happy.
+3. Reaction handling (in progress, but not there yet)
+4. Oracle version
+

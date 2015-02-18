@@ -1,0 +1,29 @@
+# Project: checkmolalt
+# Makefile created by Dev-C++ 4.9.9.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = checkmolc.o $(RES)
+LINKOBJ  = checkmolc.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib" safemem.o  -s 
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/include/c++/3.3.1"  -I"C:/Dev-Cpp/include/c++/3.3.1/mingw32"  -I"C:/Dev-Cpp/include/c++/3.3.1/backward"  -I"C:/Dev-Cpp/lib/gcc-lib/mingw32/3.3.1/include"  -I"C:/Dev-Cpp/include" 
+BIN  = checkmolalt.exe
+CXXFLAGS = $(CXXINCS)   -O3
+CFLAGS = $(INCS)   -O3
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before checkmolalt.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "checkmolalt.exe" $(LIBS)
+
+checkmolc.o: checkmolc.c C:/Dev-Cpp/include/stdlib.h   C:/Dev-Cpp/include/_mingw.h C:/Dev-Cpp/include/stddef.h   C:/Dev-Cpp/include/stdio.h C:/Dev-Cpp/include/stdarg.h   C:/Dev-Cpp/include/math.h C:/Dev-Cpp/include/string.h   C:/Dev-Cpp/include/ctype.h C:/Dev-Cpp/include/sys/types.h   C:/Dev-Cpp/include/sys/stat.h safemem.h C:/Dev-Cpp/include/errno.h
+	$(CC) -c checkmolc.c -o checkmolc.o $(CFLAGS)

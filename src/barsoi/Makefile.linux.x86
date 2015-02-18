@@ -1,0 +1,17 @@
+LIBS=-lm
+SHLIBFLAGS=-DMAKE_SHARED_LIBRARY -shared -fPIC -o libbarsoi.so
+EXEFLAGS=-o checkmol
+
+CC=gcc
+CFLAGS=-m32 -O2 -finline-functions -funroll-loops
+
+barsoi:
+	$(CC) $(CFLAGS) $(SHLIBFLAGS) safemem.c checkmolc.c $(LIBS)
+
+checkmol:
+	$(CC) $(CFLAGS) $(EXEFLAGS) safemem.c checkmolc.c $(LIBS)
+	ln checkmol matchmol
+
+
+clean:
+	rm -f libbarsoi.so checkmol matchmol

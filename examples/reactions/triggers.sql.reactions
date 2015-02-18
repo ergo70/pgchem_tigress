@@ -1,0 +1,16 @@
+CREATE TRIGGER decompose_reaction
+  AFTER INSERT OR UPDATE
+  ON reactions
+  FOR EACH ROW
+  EXECUTE PROCEDURE public.t_decompose_reaction();
+
+-- Trigger: maintain_r_indextables on r_fragments
+
+-- DROP TRIGGER maintain_r_indextables ON r_fragments;
+
+CREATE TRIGGER maintain_r_indextables
+  AFTER INSERT OR UPDATE
+  ON r_fragments
+  FOR EACH ROW
+  EXECUTE PROCEDURE public.t_maintain_r_indextables();
+

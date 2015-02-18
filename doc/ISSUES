@@ -1,0 +1,5 @@
+MDL NoStructs are weakly supported but not recommended:
+- They will always evaluate to 'false' in matches.
+- Test for Nostructs with is_nostruct(); Better yet kill 'em all, for you have NULL.
+Disconnected structures cannot be used as queries, but can be searched. This is an OpenBabel limitation.
+The png() conversion holds a lot of memory until the connection is closed. So until this ironed out, frequently closing the connection prevents running out of memory. 

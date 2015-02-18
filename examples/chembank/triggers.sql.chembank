@@ -1,0 +1,12 @@
+CREATE TRIGGER precompute_properties
+  BEFORE INSERT OR UPDATE
+  ON chembank.bioactives
+  FOR EACH ROW
+  EXECUTE PROCEDURE public.t_precompute_properties();
+
+CREATE TRIGGER maintain_pgchem_indextables
+  AFTER INSERT OR UPDATE
+  ON chembank.bioactives
+  FOR EACH ROW
+  EXECUTE PROCEDURE public.t_maintain_pgchem_indextables();
+

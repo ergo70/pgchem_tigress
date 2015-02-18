@@ -1,0 +1,625 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Options &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Indigo" href="../index.html" />
+    <link rel="next" title="Generic options" href="input-output-options.html" />
+    <link rel="prev" title="Different Mass Computation Methods" href="../concepts/mass.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="input-output-options.html" title="Generic options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../concepts/mass.html" title="Different Mass Computation Methods"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">Indigo</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="options">
+<h1>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h1>
+<p>Indigo instance represents an environment for IndigoObjects. Many methods in Indigo has additional options that can be set via Indigo.setOption method:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;text comment&quot;</span><span class="p">)</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment-color&quot;</span><span class="p">,</span> <span class="s">&quot;0, 0.4, 0.5&quot;</span><span class="p">)</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;ignore-stereochemistry-errors&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="input-output-options.html">Generic options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#ignore-stereochemistry-errors">ignore-stereochemistry-errors = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#ignore-noncritical-query-features">ignore-noncritical-query-features = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#treat-x-as-pseudoatom">treat-x-as-pseudoatom = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#skip-3d-chirality">skip-3d-chirality = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#molfile-saving-mode">molfile-saving-mode = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#molfile-saving-no-chiral">molfile-saving-no-chiral = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#molfile-saving-skip-date">molfile-saving-skip-date = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#smiles-saving-write-name">smiles-saving-write-name = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#filename-encoding">filename-encoding = ascii</a></li>
+<li class="toctree-l2"><a class="reference internal" href="input-output-options.html#serialize-preserve-ordering">serialize-preserve-ordering = false</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="layout-options.html">Layout options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="layout-options.html#layout-max-iterations">layout-max-iterations = 0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rendering-options.html">Rendering options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-output-format">render-output-format = automatic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-image-size">render-image-size = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-bond-length">render-bond-length = 100</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-relative-thickness">render-relative-thickness = 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-image-width">render-image-width = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-image-height">render-image-height = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-image-max-width">render-image-max-width = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-image-max-height">render-image-max-height = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-margins">render-margins = auto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-coloring">render-coloring = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-base-color">render-base-color = black (0, 0, 0)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-background-color">render-background-color = transparent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-label-mode">render-label-mode = terminal-hetero</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-implicit-hydrogens-visible">render-implicit-hydrogens-visible = True</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment">render-comment = None</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment-font-size">render-comment-font-size = 20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment-alignment">render-comment-alignment = center</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment-color">render-comment-color = black</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-bond-line-width">render-bond-line-width = 1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment-position">render-comment-position = bottom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-comment-offset">render-comment-offset = 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-atom-ids-visible">render-atom-ids-visible = False</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-bond-ids-visible">render-bond-ids-visible = False</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-atom-bond-ids-from-one">render-atom-bond-ids-from-one = False</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-aam-color">render-aam-color = black</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-atom-color-property">render-atom-color-property = none</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-bold-bond-detection">render-bold-bond-detection = true</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-catalysts-placement">render-catalysts-placement = above-and-below</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-center-double-bond-when-stereo-adjacent">render-center-double-bond-when-stereo-adjacent = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-data-sgroup-color">render-data-sgroup-color = black</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-hdc-offset">render-hdc-offset = 0, 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-stereo-style">render-stereo-style = old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-superatom-mode">render-superatom-mode = expand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-valences-visible">render-valences-visible = true</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-highlight-color">render-highlight-color = red</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-highlight-color-enabled">render-highlight-color-enabled = true</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-highlight-thickness-enabled">render-highlight-thickness-enabled = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rendering-options.html#render-highlighted-labels-visible">render-highlighted-labels-visible = False</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="grid-rendering-options.html">Grid rendering options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="grid-rendering-options.html#render-grid-margins">render-grid-margins = 0, 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-rendering-options.html#render-grid-title-property">render-grid-title-property = none</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-rendering-options.html#render-grid-title-alignment">render-grid-title-alignment = center</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-rendering-options.html#render-grid-title-font-size">render-grid-title-font-size = 20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="grid-rendering-options.html#render-grid-title-offset">render-grid-title-offset = 0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="substructure-matching-options.html">Substructure matching options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="substructure-matching-options.html#embedding-uniqueness">embedding-uniqueness = atoms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="substructure-matching-options.html#max-embeddings">max-embeddings = 0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fingerprints.html">Fingerprints options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fingerprints.html#fp-ord-qwords">fp-ord-qwords = 25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fingerprints.html#fp-sim-qwords">fp-sim-qwords = 8</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fingerprints.html#fp-any-qwords">fp-any-qwords = 15</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fingerprints.html#fp-tau-qwords">fp-tau-qwords = 25</a></li>
+<li class="toctree-l2"><a class="reference internal" href="fingerprints.html#fp-ext-enabled">fp-ext-enabled = true</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="deconvolution.html">Deconvolution options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="deconvolution.html#deconvolution-aromatization">deconvolution-aromatization = true</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deconvolution.html#deco-save-ap-bond-orders">deco-save-ap-bond-orders = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="deconvolution.html#deco-ignore-errors">deco-ignore-errors = true</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aromaticity.html">Aromaticity options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aromaticity.html#aromaticity-model">aromaticity-model = basic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aromaticity.html#dearomatize-verification">dearomatize-verification = true</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aromaticity.html#unique-dearomatization">unique-dearomatization = false</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="timeout.html">Timeout options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="timeout.html#timeout">timeout = 0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timeout.html#aam-timeout">aam-timeout = 0</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reaction-product-enumeration.html">Reaction Products Enumeration and Transformation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reaction-product-enumeration.html#rpe-multistep-reactions">rpe-multistep-reactions = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reaction-product-enumeration.html#rpe-mode">rpe-mode = grid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reaction-product-enumeration.html#rpe-self-reaction">rpe-self-reaction = false</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reaction-product-enumeration.html#rpe-max-depth">rpe-max-depth = 2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reaction-product-enumeration.html#rpe-max-products-count">rpe-max-products-count = 1000</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="inchi.html">InChI options</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="inchi.html#inchi-options">inchi-options = none</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="7%" />
+<col width="7%" />
+<col width="58%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Default</th>
+<th class="head">Short description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><a class="reference external" href="timeout.html#aam-timeout">aam-timeout</a></td>
+<td>integer</td>
+<td>0</td>
+<td>Timeout (is ms) for atom-to-atom mapping computation operation. Zero means no timeout.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="aromaticity.html#aromaticity-model">aromaticity-model</a></td>
+<td>enum</td>
+<td>basic</td>
+<td>Aromaticity model</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="aromaticity.html#dearomatize-verification">dearomatize-verification</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Verify dearomatization method</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="deconvolution.html#deco-ignore-errors">deco-ignore-errors</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Ignore errors during decomposition</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="deconvolution.html#deco-save-ap-bond-orders">deco-save-ap-bond-orders</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Save attachement points as separate atoms with explicit bond connected.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="deconvolution.html#deconvolution-aromatization">deconvolution-aromatization</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Aromatize input molecules</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="substructure-matching-options.html#embedding-uniqueness">embedding-uniqueness</a></td>
+<td>enum</td>
+<td>atoms</td>
+<td>Defines how the uniqueness of a substructure match is determined when counting or iterating unique matches.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#filename-encoding">filename-encoding</a></td>
+<td>enum (ascii, utf-8)</td>
+<td>ascii</td>
+<td>File names encoding</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="fingerprints.html#fp-any-qwords">fp-any-qwords</a></td>
+<td>integer</td>
+<td>15</td>
+<td>Size of &#8220;any&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="fingerprints.html#fp-ext-enabled">fp-ext-enabled</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Sets whether to include or not 3-byte &#8220;EXT&#8221; part of the fingerprint.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="fingerprints.html#fp-ord-qwords">fp-ord-qwords</a></td>
+<td>integer</td>
+<td>25</td>
+<td>Size of &#8220;ordinary&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="fingerprints.html#fp-sim-qwords">fp-sim-qwords</a></td>
+<td>integer</td>
+<td>8</td>
+<td>Size of &#8220;similarity&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="fingerprints.html#fp-tau-qwords">fp-tau-qwords</a></td>
+<td>integer</td>
+<td>25</td>
+<td>Size of &#8220;tautomer&#8221; part of a fingerprint, in 8-byte blocks.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#ignore-noncritical-query-features">ignore-noncritical-query-features</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>When true, the &#8220;bond topology&#8221;, &#8220;stereo care&#8221;, &#8220;ring bond count&#8221;, and &#8220;unsaturation&#8221; specifications are
+ignored when a non-query molecule is being loaded.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="input-output-options.html#ignore-stereochemistry-errors">ignore-stereochemistry-errors</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>When reading a Molfile/Rxnfile with incorrectly marked stereobonds, ignore them rather than raise an error.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="inchi.html#inchi-options">inchi-options</a></td>
+<td>string</td>
+<td>none</td>
+<td>Options supported by the official InChI plugin.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="layout-options.html#layout-max-iterations">layout-max-iterations</a></td>
+<td>int</td>
+<td>0</td>
+<td>The maximum number of iterations allowed for the layout procedure to run</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="substructure-matching-options.html#max-embeddings">max-embeddings</a></td>
+<td>int</td>
+<td>0</td>
+<td>The maximum number of embeddings allowed to enumerate when counting all embeddings.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="input-output-options.html#molfile-saving-mode">molfile-saving-mode</a></td>
+<td>enum (auto, 2000, 3000)</td>
+<td>auto</td>
+<td>Molfile saving mode</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#molfile-saving-no-chiral">molfile-saving-no-chiral</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Do no write the &#8220;Chiral&#8221; flag when saving Molfiles and Rxnfiles</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="input-output-options.html#molfile-saving-skip-date">molfile-saving-skip-date</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Do no write the current date into Molfiles, Rxnfiles and RDFiles</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-aam-color">render-aam-color</a></td>
+<td>color</td>
+<td>black</td>
+<td>Atom-by-atom mapping indices color in reactions.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-atom-bond-ids-from-one">render-atom-bond-ids-from-one</a></td>
+<td>boolean</td>
+<td>False</td>
+<td>Show atom and bond numbers starting from one, not from zero.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-atom-color-property">render-atom-color-property</a></td>
+<td>string</td>
+<td>none</td>
+<td>S-group name for atom colors</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-atom-ids-visible">render-atom-ids-visible</a></td>
+<td>boolean</td>
+<td>False</td>
+<td>Show atom numbers (for debugging purposes only).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-background-color">render-background-color</a></td>
+<td>color</td>
+<td>transparent</td>
+<td>Background color.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-base-color">render-base-color</a></td>
+<td>coloring</td>
+<td>black (0, 0, 0)</td>
+<td>The default color for atoms and bonds.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-bold-bond-detection">render-bold-bond-detection</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Detect and draw bold bond for Haworth projection</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-bond-ids-visible">render-bond-ids-visible</a></td>
+<td>boolean</td>
+<td>False</td>
+<td>Show bond numbers (for debugging purposes only).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-bond-length">render-bond-length</a></td>
+<td>integer</td>
+<td>100</td>
+<td>Desired average bond length in pixels</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-bond-line-width">render-bond-line-width</a></td>
+<td>float</td>
+<td>1.0</td>
+<td>Relative bond line width</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-catalysts-placement">render-catalysts-placement</a></td>
+<td>enum</td>
+<td>above-and-below</td>
+<td>Reaction catalysts place relative to the reaction arrow</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-center-double-bond-when-stereo-adjacent">render-center-double-bond-when-stereo-adjacent</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Center double done if there is an attached stereobond</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-coloring">render-coloring</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Turn on atom coloring, e.g. nitrogen is blue, oxygen is red, etc.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-comment">render-comment</a></td>
+<td>string</td>
+<td>None</td>
+<td>Put a comment at the top or bottom of the image</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-comment-alignment">render-comment-alignment</a></td>
+<td>enum</td>
+<td>center</td>
+<td>Comment alignment</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-comment-color">render-comment-color</a></td>
+<td>color</td>
+<td>black</td>
+<td>Color to use for the comment.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-comment-font-size">render-comment-font-size</a></td>
+<td>integer</td>
+<td>20</td>
+<td>Font size for the comment in absolute units, roughly equal to the height in pixels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-comment-offset">render-comment-offset</a></td>
+<td>integer</td>
+<td>0</td>
+<td>Vertical space (in pixels) between the comment and the rendered structure or reaction.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-comment-position">render-comment-position</a></td>
+<td>enum</td>
+<td>bottom</td>
+<td>top or bottom.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-data-sgroup-color">render-data-sgroup-color</a></td>
+<td>color</td>
+<td>black</td>
+<td>Color for data-sgroups</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="grid-rendering-options.html#render-grid-margins">render-grid-margins</a></td>
+<td>size</td>
+<td>0, 0</td>
+<td>Horizontal and vertical margins around the grid cell, in pixels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="grid-rendering-options.html#render-grid-title-alignment">render-grid-title-alignment</a></td>
+<td>enum</td>
+<td>center</td>
+<td>Cell title alignment</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="grid-rendering-options.html#render-grid-title-font-size">render-grid-title-font-size</a></td>
+<td>int</td>
+<td>20</td>
+<td>Font size for the title in absolute units, roughly equal to the height in pixels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="grid-rendering-options.html#render-grid-title-offset">render-grid-title-offset</a></td>
+<td>int</td>
+<td>0</td>
+<td>Vertical space (in pixels) between the title and the rendered structure.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="grid-rendering-options.html#render-grid-title-property">render-grid-title-property</a></td>
+<td>string</td>
+<td>none</td>
+<td>The name of the molecule&#8217;s property that defines the title that is put under each molecule.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-hdc-offset">render-hdc-offset</a></td>
+<td>offset</td>
+<td>0, 0</td>
+<td>Offset for the rendering area</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-highlight-color">render-highlight-color</a></td>
+<td>color</td>
+<td>red</td>
+<td>The color to be used for highlighting.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-highlight-color-enabled">render-highlight-color-enabled</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Enable highlighting with color.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-highlight-thickness-enabled">render-highlight-thickness-enabled</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Enable highlighting with thick bonds and bold atom labels.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-highlighted-labels-visible">render-highlighted-labels-visible</a></td>
+<td>boolean</td>
+<td>False</td>
+<td>Always show labels of highlighted atoms.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-image-height">render-image-height</a></td>
+<td>int</td>
+<td>auto</td>
+<td>Image height</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-image-max-height">render-image-max-height</a></td>
+<td>int</td>
+<td>auto</td>
+<td>Maximum image height</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-image-max-width">render-image-max-width</a></td>
+<td>int</td>
+<td>auto</td>
+<td>Maximum image width</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-image-size">render-image-size</a></td>
+<td>size</td>
+<td>auto</td>
+<td>Width and height of target image.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-image-width">render-image-width</a></td>
+<td>int</td>
+<td>auto</td>
+<td>Image width</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-implicit-hydrogens-visible">render-implicit-hydrogens-visible</a></td>
+<td>boolean</td>
+<td>True</td>
+<td>Show implicit hydrogens on visible atoms.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-label-mode">render-label-mode</a></td>
+<td>enum</td>
+<td>terminal-hetero</td>
+<td>Atom label rendering mode</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-margins">render-margins</a></td>
+<td>size</td>
+<td>auto</td>
+<td>Horizontal and vertical margins around the image, in pixels.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-output-format">render-output-format</a></td>
+<td>string</td>
+<td>automatic</td>
+<td>Image file format.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-relative-thickness">render-relative-thickness</a></td>
+<td>float</td>
+<td>1.0</td>
+<td>Set the thickness of bonds and atom labels to X/30 of the average bond length.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-stereo-style">render-stereo-style</a></td>
+<td>enum (old, ext, none)</td>
+<td>old</td>
+<td>Stereocenters rendering mode</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="rendering-options.html#render-superatom-mode">render-superatom-mode</a></td>
+<td>enum (expand, collapse)</td>
+<td>expand</td>
+<td>Supertatoms rendering mode</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="rendering-options.html#render-valences-visible">render-valences-visible</a></td>
+<td>boolean</td>
+<td>true</td>
+<td>Render explicit valences</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="reaction-product-enumeration.html#rpe-max-depth">rpe-max-depth</a></td>
+<td>int</td>
+<td>2</td>
+<td>Maximum level of representing product like a monomer (works only with ``rpe-multistep-reactions enabled``).</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="reaction-product-enumeration.html#rpe-max-products-count">rpe-max-products-count</a></td>
+<td>int</td>
+<td>1000</td>
+<td>Maximum amount of generated products.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="reaction-product-enumeration.html#rpe-mode">rpe-mode</a></td>
+<td>enum (grid, one-tube)</td>
+<td>grid</td>
+<td>Monomers mixing mode</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="reaction-product-enumeration.html#rpe-multistep-reactions">rpe-multistep-reactions</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Enable multistep reactions</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="reaction-product-enumeration.html#rpe-self-reaction">rpe-self-reaction</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Enable intramolecular reactions, where one molecule of monomers can play role of two (or more) reactants</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#serialize-preserve-ordering">serialize-preserve-ordering</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Preserve atom and bond ordering in the serialization procedure</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="input-output-options.html#skip-3d-chirality">skip-3d-chirality</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Do not calculate chirality of 3D input structures.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#smiles-saving-write-name">smiles-saving-write-name</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Write names when saving via generic saver interface in SMILES mode</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="timeout.html#timeout">timeout</a></td>
+<td>integer</td>
+<td>0</td>
+<td>Timeout (is ms) for Indigo operation. Zero means no timeout.</td>
+</tr>
+<tr class="row-odd"><td><a class="reference external" href="input-output-options.html#treat-x-as-pseudoatom">treat-x-as-pseudoatom</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Treat &#8216;X&#8217; atoms in Molfiles/Rxnfiles as pseudoatoms, rather than &#8220;any halogen&#8221; query atoms.</td>
+</tr>
+<tr class="row-even"><td><a class="reference external" href="aromaticity.html#unique-dearomatization">unique-dearomatization</a></td>
+<td>boolean</td>
+<td>false</td>
+<td>Find dearomatization if all possible configurations uniquely define hydrogens.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="../concepts/mass.html"
+                        title="previous chapter">Different Mass Computation Methods</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="input-output-options.html"
+                        title="next chapter">Generic options</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/options/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="input-output-options.html" title="Generic options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../concepts/mass.html" title="Different Mass Computation Methods"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

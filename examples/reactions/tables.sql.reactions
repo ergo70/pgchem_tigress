@@ -1,0 +1,733 @@
+-- Table: chembank.r_molstatistics
+
+-- DROP TABLE chembank.r_molstatistics;
+
+CREATE TABLE chembank.r_molstatistics
+(
+  iiid int4 NOT NULL DEFAULT 0,
+  n_atoms int2 NOT NULL DEFAULT 0,
+  n_bonds int2 NOT NULL DEFAULT 0,
+  n_rings int2 NOT NULL DEFAULT 0,
+  n_qa int2 NOT NULL DEFAULT 0,
+  n_qb int2 NOT NULL DEFAULT 0,
+  n_chg int2 NOT NULL DEFAULT 0,
+  n_c1 int2 NOT NULL DEFAULT 0,
+  n_c2 int2 NOT NULL DEFAULT 0,
+  n_c int2 NOT NULL DEFAULT 0,
+  n_chb1p int2 NOT NULL DEFAULT 0,
+  n_chb2p int2 NOT NULL DEFAULT 0,
+  n_chb3p int2 NOT NULL DEFAULT 0,
+  n_chb4 int2 NOT NULL DEFAULT 0,
+  n_o2 int2 NOT NULL DEFAULT 0,
+  n_o3 int2 NOT NULL DEFAULT 0,
+  n_n1 int2 NOT NULL DEFAULT 0,
+  n_n2 int2 NOT NULL DEFAULT 0,
+  n_n3 int2 NOT NULL DEFAULT 0,
+  n_s int2 NOT NULL DEFAULT 0,
+  n_sete int2 NOT NULL DEFAULT 0,
+  n_f int2 NOT NULL DEFAULT 0,
+  n_cl int2 NOT NULL DEFAULT 0,
+  n_br int2 NOT NULL DEFAULT 0,
+  n_i int2 NOT NULL DEFAULT 0,
+  n_p int2 NOT NULL DEFAULT 0,
+  n_b int2 NOT NULL DEFAULT 0,
+  n_met int2 NOT NULL DEFAULT 0,
+  n_x int2 NOT NULL DEFAULT 0,
+  n_b1 int2 NOT NULL DEFAULT 0,
+  n_b2 int2 NOT NULL DEFAULT 0,
+  n_b3 int2 NOT NULL DEFAULT 0,
+  n_bar int2 NOT NULL DEFAULT 0,
+  n_c1o int2 NOT NULL DEFAULT 0,
+  n_c2o int2 NOT NULL DEFAULT 0,
+  n_cn int2 NOT NULL DEFAULT 0,
+  n_xy int2 NOT NULL DEFAULT 0,
+  n_r3 int2 NOT NULL DEFAULT 0,
+  n_r4 int2 NOT NULL DEFAULT 0,
+  n_r5 int2 NOT NULL DEFAULT 0,
+  n_r6 int2 NOT NULL DEFAULT 0,
+  n_r7 int2 NOT NULL DEFAULT 0,
+  n_r8 int2 NOT NULL DEFAULT 0,
+  n_r9 int2 NOT NULL DEFAULT 0,
+  n_r10 int2 NOT NULL DEFAULT 0,
+  n_r11 int2 NOT NULL DEFAULT 0,
+  n_r12 int2 NOT NULL DEFAULT 0,
+  n_r13p int2 NOT NULL DEFAULT 0,
+  n_rn int2 NOT NULL DEFAULT 0,
+  n_rn1 int2 NOT NULL DEFAULT 0,
+  n_rn2 int2 NOT NULL DEFAULT 0,
+  n_rn3p int2 NOT NULL DEFAULT 0,
+  n_ro int2 NOT NULL DEFAULT 0,
+  n_ro1 int2 NOT NULL DEFAULT 0,
+  n_ro2p int2 NOT NULL DEFAULT 0,
+  n_rs int2 NOT NULL DEFAULT 0,
+  n_rx int2 NOT NULL DEFAULT 0,
+  n_rar int2 NOT NULL DEFAULT 0,
+  n_rbz int2 NOT NULL DEFAULT 0,
+  CONSTRAINT rxnfragment_molstatistics_pkey PRIMARY KEY (iiid),
+  CONSTRAINT fk_r_fragments FOREIGN KEY (iiid)
+      REFERENCES chembank.r_fragments (iiid) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE
+) 
+WITHOUT OIDS;
+ALTER TABLE chembank.r_molstatistics OWNER TO postgres;
+
+
+-- Index: chembank.fki_r_fragments
+
+-- DROP INDEX chembank.fki_r_fragments;
+
+CREATE INDEX fki_r_fragments
+  ON chembank.r_molstatistics
+  USING btree
+  (iiid);
+
+-- Index: chembank.idx2_n_atoms
+
+-- DROP INDEX chembank.idx2_n_atoms;
+
+CREATE INDEX idx2_n_atoms
+  ON chembank.r_molstatistics
+  USING btree
+  (n_atoms);
+
+-- Index: chembank.idx2_n_b
+
+-- DROP INDEX chembank.idx2_n_b;
+
+CREATE INDEX idx2_n_b
+  ON chembank.r_molstatistics
+  USING btree
+  (n_b);
+
+-- Index: chembank.idx2_n_b1
+
+-- DROP INDEX chembank.idx2_n_b1;
+
+CREATE INDEX idx2_n_b1
+  ON chembank.r_molstatistics
+  USING btree
+  (n_b1);
+
+-- Index: chembank.idx2_n_b2
+
+-- DROP INDEX chembank.idx2_n_b2;
+
+CREATE INDEX idx2_n_b2
+  ON chembank.r_molstatistics
+  USING btree
+  (n_b2);
+
+-- Index: chembank.idx2_n_b3
+
+-- DROP INDEX chembank.idx2_n_b3;
+
+CREATE INDEX idx2_n_b3
+  ON chembank.r_molstatistics
+  USING btree
+  (n_b3);
+
+-- Index: chembank.idx2_n_bar
+
+-- DROP INDEX chembank.idx2_n_bar;
+
+CREATE INDEX idx2_n_bar
+  ON chembank.r_molstatistics
+  USING btree
+  (n_bar);
+
+-- Index: chembank.idx2_n_bonds
+
+-- DROP INDEX chembank.idx2_n_bonds;
+
+CREATE INDEX idx2_n_bonds
+  ON chembank.r_molstatistics
+  USING btree
+  (n_bonds);
+
+-- Index: chembank.idx2_n_br
+
+-- DROP INDEX chembank.idx2_n_br;
+
+CREATE INDEX idx2_n_br
+  ON chembank.r_molstatistics
+  USING btree
+  (n_br);
+
+-- Index: chembank.idx2_n_c
+
+-- DROP INDEX chembank.idx2_n_c;
+
+CREATE INDEX idx2_n_c
+  ON chembank.r_molstatistics
+  USING btree
+  (n_c);
+
+-- Index: chembank.idx2_n_c1
+
+-- DROP INDEX chembank.idx2_n_c1;
+
+CREATE INDEX idx2_n_c1
+  ON chembank.r_molstatistics
+  USING btree
+  (n_c1);
+
+-- Index: chembank.idx2_n_c1o
+
+-- DROP INDEX chembank.idx2_n_c1o;
+
+CREATE INDEX idx2_n_c1o
+  ON chembank.r_molstatistics
+  USING btree
+  (n_c1o);
+
+-- Index: chembank.idx2_n_c2
+
+-- DROP INDEX chembank.idx2_n_c2;
+
+CREATE INDEX idx2_n_c2
+  ON chembank.r_molstatistics
+  USING btree
+  (n_c2);
+
+-- Index: chembank.idx2_n_c2o
+
+-- DROP INDEX chembank.idx2_n_c2o;
+
+CREATE INDEX idx2_n_c2o
+  ON chembank.r_molstatistics
+  USING btree
+  (n_c2o);
+
+-- Index: chembank.idx2_n_chb1p
+
+-- DROP INDEX chembank.idx2_n_chb1p;
+
+CREATE INDEX idx2_n_chb1p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_chb1p);
+
+-- Index: chembank.idx2_n_chb2p
+
+-- DROP INDEX chembank.idx2_n_chb2p;
+
+CREATE INDEX idx2_n_chb2p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_chb2p);
+
+-- Index: chembank.idx2_n_chb3p
+
+-- DROP INDEX chembank.idx2_n_chb3p;
+
+CREATE INDEX idx2_n_chb3p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_chb3p);
+
+-- Index: chembank.idx2_n_chb4
+
+-- DROP INDEX chembank.idx2_n_chb4;
+
+CREATE INDEX idx2_n_chb4
+  ON chembank.r_molstatistics
+  USING btree
+  (n_chb4);
+
+-- Index: chembank.idx2_n_chg
+
+-- DROP INDEX chembank.idx2_n_chg;
+
+CREATE INDEX idx2_n_chg
+  ON chembank.r_molstatistics
+  USING btree
+  (n_chg);
+
+-- Index: chembank.idx2_n_cl
+
+-- DROP INDEX chembank.idx2_n_cl;
+
+CREATE INDEX idx2_n_cl
+  ON chembank.r_molstatistics
+  USING btree
+  (n_cl);
+
+-- Index: chembank.idx2_n_cn
+
+-- DROP INDEX chembank.idx2_n_cn;
+
+CREATE INDEX idx2_n_cn
+  ON chembank.r_molstatistics
+  USING btree
+  (n_cn);
+
+-- Index: chembank.idx2_n_f
+
+-- DROP INDEX chembank.idx2_n_f;
+
+CREATE INDEX idx2_n_f
+  ON chembank.r_molstatistics
+  USING btree
+  (n_f);
+
+-- Index: chembank.idx2_n_i
+
+-- DROP INDEX chembank.idx2_n_i;
+
+CREATE INDEX idx2_n_i
+  ON chembank.r_molstatistics
+  USING btree
+  (n_i);
+
+-- Index: chembank.idx2_n_met
+
+-- DROP INDEX chembank.idx2_n_met;
+
+CREATE INDEX idx2_n_met
+  ON chembank.r_molstatistics
+  USING btree
+  (n_met);
+
+-- Index: chembank.idx2_n_n1
+
+-- DROP INDEX chembank.idx2_n_n1;
+
+CREATE INDEX idx2_n_n1
+  ON chembank.r_molstatistics
+  USING btree
+  (n_n1);
+
+-- Index: chembank.idx2_n_n2
+
+-- DROP INDEX chembank.idx2_n_n2;
+
+CREATE INDEX idx2_n_n2
+  ON chembank.r_molstatistics
+  USING btree
+  (n_n2);
+
+-- Index: chembank.idx2_n_n3
+
+-- DROP INDEX chembank.idx2_n_n3;
+
+CREATE INDEX idx2_n_n3
+  ON chembank.r_molstatistics
+  USING btree
+  (n_n3);
+
+-- Index: chembank.idx2_n_o2
+
+-- DROP INDEX chembank.idx2_n_o2;
+
+CREATE INDEX idx2_n_o2
+  ON chembank.r_molstatistics
+  USING btree
+  (n_o2);
+
+-- Index: chembank.idx2_n_o3
+
+-- DROP INDEX chembank.idx2_n_o3;
+
+CREATE INDEX idx2_n_o3
+  ON chembank.r_molstatistics
+  USING btree
+  (n_o3);
+
+-- Index: chembank.idx2_n_p
+
+-- DROP INDEX chembank.idx2_n_p;
+
+CREATE INDEX idx2_n_p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_p);
+
+-- Index: chembank.idx2_n_qa
+
+-- DROP INDEX chembank.idx2_n_qa;
+
+CREATE INDEX idx2_n_qa
+  ON chembank.r_molstatistics
+  USING btree
+  (n_qa);
+
+-- Index: chembank.idx2_n_qb
+
+-- DROP INDEX chembank.idx2_n_qb;
+
+CREATE INDEX idx2_n_qb
+  ON chembank.r_molstatistics
+  USING btree
+  (n_qb);
+
+-- Index: chembank.idx2_n_r10
+
+-- DROP INDEX chembank.idx2_n_r10;
+
+CREATE INDEX idx2_n_r10
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r10);
+
+-- Index: chembank.idx2_n_r11
+
+-- DROP INDEX chembank.idx2_n_r11;
+
+CREATE INDEX idx2_n_r11
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r11);
+
+-- Index: chembank.idx2_n_r12
+
+-- DROP INDEX chembank.idx2_n_r12;
+
+CREATE INDEX idx2_n_r12
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r12);
+
+-- Index: chembank.idx2_n_r13p
+
+-- DROP INDEX chembank.idx2_n_r13p;
+
+CREATE INDEX idx2_n_r13p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r13p);
+
+-- Index: chembank.idx2_n_r3
+
+-- DROP INDEX chembank.idx2_n_r3;
+
+CREATE INDEX idx2_n_r3
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r3);
+
+-- Index: chembank.idx2_n_r4
+
+-- DROP INDEX chembank.idx2_n_r4;
+
+CREATE INDEX idx2_n_r4
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r4);
+
+-- Index: chembank.idx2_n_r5
+
+-- DROP INDEX chembank.idx2_n_r5;
+
+CREATE INDEX idx2_n_r5
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r5);
+
+-- Index: chembank.idx2_n_r6
+
+-- DROP INDEX chembank.idx2_n_r6;
+
+CREATE INDEX idx2_n_r6
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r6);
+
+-- Index: chembank.idx2_n_r7
+
+-- DROP INDEX chembank.idx2_n_r7;
+
+CREATE INDEX idx2_n_r7
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r7);
+
+-- Index: chembank.idx2_n_r8
+
+-- DROP INDEX chembank.idx2_n_r8;
+
+CREATE INDEX idx2_n_r8
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r8);
+
+-- Index: chembank.idx2_n_r9
+
+-- DROP INDEX chembank.idx2_n_r9;
+
+CREATE INDEX idx2_n_r9
+  ON chembank.r_molstatistics
+  USING btree
+  (n_r9);
+
+-- Index: chembank.idx2_n_rar
+
+-- DROP INDEX chembank.idx2_n_rar;
+
+CREATE INDEX idx2_n_rar
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rar);
+
+-- Index: chembank.idx2_n_rbz
+
+-- DROP INDEX chembank.idx2_n_rbz;
+
+CREATE INDEX idx2_n_rbz
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rbz);
+
+-- Index: chembank.idx2_n_rings
+
+-- DROP INDEX chembank.idx2_n_rings;
+
+CREATE INDEX idx2_n_rings
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rings);
+
+-- Index: chembank.idx2_n_rn
+
+-- DROP INDEX chembank.idx2_n_rn;
+
+CREATE INDEX idx2_n_rn
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rn);
+
+-- Index: chembank.idx2_n_rn1
+
+-- DROP INDEX chembank.idx2_n_rn1;
+
+CREATE INDEX idx2_n_rn1
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rn1);
+
+-- Index: chembank.idx2_n_rn2
+
+-- DROP INDEX chembank.idx2_n_rn2;
+
+CREATE INDEX idx2_n_rn2
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rn2);
+
+-- Index: chembank.idx2_n_rn3p
+
+-- DROP INDEX chembank.idx2_n_rn3p;
+
+CREATE INDEX idx2_n_rn3p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rn3p);
+
+-- Index: chembank.idx2_n_ro
+
+-- DROP INDEX chembank.idx2_n_ro;
+
+CREATE INDEX idx2_n_ro
+  ON chembank.r_molstatistics
+  USING btree
+  (n_ro);
+
+-- Index: chembank.idx2_n_ro1
+
+-- DROP INDEX chembank.idx2_n_ro1;
+
+CREATE INDEX idx2_n_ro1
+  ON chembank.r_molstatistics
+  USING btree
+  (n_ro1);
+
+-- Index: chembank.idx2_n_ro2p
+
+-- DROP INDEX chembank.idx2_n_ro2p;
+
+CREATE INDEX idx2_n_ro2p
+  ON chembank.r_molstatistics
+  USING btree
+  (n_ro2p);
+
+-- Index: chembank.idx2_n_rs
+
+-- DROP INDEX chembank.idx2_n_rs;
+
+CREATE INDEX idx2_n_rs
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rs);
+
+-- Index: chembank.idx2_n_rx
+
+-- DROP INDEX chembank.idx2_n_rx;
+
+CREATE INDEX idx2_n_rx
+  ON chembank.r_molstatistics
+  USING btree
+  (n_rx);
+
+-- Index: chembank.idx2_n_s
+
+-- DROP INDEX chembank.idx2_n_s;
+
+CREATE INDEX idx2_n_s
+  ON chembank.r_molstatistics
+  USING btree
+  (n_s);
+
+-- Index: chembank.idx2_n_sete
+
+-- DROP INDEX chembank.idx2_n_sete;
+
+CREATE INDEX idx2_n_sete
+  ON chembank.r_molstatistics
+  USING btree
+  (n_sete);
+
+-- Index: chembank.idx2_n_x
+
+-- DROP INDEX chembank.idx2_n_x;
+
+CREATE INDEX idx2_n_x
+  ON chembank.r_molstatistics
+  USING btree
+  (n_x);
+
+-- Index: chembank.idx2_n_xy
+
+-- DROP INDEX chembank.idx2_n_xy;
+
+CREATE INDEX idx2_n_xy
+  ON chembank.r_molstatistics
+  USING btree
+  (n_xy);
+
+
+-- Table: chembank.r_fragments
+
+-- DROP TABLE chembank.r_fragments;
+
+CREATE TABLE chembank.r_fragments
+(
+  iiid serial NOT NULL,
+  molecule bytea NOT NULL,
+  CONSTRAINT pk_rxnindex PRIMARY KEY (iiid)
+) 
+WITHOUT OIDS;
+ALTER TABLE chembank.r_fragments OWNER TO postgres;
+
+
+-- Index: chembank.fbidx_ms_fingerprint_short_molecule
+
+-- DROP INDEX chembank.fbidx_ms_fingerprint_short_molecule;
+
+CREATE INDEX fbidx_ms_fingerprint_short_molecule
+  ON chembank.r_fragments
+  USING btree
+  (ms_fingerprint_short_a(molecule));
+
+
+
+-- Trigger: maintain_r_indextables on chembank.r_fragments
+
+-- DROP TRIGGER maintain_r_indextables ON chembank.r_fragments;
+
+CREATE TRIGGER maintain_r_indextables
+  AFTER INSERT OR UPDATE
+  ON chembank.r_fragments
+  FOR EACH ROW
+  EXECUTE PROCEDURE t_maintain_r_indextables();
+
+
+
+
+-- Table: r_hash
+
+-- DROP TABLE r_hash;
+
+CREATE TABLE r_hash
+(
+  rxn_id int4 NOT NULL,
+  rxn_hash text NOT NULL,
+  CONSTRAINT rxn_id PRIMARY KEY (rxn_id),
+  CONSTRAINT fk_rxn_id_reactions FOREIGN KEY (rxn_id)
+      REFERENCES reactions (rxn_id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE
+) 
+WITHOUT OIDS;
+ALTER TABLE r_hash OWNER TO postgres;
+
+
+-- Table: r_matchmatrix
+
+-- DROP TABLE r_matchmatrix;
+
+CREATE TABLE r_matchmatrix
+(
+  target_pos int4 DEFAULT 0,
+  query_1 int4 DEFAULT 0,
+  query_2 int4 DEFAULT 0,
+  query_3 int4 DEFAULT 0,
+  query_4 int4 DEFAULT 0,
+  query_5 int4 DEFAULT 0,
+  query_6 int4 DEFAULT 0,
+  query_7 int4 DEFAULT 0,
+  query_8 int4 DEFAULT 0,
+  query_9 int4 DEFAULT 0,
+  query_10 int4 DEFAULT 0,
+  tid int4 NOT NULL
+) 
+WITHOUT OIDS;
+ALTER TABLE r_matchmatrix OWNER TO chembank;
+
+
+-- Index: idx_tid
+
+-- DROP INDEX idx_tid;
+
+CREATE INDEX idx_tid
+  ON r_matchmatrix
+  USING btree
+  (tid);
+
+CREATE SEQUENCE r_matchmatrix_tid_seq
+  INCREMENT 1
+  MINVALUE 1
+  MAXVALUE 10000
+  START 2200
+  CACHE 10
+  CYCLE;
+ALTER TABLE r_matchmatrix_tid_seq OWNER TO chembank;
+
+-- Table: chembank.r_rf_crossref
+
+-- DROP TABLE chembank.r_rf_crossref;
+
+CREATE TABLE chembank.r_rf_crossref
+(
+  rxn_id int4 NOT NULL,
+  fragment_id int4 NOT NULL,
+  fragment_type int4 NOT NULL,
+  abs_fragment_pos int4 NOT NULL,
+  rel_fragment_pos int4 NOT NULL,
+  ordered_fragment_pos int4 NOT NULL,
+  n_e int4 NOT NULL,
+  n_p int4 NOT NULL,
+  CONSTRAINT pk_rf_crossref PRIMARY KEY (rxn_id, fragment_id, fragment_type, abs_fragment_pos),
+  CONSTRAINT fk_rxn_id_crossref FOREIGN KEY (rxn_id)
+      REFERENCES chembank.reactions (rxn_id) MATCH SIMPLE
+      ON UPDATE CASCADE ON DELETE CASCADE
+) 
+WITHOUT OIDS;
+ALTER TABLE chembank.r_rf_crossref OWNER TO chembank;
+
+
+-- Index: chembank.fki_rxn_id_crossref
+
+-- DROP INDEX chembank.fki_rxn_id_crossref;
+
+CREATE INDEX fki_rxn_id_crossref
+  ON chembank.r_rf_crossref
+  USING btree
+  (rxn_id);

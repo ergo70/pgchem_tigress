@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Aromaticity options &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Options" href="index.html" />
+    <link rel="next" title="Timeout options" href="timeout.html" />
+    <link rel="prev" title="Deconvolution options" href="deconvolution.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="timeout.html" title="Timeout options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="deconvolution.html" title="Deconvolution options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Options</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="aromaticity-options">
+<h1>Aromaticity options<a class="headerlink" href="#aromaticity-options" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="aromaticity-model">
+<span id="indigo-option-0"></span><h2>aromaticity-model = basic<a class="headerlink" href="#aromaticity-model" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">enum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">basic</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Aromaticity model</td>
+</tr>
+</tbody>
+</table>
+<p>Aromaticity model used in aromatization and dearomatization procedures. Supported values:</p>
+<dl class="docutils">
+<dt><strong>basic</strong>:</dt>
+<dd>External double bond for aromatic rings are not allowed</dd>
+<dt><strong>generic</strong></dt>
+<dd>External double bond are allowed</dd>
+</dl>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMolecule</span><span class="p">(</span><span class="s">&#39;O=c1[nH]c(nc2c1CSCC2)c1ccc(cc1)C(F)(F)F&#39;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Aromatized&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_1.png&quot;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;aromaticity-model&quot;</span><span class="p">,</span> <span class="s">&quot;basic&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Dearomatized (basic)&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_2.png&quot;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;aromaticity-model&quot;</span><span class="p">,</span> <span class="s">&quot;generic&quot;</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Dearomatized (basic)&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_3.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a1.svg"><img src="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a2.svg"><img src="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a3.svg"><img src="../../_images/indigorenderer_acd3274648b33dd2cd94290d0484ddb0539cf10a3.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="section" id="dearomatize-verification">
+<span id="indigo-option-1"></span><h2>dearomatize-verification = true<a class="headerlink" href="#dearomatize-verification" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">true</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Verify dearomatization method</td>
+</tr>
+</tbody>
+</table>
+<p>In the dearomatization method Indigo enumerates possible single/double bonds configurations and checks that such configuration is aromatic. If there are no valid dearomatization for a given aromatic system, then Indigo leaves such aromatic system unchanged. With this option disabled Indigo dearomatizes such aromatic system, but without guarantee that this dearomatization is correct. It can be used to convert antiaromatic rings:</p>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMolecule</span><span class="p">(</span><span class="s">&#39;c1ccccccc1&#39;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Original</span><span class="se">\n</span><span class="s">structure&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_1.png&quot;</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Dearomatized with</span><span class="se">\n</span><span class="s">verification&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_2.png&quot;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;dearomatize-verification&quot;</span><span class="p">,</span> <span class="bp">False</span><span class="p">)</span>
+<span class="n">m</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;Dearomatized without</span><span class="se">\n</span><span class="s">verification&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_3.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca1.svg"><img src="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca1.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca2.svg"><img src="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca2.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca3.svg"><img src="../../_images/indigorenderer_64a205b625eac91606167f67326e4b4634dd73ca3.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="section" id="unique-dearomatization">
+<span id="indigo-option-2"></span><h2>unique-dearomatization = false<a class="headerlink" href="#unique-dearomatization" title="Permalink to this headline">¶</a></h2>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">type:</th><td class="field-body">boolean</td>
+</tr>
+<tr class="field-even field"><th class="field-name">default:</th><td class="field-body">false</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">description:</th><td class="field-body">Find dearomatization if all possible configurations uniquely define hydrogens.</td>
+</tr>
+</tbody>
+</table>
+<p>Molfile format doesn&#8217;t store information about hydrogens in aromatic rings and this leads to a situation when two different (tautomers) structure has the same aromatization.</p>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_92997ca46105f8d8f120747a8852eaa2a02fba521.svg"><img src="../../_images/indigorenderer_92997ca46105f8d8f120747a8852eaa2a02fba521.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_92997ca46105f8d8f120747a8852eaa2a02fba522.svg"><img src="../../_images/indigorenderer_92997ca46105f8d8f120747a8852eaa2a02fba522.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+<p>Molecules (A) and (B) are different, and aromatic forms are the following:</p>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_fd2b85cebb2428032323245bf285c71d33a012761.svg"><img src="../../_images/indigorenderer_fd2b85cebb2428032323245bf285c71d33a012761.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_fd2b85cebb2428032323245bf285c71d33a012762.svg"><img src="../../_images/indigorenderer_fd2b85cebb2428032323245bf285c71d33a012762.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+<p>Such aromatic molecules can be dearomatized, all atoms has specific number of implicit hydrogens and we can compute canonical SMILES:</p>
+<div class="output highlight-python"><pre>(A): Nc1[nH]c(O)c[n]1
+(B): Nc1[nH]cc(O)[n]1
+</pre>
+</div>
+<div class="line"><br /></div>
+<p>Let&#8217;s consider that we loaded a molecule (A) or (B) in an aromatic form from molfile. If explicit hydrogens are not saved into molfile then we get the following structure:</p>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_2d8db7fdcd7c9c858037d63ee71e35b7bcaa202a3.svg"><img src="../../_images/indigorenderer_2d8db7fdcd7c9c858037d63ee71e35b7bcaa202a3.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<div class="line"><br /></div>
+<p>Canonical SMILES computation throws an exception on such molecule because we cannot decided if it is (A) or (B).</p>
+<p>Dearomtization method by default doesn&#8217;t check uniqueness in terms of number of Hydrogens:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m3</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMoleculeFromFile</span><span class="p">(</span><span class="s">&#39;data/ambiguous_arom3.mol&#39;</span><span class="p">)</span>
+<span class="n">m3</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;render-comment&quot;</span><span class="p">,</span> <span class="s">&quot;(C)&quot;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m3</span><span class="p">,</span> <span class="s">&quot;result_3.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_13e298caf26dc7b9374b1fbacd3f211a9e8c46d03.svg"><img src="../../_images/indigorenderer_13e298caf26dc7b9374b1fbacd3f211a9e8c46d03.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<p>But such check it can be set explicitly if needed, and dearomatize method will throw an exception in this case:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m3</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMoleculeFromFile</span><span class="p">(</span><span class="s">&#39;data/ambiguous_arom3.mol&#39;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;unique-dearomatization&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">m3</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="k">except</span> <span class="n">IndigoException</span><span class="p">,</span> <span class="n">ex</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">ex</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="output highlight-python"><div class="highlight"><pre><span class="s">&#39;non-unique dearomatization: Dearomatization is not unique&#39;</span>
+</pre></div>
+</div>
+<p>But we still can dearomatize structures if number if hydrogens is uniquely defined:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">m</span> <span class="o">=</span> <span class="n">indigo</span><span class="o">.</span><span class="n">loadMoleculeFromFile</span><span class="p">(</span><span class="s">&#39;data/ambiguous_arom4.mol&#39;</span><span class="p">)</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_1.png&quot;</span><span class="p">)</span>
+
+<span class="n">indigo</span><span class="o">.</span><span class="n">setOption</span><span class="p">(</span><span class="s">&quot;unique-dearomatization&quot;</span><span class="p">,</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="n">m</span><span class="o">.</span><span class="n">dearomatize</span><span class="p">()</span>
+<span class="n">indigoRenderer</span><span class="o">.</span><span class="n">renderToFile</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="s">&quot;result_2.png&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+Input:     <a class="reference download internal" href="../../_downloads/ambiguous_arom4.mol"><tt class="docutils literal"><span class="pre">data/ambiguous_arom4.mol</span></tt></a>     <div class="line"><br /></div>
+<a class="reference internal image-reference" href="../../_images/indigorenderer_8162f487b65b5186515d86c663c78d3546a4d5301.svg"><img src="../../_images/indigorenderer_8162f487b65b5186515d86c663c78d3546a4d5301.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+<a class="reference internal image-reference" href="../../_images/indigorenderer_8162f487b65b5186515d86c663c78d3546a4d5302.svg"><img src="../../_images/indigorenderer_8162f487b65b5186515d86c663c78d3546a4d5302.svg" /></a>
+<img alt="../../_static/span.png" src="../../_static/span.png" />
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Aromaticity options</a><ul>
+<li><a class="reference internal" href="#aromaticity-model">aromaticity-model = basic</a></li>
+<li><a class="reference internal" href="#dearomatize-verification">dearomatize-verification = true</a></li>
+<li><a class="reference internal" href="#unique-dearomatization">unique-dearomatization = false</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="deconvolution.html"
+                        title="previous chapter">Deconvolution options</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="timeout.html"
+                        title="next chapter">Timeout options</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/options/aromaticity.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="timeout.html" title="Timeout options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="deconvolution.html" title="Deconvolution options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" >Options</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

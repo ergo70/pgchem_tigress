@@ -1,0 +1,21 @@
+# EXPERIMENTAL / UNTESTED !!!
+# The SHLIBFLAGS are copied from the example in the
+# PostgreSQL documentation
+
+LIBS=-lm
+SHLIBFLAGS=-DMAKE_SHARED_LIBRARY -bundle -flat_namespace -undefined suppress  -o barsoi.so
+EXEFLAGS=-o checkmol
+
+CC=gcc
+CFLAGS=#-O2 -finline-functions -funroll-loops
+
+barsoi:
+	$(CC) $(CFLAGS) $(SHLIBFLAGS) safemem.c checkmolc.c $(LIBS)
+
+checkmol:
+	$(CC) $(CFLAGS) $(EXEFLAGS) safemem.c checkmolc.c $(LIBS)
+	ln checkmol matchmol
+
+
+clean:
+	rm -f barsoi.so checkmol matchmol

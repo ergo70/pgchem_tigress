@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>SDK Installation &mdash; Indigo 1.1 documentation</title>
+    
+    <link rel="stylesheet" href="../../_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="Indigo 1.1 documentation" href="../../index.html" />
+    <link rel="up" title="Examples" href="index.html" />
+    <link rel="next" title="Release Notes" href="../release-notes/index.html" />
+    <link rel="prev" title="Atom Coloring" href="atom-coloring.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../release-notes/index.html" title="Release Notes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="atom-coloring.html" title="Atom Coloring"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" accesskey="U">Examples</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="sdk-installation">
+<span id="indigo-example-api-usage"></span><h1>SDK Installation<a class="headerlink" href="#sdk-installation" title="Permalink to this headline">¶</a></h1>
+<p>This example demonstrates how to install Indigo SDK to all supported languages.</p>
+<div class="section" id="java">
+<h2>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h2>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Indigo packages support Intel x86 and x64 platforms, and Windows, Linux, Mac OS X operating systems. If you need to use Indigo on other platforms, please contact us at <a class="reference external" href="mailto:info&#37;&#52;&#48;ggasoftware&#46;com">info<span>&#64;</span>ggasoftware<span>&#46;</span>com</a>.</p>
+</div>
+<p>If your project use Maven, you can add Indigo dependency to your pom.xml:</p>
+<div class="highlight-python"><pre>&lt;dependencies&gt;
+    ...
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.ggasoftware&lt;/groupId&gt;
+        &lt;artifactId&gt;indigo&lt;/artifactId&gt;
+        &lt;version&gt;1.1.12&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.ggasoftware.indigo&lt;/groupId&gt;
+        &lt;artifactId&gt;indigo-inchi&lt;/artifactId&gt;
+        &lt;version&gt;1.1.12&lt;/version&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.ggasoftware.indigo&lt;/groupId&gt;
+        &lt;artifactId&gt;indigo-renderer&lt;/artifactId&gt;
+        &lt;version&gt;1.1.12&lt;/version&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;</pre>
+</div>
+<p>On Debian starting from Wheezy and Ubuntu starting from 12.10 you can install stable version of Indigo SDK with the following command:</p>
+<div class="highlight-python"><pre>sudo apt-get install libindigo-java</pre>
+</div>
+</div>
+<div class="section" id="python">
+<h2>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h2>
+<p>On Debian starting from Wheezy and Ubuntu starting from 12.10 you can install stable version of Indigo SDK with the following-command:</p>
+<div class="highlight-python"><pre>sudo apt-get install python-indigo</pre>
+</div>
+<p>Otherwise you have to use one of this ways <a class="footnote-reference" href="#id3" id="id1">[1]</a>:</p>
+<ul class="simple">
+<li>add path to content of Indigo archive to environment variable <tt class="docutils literal"><span class="pre">PYTHONPATH</span></tt>.</li>
+<li>copy content of Indigo archive to folder <tt class="docutils literal"><span class="pre">site-packages</span></tt> in Python installation directory.</li>
+<li>copy content of Indigo archive to your project folder.</li>
+<li>append path to Indigo to <tt class="docutils literal"><span class="pre">sys.path</span></tt>.</li>
+</ul>
+<p>We also plan to add Indigo to Python Package Index.</p>
+</div>
+<div class="section" id="net">
+<h2>.NET<a class="headerlink" href="#net" title="Permalink to this headline">¶</a></h2>
+<p>To add Indigo assembly DLL to your Visual Studio project you need to <a class="footnote-reference" href="#dotnet" id="id2">[2]</a>:</p>
+<ol class="arabic simple">
+<li>Right-click the name of your project in <strong>Solution Explorer</strong> and then select <strong>Add Reference</strong>. A dialog should appear.</li>
+<li>Select the <strong>Browse</strong> tab.</li>
+<li>Browse to the folder that contains Indigo, select the <strong>indigo-dotnet.dll</strong> and <strong>indigo-inchi-dotnet.dll</strong>, <strong>indigo-renderer-dotnet.dll</strong> if you need, and then click <strong>OK</strong>.</li>
+</ol>
+<p class="rubric">Footnotes</p>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td><a class="reference external" href="http://docs.python.org/2/tutorial/modules.html#the-module-search-path">http://docs.python.org/2/tutorial/modules.html#the-module-search-path</a></td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="dotnet" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td><a class="reference external" href="http://msdn.microsoft.com/en-us/library/7314433t(v=vs.90).aspx">http://msdn.microsoft.com/en-us/library/7314433t(v=vs.90).aspx</a></td></tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">SDK Installation</a><ul>
+<li><a class="reference internal" href="#java">Java</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#net">.NET</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="atom-coloring.html"
+                        title="previous chapter">Atom Coloring</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../release-notes/index.html"
+                        title="next chapter">Release Notes</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="../../_sources/indigo/examples/installation.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../release-notes/index.html" title="Release Notes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="atom-coloring.html" title="Atom Coloring"
+             >previous</a> |</li>
+        <li><a href="../../index.html">Indigo 1.1 documentation</a> &raquo;</li>
+          <li><a href="../index.html" >Indigo</a> &raquo;</li>
+          <li><a href="index.html" >Examples</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2013, GGA Software Services.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

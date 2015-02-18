@@ -1,0 +1,813 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 92.88     91.81    91.81  6555425     0.00     0.00  get_neighbors
+  5.17     96.92     5.11      757     0.01     0.13  is_ringpath
+  1.73     98.63     1.71  6607342     0.00     0.00  path_pos
+  0.10     98.73     0.10  6545856     0.00     0.00  path_length
+  0.05     98.78     0.05    45399     0.00     0.00  get_bond
+  0.04     98.82     0.04                             memset
+  0.02     98.84     0.02        1     0.02     0.07  update_atypes
+  0.01     98.85     0.01     3480     0.00     0.00  get_nextneighbors
+  0.00     98.85     0.00     6304     0.00     0.00  strsub
+  0.00     98.85     0.00     4839     0.00     0.00  strpos2
+  0.00     98.85     0.00     3249     0.00     0.00  is_oxo_C
+  0.00     98.85     0.00     2025     0.00     0.00  is_aryl
+  0.00     98.85     0.00     1978     0.00     0.00  is_thioxo_C
+  0.00     98.85     0.00     1858     0.00     0.00  hetbond_count
+  0.00     98.85     0.00     1511     0.00     0.00  is_alkyl
+  0.00     98.85     0.00     1428     0.00     0.00  is_amino
+  0.00     98.85     0.00     1063     0.00     0.00  is_true_alkyl
+  0.00     98.85     0.00     1025     0.00     0.00  find_exocyclic_methylene_C
+  0.00     98.85     0.00      735     0.00     0.00  is_alkynyl
+  0.00     98.85     0.00      730     0.00     0.00  is_hydroxy
+  0.00     98.85     0.00      674     0.00     0.00  get_nvalences
+  0.00     98.85     0.00      674     0.00     0.00  is_heavyatom
+  0.00     98.85     0.00      674     0.00     0.00  is_metal
+  0.00     98.85     0.00      618     0.00     0.00  is_alkylamino
+  0.00     98.85     0.00      618     0.00     0.00  is_arylamino
+  0.00     98.85     0.00      585     0.00     0.00  is_alkenyl
+  0.00     98.85     0.00      555     0.00     0.00  chk_single
+  0.00     98.85     0.00      471     0.00     0.00  is_diarylamino
+  0.00     98.85     0.00      413     0.00     0.00  is_acyl_gen
+  0.00     98.85     0.00      357     0.00     0.00  is_alkylarylamino
+  0.00     98.85     0.00      357     0.00     0.00  is_dialkylamino
+  0.00     98.85     0.00      357     0.00     0.00  is_subst_amino
+  0.00     98.85     0.00      338     0.00     0.00  is_hydrazino
+  0.00     98.85     0.00      327     0.00     0.00  is_C_disubst_amino
+  0.00     98.85     0.00      327     0.00     0.00  is_C_monosubst_amino
+  0.00     98.85     0.00      221     0.00     0.00  is_azido
+  0.00     98.85     0.00      221     0.00     0.00  is_hydroxylamino
+  0.00     98.85     0.00      220     0.00     0.00  swap_atoms
+  0.00     98.85     0.00      214     0.00     0.00  is_subst_acylamino
+  0.00     98.85     0.00      141     0.00     0.00  chk_double
+  0.00     98.85     0.00      119     0.00     0.00  is_true_imino_C
+  0.00     98.85     0.00      117     0.00     0.00  is_acyl
+  0.00     98.85     0.00      114     0.00     0.00  chk_carboxyl_deriv
+  0.00     98.85     0.00      114     0.00     0.00  is_diazonium
+  0.00     98.85     0.00      114     0.00     0.00  is_nitro
+  0.00     98.85     0.00      114     0.00     0.00  is_true_alkylamino
+  0.00     98.85     0.00      114     0.00     0.00  is_true_dialkylamino
+  0.00     98.85     0.00      113     0.00     0.00  is_carbamoyl
+  0.00     98.85     0.00       99     0.00     0.00  chk_imide
+  0.00     98.85     0.00       93     0.00     0.00  is_arene
+  0.00     98.85     0.00       49     0.00     0.00  chk_arom_fg
+  0.00     98.85     0.00       46     0.00     0.00  is_aryloxy
+  0.00     98.85     0.00       37     0.00     0.00  is_heterocycle
+  0.00     98.85     0.00       31     0.00     0.00  chk_oxo_thioxo_imino_hetarene
+  0.00     98.85     0.00       27     0.00     0.00  is_acylamino
+  0.00     98.85     0.00       27     0.00     0.00  is_alkoxy
+  0.00     98.85     0.00       26     0.00     0.00  is_alkynyloxy
+  0.00     98.85     0.00       19     0.00     0.00  is_true_alkoxy
+  0.00     98.85     0.00       10     0.00     0.00  is_arylsulfanyl
+  0.00     98.85     0.00       10     0.00     0.00  is_sulfanyl
+  0.00     98.85     0.00       10     0.00     0.00  is_true_alkylsulfanyl
+  0.00     98.85     0.00        7     0.00     0.00  is_alkenyloxy
+  0.00     98.85     0.00        5     0.00     0.00  chk_x_y_single
+  0.00     98.85     0.00        4     0.00     0.00  safe_calloc
+  0.00     98.85     0.00        1     0.00     0.06  chk_arom
+  0.00     98.85     0.00        1     0.00     0.10  chk_functionalgroups
+  0.00     98.85     0.00        1     0.00    98.56  chk_ringbonds
+  0.00     98.85     0.00        1     0.00     0.00  count_neighbors
+  0.00     98.85     0.00        1     0.00     0.00  file_exists
+  0.00     98.85     0.00        1     0.00     0.00  get_filetype
+  0.00     98.85     0.00        1     0.00     0.01  get_molstat
+  0.00     98.85     0.00        1     0.00     0.00  normalize_ionic_bonds
+  0.00     98.85     0.00        1     0.00     0.00  read_MDLmolfile
+  0.00     98.85     0.00        1     0.00     0.00  readinputfile
+  0.00     98.85     0.00        1     0.00     0.00  safe_malloc
+  0.00     98.85     0.00        1     0.00     0.01  update_Htotal
+  0.00     98.85     0.00        1     0.00     0.00  update_ringcount
+  0.00     98.85     0.00        1     0.00     0.00  write_fg_text
+  0.00     98.85     0.00        1     0.00     0.00  zap_molecule
+
+ %         the percentage of the total running time of the
+time       program used by this function.
+
+cumulative a running sum of the number of seconds accounted
+ seconds   for by this function and those listed above it.
+
+ self      the number of seconds accounted for by this
+seconds    function alone.  This is the major sort for this
+           listing.
+
+calls      the number of times this function was invoked, if
+           this function is profiled, else blank.
+ 
+ self      the average number of milliseconds spent in this
+ms/call    function per call, if this function is profiled,
+	   else blank.
+
+ total     the average number of milliseconds spent in this
+ms/call    function and its descendents per call, if this 
+	   function is profiled, else blank.
+
+name       the name of the function.  This is the minor sort
+           for this listing. The index shows the location of
+	   the function in the gprof listing. If the index is
+	   in parenthesis it shows where it would appear in
+	   the gprof listing if it were to be printed.
+
+		     Call graph (explanation follows)
+
+
+granularity: each sample hit covers 4 byte(s) for 0.01% of 98.85 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.00   98.81                 main [1]
+                0.00   98.56       1/1           chk_ringbonds [2]
+                0.00    0.10       1/1           chk_functionalgroups [7]
+                0.02    0.05       1/1           update_atypes [8]
+                0.00    0.06       1/1           chk_arom [9]
+                0.00    0.01       1/1           update_Htotal [19]
+                0.00    0.01       1/1           get_molstat [23]
+                0.00    0.00       1/1           update_ringcount [50]
+                0.00    0.00       1/1           safe_malloc [80]
+                0.00    0.00       1/1           file_exists [75]
+                0.00    0.00       1/1           readinputfile [79]
+                0.00    0.00       1/1           get_filetype [76]
+                0.00    0.00       1/1           count_neighbors [74]
+                0.00    0.00       1/1           zap_molecule [82]
+                0.00    0.00       1/1           read_MDLmolfile [78]
+                0.00    0.00       1/4839        strpos2 [66]
+                0.00    0.00       1/1           normalize_ionic_bonds [77]
+                0.00    0.00       1/1           write_fg_text [81]
+-----------------------------------------------
+                0.00   98.56       1/1           main [1]
+[2]     99.7    0.00   98.56       1         chk_ringbonds [2]
+                5.11   93.44     757/757         is_ringpath [3]
+                0.01    0.00     696/6555425     get_neighbors [4]
+-----------------------------------------------
+                             6542898             is_ringpath [3]
+                5.11   93.44     757/757         chk_ringbonds [2]
+[3]     99.7    5.11   93.44     757+6542898 is_ringpath [3]
+               91.63    0.00 6542570/6555425     get_neighbors [4]
+                0.10    1.69 6545856/6545856     path_length [5]
+                0.02    0.00   61486/6607342     path_pos [6]
+                             6542898             is_ringpath [3]
+-----------------------------------------------
+                0.00    0.00       2/6555425     chk_arom_fg [41]
+                0.00    0.00       5/6555425     chk_double [16]
+                0.00    0.00      69/6555425     chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00      99/6555425     chk_imide [22]
+                0.00    0.00     124/6555425     is_true_imino_C [34]
+                0.00    0.00     254/6555425     chk_single [14]
+                0.00    0.00     342/6555425     chk_carboxyl_deriv [17]
+                0.01    0.00     392/6555425     get_molstat [23]
+                0.01    0.00     674/6555425     update_Htotal [19]
+                0.01    0.00     674/6555425     update_atypes [8]
+                0.01    0.00     674/6555425     chk_functionalgroups [7]
+                0.01    0.00     696/6555425     chk_ringbonds [2]
+                0.01    0.00     740/6555425     chk_arom [9]
+                0.01    0.00    1025/6555425     find_exocyclic_methylene_C [18]
+                0.03    0.00    1858/6555425     hetbond_count [13]
+                0.03    0.00    1978/6555425     is_thioxo_C [15]
+                0.05    0.00    3249/6555425     is_oxo_C [10]
+               91.63    0.00 6542570/6555425     is_ringpath [3]
+[4]     92.9   91.81    0.00 6555425         get_neighbors [4]
+-----------------------------------------------
+                0.10    1.69 6545856/6545856     is_ringpath [3]
+[5]      1.8    0.10    1.69 6545856         path_length [5]
+                1.69    0.00 6545856/6607342     path_pos [6]
+-----------------------------------------------
+                0.02    0.00   61486/6607342     is_ringpath [3]
+                1.69    0.00 6545856/6607342     path_length [5]
+[6]      1.7    1.71    0.00 6607342         path_pos [6]
+-----------------------------------------------
+                0.00    0.10       1/1           main [1]
+[7]      0.1    0.00    0.10       1         chk_functionalgroups [7]
+                0.00    0.03     555/555         chk_single [14]
+                0.00    0.03     141/141         chk_double [16]
+                0.00    0.02    1074/1858        hetbond_count [13]
+                0.01    0.00     674/6555425     get_neighbors [4]
+                0.00    0.01      99/99          chk_imide [22]
+                0.00    0.00      31/31          chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00      31/93          is_arene [28]
+                0.00    0.00      49/49          chk_arom_fg [41]
+                0.00    0.00     220/220         swap_atoms [70]
+                0.00    0.00      31/37          is_heterocycle [71]
+-----------------------------------------------
+                0.02    0.05       1/1           main [1]
+[8]      0.1    0.02    0.05       1         update_atypes [8]
+                0.00    0.02    1392/3249        is_oxo_C [10]
+                0.00    0.02    1050/1978        is_thioxo_C [15]
+                0.01    0.00     674/6555425     get_neighbors [4]
+                0.00    0.00    1392/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.06       1/1           main [1]
+[9]      0.1    0.00    0.06       1         chk_arom [9]
+                0.00    0.02    1016/3249        is_oxo_C [10]
+                0.00    0.02    1025/1025        find_exocyclic_methylene_C [18]
+                0.00    0.01     740/1978        is_thioxo_C [15]
+                0.01    0.00     740/6555425     get_neighbors [4]
+                0.00    0.00    4382/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       5/3249        chk_double [16]
+                0.00    0.00      69/3249        chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00     113/3249        is_carbamoyl [35]
+                0.00    0.00     114/3249        chk_carboxyl_deriv [17]
+                0.00    0.00     127/3249        is_acyl [29]
+                0.00    0.01     413/3249        is_acyl_gen [21]
+                0.00    0.02    1016/3249        chk_arom [9]
+                0.00    0.02    1392/3249        update_atypes [8]
+[10]     0.1    0.00    0.05    3249         is_oxo_C [10]
+                0.05    0.00    3249/6555425     get_neighbors [4]
+                0.01    0.00    6883/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       5/45399       chk_arom_fg [41]
+                0.00    0.00       7/45399       is_alkenyloxy [62]
+                0.00    0.00      10/45399       is_sulfanyl [61]
+                0.00    0.00      10/45399       is_true_alkylsulfanyl [54]
+                0.00    0.00      10/45399       is_arylsulfanyl [55]
+                0.00    0.00      19/45399       is_true_alkoxy [60]
+                0.00    0.00      26/45399       is_alkynyloxy [59]
+                0.00    0.00      27/45399       is_alkoxy [58]
+                0.00    0.00      27/45399       is_acylamino [57]
+                0.00    0.00      36/45399       chk_single [14]
+                0.00    0.00      46/45399       is_aryloxy [56]
+                0.00    0.00     113/45399       is_carbamoyl [35]
+                0.00    0.00     114/45399       is_true_alkylamino [52]
+                0.00    0.00     114/45399       is_true_dialkylamino [53]
+                0.00    0.00     114/45399       is_diazonium [49]
+                0.00    0.00     127/45399       is_acyl [29]
+                0.00    0.00     149/45399       chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00     171/45399       chk_double [16]
+                0.00    0.00     186/45399       is_nitro [51]
+                0.00    0.00     214/45399       is_subst_acylamino [26]
+                0.00    0.00     221/45399       is_hydroxylamino [40]
+                0.00    0.00     221/45399       is_azido [44]
+                0.00    0.00     311/45399       update_ringcount [50]
+                0.00    0.00     327/45399       is_C_monosubst_amino [39]
+                0.00    0.00     327/45399       is_C_disubst_amino [46]
+                0.00    0.00     338/45399       is_hydrazino [25]
+                0.00    0.00     357/45399       is_true_imino_C [34]
+                0.00    0.00     357/45399       is_dialkylamino [48]
+                0.00    0.00     357/45399       is_alkylarylamino [47]
+                0.00    0.00     471/45399       is_diarylamino [45]
+                0.00    0.00     585/45399       is_alkenyl [32]
+                0.00    0.00     618/45399       is_alkylamino [37]
+                0.00    0.00     618/45399       is_arylamino [38]
+                0.00    0.00     730/45399       is_hydroxy [43]
+                0.00    0.00     735/45399       is_alkynyl [42]
+                0.00    0.00    1063/45399       is_true_alkyl [31]
+                0.00    0.00    1392/45399       update_Htotal [19]
+                0.00    0.00    1392/45399       update_atypes [8]
+                0.00    0.00    1428/45399       is_amino [36]
+                0.00    0.00    1482/45399       chk_carboxyl_deriv [17]
+                0.00    0.00    1511/45399       is_alkyl [27]
+                0.00    0.00    1916/45399       find_exocyclic_methylene_C [18]
+                0.00    0.00    2025/45399       is_aryl [33]
+                0.00    0.00    3172/45399       is_thioxo_C [15]
+                0.00    0.00    3255/45399       is_arene [28]
+                0.00    0.00    4382/45399       chk_arom [9]
+                0.01    0.00    6883/45399       is_oxo_C [10]
+                0.01    0.00    7400/45399       hetbond_count [13]
+[11]     0.1    0.05    0.00   45399         get_bond [11]
+-----------------------------------------------
+                                                 <spontaneous>
+[12]     0.0    0.04    0.00                 memset [12]
+-----------------------------------------------
+                0.00    0.00      56/1858        chk_arom_fg [41]
+                0.00    0.01     357/1858        chk_double [16]
+                0.00    0.01     371/1858        chk_single [14]
+                0.00    0.02    1074/1858        chk_functionalgroups [7]
+[13]     0.0    0.00    0.03    1858         hetbond_count [13]
+                0.03    0.00    1858/6555425     get_neighbors [4]
+                0.01    0.00    7400/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.03     555/555         chk_functionalgroups [7]
+[14]     0.0    0.00    0.03     555         chk_single [14]
+                0.00    0.01     371/1858        hetbond_count [13]
+                0.00    0.00     254/6555425     get_neighbors [4]
+                0.00    0.00     117/117         is_acyl [29]
+                0.00    0.00     221/338         is_hydrazino [25]
+                0.00    0.00    1185/1511        is_alkyl [27]
+                0.00    0.00    1048/1063        is_true_alkyl [31]
+                0.00    0.00     585/585         is_alkenyl [32]
+                0.00    0.00    1867/2025        is_aryl [33]
+                0.00    0.00     735/735         is_alkynyl [42]
+                0.00    0.00     220/327         is_C_monosubst_amino [39]
+                0.00    0.00     627/1428        is_amino [36]
+                0.00    0.00     114/221         is_hydroxylamino [40]
+                0.00    0.00     491/730         is_hydroxy [43]
+                0.00    0.00     261/618         is_alkylamino [37]
+                0.00    0.00     261/618         is_arylamino [38]
+                0.00    0.00     114/221         is_azido [44]
+                0.00    0.00     114/114         is_diazonium [49]
+                0.00    0.00     220/327         is_C_disubst_amino [46]
+                0.00    0.00     114/114         is_nitro [51]
+                0.00    0.00      20/357         is_subst_amino [30]
+                0.00    0.00     114/114         is_true_alkylamino [52]
+                0.00    0.00     114/471         is_diarylamino [45]
+                0.00    0.00     114/114         is_true_dialkylamino [53]
+                0.00    0.00      10/10          is_true_alkylsulfanyl [54]
+                0.00    0.00      10/10          is_arylsulfanyl [55]
+                0.00    0.00      39/46          is_aryloxy [56]
+                0.00    0.00      36/45399       get_bond [11]
+                0.00    0.00      27/27          is_acylamino [57]
+                0.00    0.00      20/27          is_alkoxy [58]
+                0.00    0.00      19/26          is_alkynyloxy [59]
+                0.00    0.00      19/19          is_true_alkoxy [60]
+                0.00    0.00      10/10          is_sulfanyl [61]
+                0.00    0.00       5/5           chk_x_y_single [72]
+-----------------------------------------------
+                0.00    0.00       5/1978        chk_double [16]
+                0.00    0.00      69/1978        chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00     114/1978        chk_carboxyl_deriv [17]
+                0.00    0.01     740/1978        chk_arom [9]
+                0.00    0.02    1050/1978        update_atypes [8]
+[15]     0.0    0.00    0.03    1978         is_thioxo_C [15]
+                0.03    0.00    1978/6555425     get_neighbors [4]
+                0.00    0.00    3172/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.03     141/141         chk_functionalgroups [7]
+[16]     0.0    0.00    0.03     141         chk_double [16]
+                0.00    0.02     114/114         chk_carboxyl_deriv [17]
+                0.00    0.01     357/1858        hetbond_count [13]
+                0.00    0.00     171/45399       get_bond [11]
+                0.00    0.00      10/338         is_hydrazino [25]
+                0.00    0.00       5/119         is_true_imino_C [34]
+                0.00    0.00       5/3249        is_oxo_C [10]
+                0.00    0.00       5/1978        is_thioxo_C [15]
+                0.00    0.00       5/6555425     get_neighbors [4]
+                0.00    0.00       5/3480        get_nextneighbors [20]
+-----------------------------------------------
+                0.00    0.02     114/114         chk_double [16]
+[17]     0.0    0.00    0.02     114         chk_carboxyl_deriv [17]
+                0.00    0.00     342/6555425     get_neighbors [4]
+                0.00    0.00     214/214         is_subst_acylamino [26]
+                0.00    0.00     114/119         is_true_imino_C [34]
+                0.00    0.00     114/3249        is_oxo_C [10]
+                0.00    0.00     114/1978        is_thioxo_C [15]
+                0.00    0.00    1482/45399       get_bond [11]
+                0.00    0.00     107/338         is_hydrazino [25]
+                0.00    0.00     107/221         is_hydroxylamino [40]
+                0.00    0.00     107/327         is_C_monosubst_amino [39]
+                0.00    0.00     107/221         is_azido [44]
+                0.00    0.00     107/327         is_C_disubst_amino [46]
+                0.00    0.00     107/1428        is_amino [36]
+                0.00    0.00       7/730         is_hydroxy [43]
+                0.00    0.00       7/27          is_alkoxy [58]
+                0.00    0.00       7/46          is_aryloxy [56]
+                0.00    0.00       7/7           is_alkenyloxy [62]
+                0.00    0.00       7/26          is_alkynyloxy [59]
+-----------------------------------------------
+                0.00    0.02    1025/1025        chk_arom [9]
+[18]     0.0    0.00    0.02    1025         find_exocyclic_methylene_C [18]
+                0.01    0.00    1025/6555425     get_neighbors [4]
+                0.00    0.00    1916/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.01       1/1           main [1]
+[19]     0.0    0.00    0.01       1         update_Htotal [19]
+                0.01    0.00     674/6555425     get_neighbors [4]
+                0.00    0.00    1392/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       5/3480        is_true_alkylamino [52]
+                0.00    0.00       5/3480        chk_double [16]
+                0.00    0.00      10/3480        is_true_alkylsulfanyl [54]
+                0.00    0.00      10/3480        is_arylsulfanyl [55]
+                0.00    0.00      18/3480        is_diarylamino [45]
+                0.00    0.00      18/3480        is_nitro [51]
+                0.00    0.00      36/3480        is_C_disubst_amino [46]
+                0.00    0.00      90/3480        is_diazonium [49]
+                0.00    0.00     107/3480        is_acyl [29]
+                0.00    0.00     112/3480        is_alkylamino [37]
+                0.00    0.00     112/3480        is_arylamino [38]
+                0.00    0.00     175/3480        is_azido [44]
+                0.00    0.00     188/3480        is_subst_acylamino [26]
+                0.00    0.00     202/3480        is_hydroxylamino [40]
+                0.00    0.00     265/3480        is_C_monosubst_amino [39]
+                0.00    0.00     301/3480        is_hydrazino [25]
+                0.00    0.00     544/3480        is_true_alkyl [31]
+                0.00    0.00     585/3480        is_alkenyl [32]
+                0.00    0.00     697/3480        is_alkyl [27]
+[20]     0.0    0.01    0.00    3480         get_nextneighbors [20]
+-----------------------------------------------
+                0.00    0.00     206/413         is_subst_acylamino [26]
+                0.00    0.00     207/413         chk_imide [22]
+[21]     0.0    0.00    0.01     413         is_acyl_gen [21]
+                0.00    0.01     413/3249        is_oxo_C [10]
+-----------------------------------------------
+                0.00    0.01      99/99          chk_functionalgroups [7]
+[22]     0.0    0.00    0.01      99         chk_imide [22]
+                0.00    0.00     207/413         is_acyl_gen [21]
+                0.00    0.00     113/113         is_carbamoyl [35]
+                0.00    0.00      99/6555425     get_neighbors [4]
+-----------------------------------------------
+                0.00    0.01       1/1           main [1]
+[23]     0.0    0.00    0.01       1         get_molstat [23]
+                0.01    0.00     392/6555425     get_neighbors [4]
+                0.00    0.00      31/93          is_arene [28]
+                0.00    0.00       6/37          is_heterocycle [71]
+-----------------------------------------------
+                0.00    0.00      31/31          chk_functionalgroups [7]
+[24]     0.0    0.00    0.00      31         chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00      31/93          is_arene [28]
+                0.00    0.00      69/3249        is_oxo_C [10]
+                0.00    0.00      69/1978        is_thioxo_C [15]
+                0.00    0.00      69/6555425     get_neighbors [4]
+                0.00    0.00     149/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      10/338         chk_double [16]
+                0.00    0.00     107/338         chk_carboxyl_deriv [17]
+                0.00    0.00     221/338         chk_single [14]
+[25]     0.0    0.00    0.00     338         is_hydrazino [25]
+                0.00    0.00     337/357         is_subst_amino [30]
+                0.00    0.00     301/3480        get_nextneighbors [20]
+                0.00    0.00     338/45399       get_bond [11]
+                0.00    0.00     337/1428        is_amino [36]
+-----------------------------------------------
+                0.00    0.00     214/214         chk_carboxyl_deriv [17]
+[26]     0.0    0.00    0.00     214         is_subst_acylamino [26]
+                0.00    0.00     206/413         is_acyl_gen [21]
+                0.00    0.00     188/3480        get_nextneighbors [20]
+                0.00    0.00     214/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     112/1511        is_alkylamino [37]
+                0.00    0.00     214/1511        is_acyl [29]
+                0.00    0.00    1185/1511        chk_single [14]
+[27]     0.0    0.00    0.00    1511         is_alkyl [27]
+                0.00    0.00     697/3480        get_nextneighbors [20]
+                0.00    0.00    1511/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      31/93          chk_oxo_thioxo_imino_hetarene [24]
+                0.00    0.00      31/93          chk_functionalgroups [7]
+                0.00    0.00      31/93          get_molstat [23]
+[28]     0.0    0.00    0.00      93         is_arene [28]
+                0.00    0.00    3255/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     117/117         chk_single [14]
+[29]     0.0    0.00    0.00     117         is_acyl [29]
+                0.00    0.00     127/3249        is_oxo_C [10]
+                0.00    0.00     214/1511        is_alkyl [27]
+                0.00    0.00     107/3480        get_nextneighbors [20]
+                0.00    0.00     127/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      20/357         chk_single [14]
+                0.00    0.00     337/357         is_hydrazino [25]
+[30]     0.0    0.00    0.00     357         is_subst_amino [30]
+                0.00    0.00     357/618         is_alkylamino [37]
+                0.00    0.00     357/618         is_arylamino [38]
+                0.00    0.00     357/471         is_diarylamino [45]
+                0.00    0.00     357/1428        is_amino [36]
+                0.00    0.00     357/357         is_dialkylamino [48]
+                0.00    0.00     357/357         is_alkylarylamino [47]
+-----------------------------------------------
+                0.00    0.00       5/1063        is_true_alkylamino [52]
+                0.00    0.00      10/1063        is_true_alkylsulfanyl [54]
+                0.00    0.00    1048/1063        chk_single [14]
+[31]     0.0    0.00    0.00    1063         is_true_alkyl [31]
+                0.00    0.00     544/3480        get_nextneighbors [20]
+                0.00    0.00    1063/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     585/585         chk_single [14]
+[32]     0.0    0.00    0.00     585         is_alkenyl [32]
+                0.00    0.00     585/3480        get_nextneighbors [20]
+                0.00    0.00     585/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      10/2025        is_arylsulfanyl [55]
+                0.00    0.00      36/2025        is_diarylamino [45]
+                0.00    0.00     112/2025        is_arylamino [38]
+                0.00    0.00    1867/2025        chk_single [14]
+[33]     0.0    0.00    0.00    2025         is_aryl [33]
+                0.00    0.00    2025/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       5/119         chk_double [16]
+                0.00    0.00     114/119         chk_carboxyl_deriv [17]
+[34]     0.0    0.00    0.00     119         is_true_imino_C [34]
+                0.00    0.00     124/6555425     get_neighbors [4]
+                0.00    0.00     357/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     113/113         chk_imide [22]
+[35]     0.0    0.00    0.00     113         is_carbamoyl [35]
+                0.00    0.00     113/3249        is_oxo_C [10]
+                0.00    0.00     113/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     107/1428        chk_carboxyl_deriv [17]
+                0.00    0.00     337/1428        is_hydrazino [25]
+                0.00    0.00     357/1428        is_subst_amino [30]
+                0.00    0.00     627/1428        chk_single [14]
+[36]     0.0    0.00    0.00    1428         is_amino [36]
+                0.00    0.00    1428/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     261/618         chk_single [14]
+                0.00    0.00     357/618         is_subst_amino [30]
+[37]     0.0    0.00    0.00     618         is_alkylamino [37]
+                0.00    0.00     618/45399       get_bond [11]
+                0.00    0.00     112/3480        get_nextneighbors [20]
+                0.00    0.00     112/1511        is_alkyl [27]
+-----------------------------------------------
+                0.00    0.00     261/618         chk_single [14]
+                0.00    0.00     357/618         is_subst_amino [30]
+[38]     0.0    0.00    0.00     618         is_arylamino [38]
+                0.00    0.00     618/45399       get_bond [11]
+                0.00    0.00     112/3480        get_nextneighbors [20]
+                0.00    0.00     112/2025        is_aryl [33]
+-----------------------------------------------
+                0.00    0.00     107/327         chk_carboxyl_deriv [17]
+                0.00    0.00     220/327         chk_single [14]
+[39]     0.0    0.00    0.00     327         is_C_monosubst_amino [39]
+                0.00    0.00     265/3480        get_nextneighbors [20]
+                0.00    0.00     327/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     107/221         chk_carboxyl_deriv [17]
+                0.00    0.00     114/221         chk_single [14]
+[40]     0.0    0.00    0.00     221         is_hydroxylamino [40]
+                0.00    0.00     202/3480        get_nextneighbors [20]
+                0.00    0.00     229/730         is_hydroxy [43]
+                0.00    0.00     221/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      49/49          chk_functionalgroups [7]
+[41]     0.0    0.00    0.00      49         chk_arom_fg [41]
+                0.00    0.00      56/1858        hetbond_count [13]
+                0.00    0.00       2/6555425     get_neighbors [4]
+                0.00    0.00       5/45399       get_bond [11]
+                0.00    0.00       3/730         is_hydroxy [43]
+-----------------------------------------------
+                0.00    0.00     735/735         chk_single [14]
+[42]     0.0    0.00    0.00     735         is_alkynyl [42]
+                0.00    0.00     735/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       3/730         chk_arom_fg [41]
+                0.00    0.00       7/730         chk_carboxyl_deriv [17]
+                0.00    0.00     229/730         is_hydroxylamino [40]
+                0.00    0.00     491/730         chk_single [14]
+[43]     0.0    0.00    0.00     730         is_hydroxy [43]
+                0.00    0.00     730/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     107/221         chk_carboxyl_deriv [17]
+                0.00    0.00     114/221         chk_single [14]
+[44]     0.0    0.00    0.00     221         is_azido [44]
+                0.00    0.00     175/3480        get_nextneighbors [20]
+                0.00    0.00     221/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     114/471         chk_single [14]
+                0.00    0.00     357/471         is_subst_amino [30]
+[45]     0.0    0.00    0.00     471         is_diarylamino [45]
+                0.00    0.00     471/45399       get_bond [11]
+                0.00    0.00      18/3480        get_nextneighbors [20]
+                0.00    0.00      36/2025        is_aryl [33]
+-----------------------------------------------
+                0.00    0.00     107/327         chk_carboxyl_deriv [17]
+                0.00    0.00     220/327         chk_single [14]
+[46]     0.0    0.00    0.00     327         is_C_disubst_amino [46]
+                0.00    0.00     327/45399       get_bond [11]
+                0.00    0.00      36/3480        get_nextneighbors [20]
+-----------------------------------------------
+                0.00    0.00     357/357         is_subst_amino [30]
+[47]     0.0    0.00    0.00     357         is_alkylarylamino [47]
+                0.00    0.00     357/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     357/357         is_subst_amino [30]
+[48]     0.0    0.00    0.00     357         is_dialkylamino [48]
+                0.00    0.00     357/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     114/114         chk_single [14]
+[49]     0.0    0.00    0.00     114         is_diazonium [49]
+                0.00    0.00      90/3480        get_nextneighbors [20]
+                0.00    0.00     114/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[50]     0.0    0.00    0.00       1         update_ringcount [50]
+                0.00    0.00     311/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00     114/114         chk_single [14]
+[51]     0.0    0.00    0.00     114         is_nitro [51]
+                0.00    0.00     186/45399       get_bond [11]
+                0.00    0.00      18/3480        get_nextneighbors [20]
+-----------------------------------------------
+                0.00    0.00     114/114         chk_single [14]
+[52]     0.0    0.00    0.00     114         is_true_alkylamino [52]
+                0.00    0.00     114/45399       get_bond [11]
+                0.00    0.00       5/3480        get_nextneighbors [20]
+                0.00    0.00       5/1063        is_true_alkyl [31]
+-----------------------------------------------
+                0.00    0.00     114/114         chk_single [14]
+[53]     0.0    0.00    0.00     114         is_true_dialkylamino [53]
+                0.00    0.00     114/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      10/10          chk_single [14]
+[54]     0.0    0.00    0.00      10         is_true_alkylsulfanyl [54]
+                0.00    0.00      10/3480        get_nextneighbors [20]
+                0.00    0.00      10/1063        is_true_alkyl [31]
+                0.00    0.00      10/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      10/10          chk_single [14]
+[55]     0.0    0.00    0.00      10         is_arylsulfanyl [55]
+                0.00    0.00      10/3480        get_nextneighbors [20]
+                0.00    0.00      10/45399       get_bond [11]
+                0.00    0.00      10/2025        is_aryl [33]
+-----------------------------------------------
+                0.00    0.00       7/46          chk_carboxyl_deriv [17]
+                0.00    0.00      39/46          chk_single [14]
+[56]     0.0    0.00    0.00      46         is_aryloxy [56]
+                0.00    0.00      46/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      27/27          chk_single [14]
+[57]     0.0    0.00    0.00      27         is_acylamino [57]
+                0.00    0.00      27/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       7/27          chk_carboxyl_deriv [17]
+                0.00    0.00      20/27          chk_single [14]
+[58]     0.0    0.00    0.00      27         is_alkoxy [58]
+                0.00    0.00      27/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       7/26          chk_carboxyl_deriv [17]
+                0.00    0.00      19/26          chk_single [14]
+[59]     0.0    0.00    0.00      26         is_alkynyloxy [59]
+                0.00    0.00      26/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      19/19          chk_single [14]
+[60]     0.0    0.00    0.00      19         is_true_alkoxy [60]
+                0.00    0.00      19/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00      10/10          chk_single [14]
+[61]     0.0    0.00    0.00      10         is_sulfanyl [61]
+                0.00    0.00      10/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       7/7           chk_carboxyl_deriv [17]
+[62]     0.0    0.00    0.00       7         is_alkenyloxy [62]
+                0.00    0.00       7/45399       get_bond [11]
+-----------------------------------------------
+                0.00    0.00       6/6304        get_filetype [76]
+                0.00    0.00    6298/6304        read_MDLmolfile [78]
+[65]     0.0    0.00    0.00    6304         strsub [65]
+-----------------------------------------------
+                0.00    0.00       1/4839        main [1]
+                0.00    0.00     710/4839        read_MDLmolfile [78]
+                0.00    0.00    4128/4839        get_filetype [76]
+[66]     0.0    0.00    0.00    4839         strpos2 [66]
+-----------------------------------------------
+                0.00    0.00     674/674         read_MDLmolfile [78]
+[67]     0.0    0.00    0.00     674         get_nvalences [67]
+-----------------------------------------------
+                0.00    0.00     674/674         read_MDLmolfile [78]
+[68]     0.0    0.00    0.00     674         is_heavyatom [68]
+-----------------------------------------------
+                0.00    0.00     674/674         read_MDLmolfile [78]
+[69]     0.0    0.00    0.00     674         is_metal [69]
+-----------------------------------------------
+                0.00    0.00     220/220         chk_functionalgroups [7]
+[70]     0.0    0.00    0.00     220         swap_atoms [70]
+-----------------------------------------------
+                0.00    0.00       6/37          get_molstat [23]
+                0.00    0.00      31/37          chk_functionalgroups [7]
+[71]     0.0    0.00    0.00      37         is_heterocycle [71]
+-----------------------------------------------
+                0.00    0.00       5/5           chk_single [14]
+[72]     0.0    0.00    0.00       5         chk_x_y_single [72]
+-----------------------------------------------
+                0.00    0.00       4/4           read_MDLmolfile [78]
+[73]     0.0    0.00    0.00       4         safe_calloc [73]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[74]     0.0    0.00    0.00       1         count_neighbors [74]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[75]     0.0    0.00    0.00       1         file_exists [75]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[76]     0.0    0.00    0.00       1         get_filetype [76]
+                0.00    0.00    4128/4839        strpos2 [66]
+                0.00    0.00       6/6304        strsub [65]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[77]     0.0    0.00    0.00       1         normalize_ionic_bonds [77]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[78]     0.0    0.00    0.00       1         read_MDLmolfile [78]
+                0.00    0.00    6298/6304        strsub [65]
+                0.00    0.00     710/4839        strpos2 [66]
+                0.00    0.00     674/674         is_heavyatom [68]
+                0.00    0.00     674/674         get_nvalences [67]
+                0.00    0.00     674/674         is_metal [69]
+                0.00    0.00       4/4           safe_calloc [73]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[79]     0.0    0.00    0.00       1         readinputfile [79]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[80]     0.0    0.00    0.00       1         safe_malloc [80]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[81]     0.0    0.00    0.00       1         write_fg_text [81]
+-----------------------------------------------
+                0.00    0.00       1/1           main [1]
+[82]     0.0    0.00    0.00       1         zap_molecule [82]
+-----------------------------------------------
+
+ This table describes the call tree of the program, and was sorted by
+ the total amount of time spent in each function and its children.
+
+ Each entry in this table consists of several lines.  The line with the
+ index number at the left hand margin lists the current function.
+ The lines above it list the functions that called this function,
+ and the lines below it list the functions this one called.
+ This line lists:
+     index	A unique number given to each element of the table.
+		Index numbers are sorted numerically.
+		The index number is printed next to every function name so
+		it is easier to look up where the function in the table.
+
+     % time	This is the percentage of the `total' time that was spent
+		in this function and its children.  Note that due to
+		different viewpoints, functions excluded by options, etc,
+		these numbers will NOT add up to 100%.
+
+     self	This is the total amount of time spent in this function.
+
+     children	This is the total amount of time propagated into this
+		function by its children.
+
+     called	This is the number of times the function was called.
+		If the function called itself recursively, the number
+		only includes non-recursive calls, and is followed by
+		a `+' and the number of recursive calls.
+
+     name	The name of the current function.  The index number is
+		printed after it.  If the function is a member of a
+		cycle, the cycle number is printed between the
+		function's name and the index number.
+
+
+ For the function's parents, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the function into this parent.
+
+     children	This is the amount of time that was propagated from
+		the function's children into this parent.
+
+     called	This is the number of times this parent called the
+		function `/' the total number of times the function
+		was called.  Recursive calls to the function are not
+		included in the number after the `/'.
+
+     name	This is the name of the parent.  The parent's index
+		number is printed after it.  If the parent is a
+		member of a cycle, the cycle number is printed between
+		the name and the index number.
+
+ If the parents of the function cannot be determined, the word
+ `<spontaneous>' is printed in the `name' field, and all the other
+ fields are blank.
+
+ For the function's children, the fields have the following meanings:
+
+     self	This is the amount of time that was propagated directly
+		from the child into the function.
+
+     children	This is the amount of time that was propagated from the
+		child's children to the function.
+
+     called	This is the number of times the function called
+		this child `/' the total number of times the child
+		was called.  Recursive calls by the child are not
+		listed in the number after the `/'.
+
+     name	This is the name of the child.  The child's index
+		number is printed after it.  If the child is a
+		member of a cycle, the cycle number is printed
+		between the name and the index number.
+
+ If there are any cycles (circles) in the call graph, there is an
+ entry for the cycle-as-a-whole.  This entry shows who called the
+ cycle (as parents) and the members of the cycle (as children.)
+ The `+' recursive calls entry shows the number of function calls that
+ were internal to the cycle, and the calls entry for each member shows,
+ for that member, how many times it was called from other members of
+ the cycle.
+
+
+Index by function name
+
+   [9] chk_arom (gcrt0.c)     [58] is_alkoxy (gcrt0.c)    [30] is_subst_amino (gcrt0.c)
+  [41] chk_arom_fg (gcrt0.c)  [27] is_alkyl (gcrt0.c)     [61] is_sulfanyl (gcrt0.c)
+  [17] chk_carboxyl_deriv (gcrt0.c) [37] is_alkylamino (gcrt0.c) [15] is_thioxo_C (gcrt0.c)
+  [16] chk_double (gcrt0.c)   [47] is_alkylarylamino (gcrt0.c) [60] is_true_alkoxy (gcrt0.c)
+   [7] chk_functionalgroups (gcrt0.c) [42] is_alkynyl (gcrt0.c) [31] is_true_alkyl (gcrt0.c)
+  [22] chk_imide (gcrt0.c)    [59] is_alkynyloxy (gcrt0.c) [52] is_true_alkylamino (gcrt0.c)
+  [24] chk_oxo_thioxo_imino_hetarene (gcrt0.c) [36] is_amino (gcrt0.c) [54] is_true_alkylsulfanyl (gcrt0.c)
+   [2] chk_ringbonds (gcrt0.c) [28] is_arene (gcrt0.c)    [53] is_true_dialkylamino (gcrt0.c)
+  [14] chk_single (gcrt0.c)   [33] is_aryl (gcrt0.c)      [34] is_true_imino_C (gcrt0.c)
+  [72] chk_x_y_single (gcrt0.c) [38] is_arylamino (gcrt0.c) [12] memset
+  [74] count_neighbors (gcrt0.c) [56] is_aryloxy (gcrt0.c) [77] normalize_ionic_bonds (gcrt0.c)
+  [75] file_exists (gcrt0.c)  [55] is_arylsulfanyl (gcrt0.c) [5] path_length (gcrt0.c)
+  [18] find_exocyclic_methylene_C (gcrt0.c) [44] is_azido (gcrt0.c) [6] path_pos (gcrt0.c)
+  [11] get_bond (gcrt0.c)     [35] is_carbamoyl (gcrt0.c) [78] read_MDLmolfile (gcrt0.c)
+  [76] get_filetype (gcrt0.c) [48] is_dialkylamino (gcrt0.c) [79] readinputfile (gcrt0.c)
+  [23] get_molstat (gcrt0.c)  [45] is_diarylamino (gcrt0.c) [73] safe_calloc
+   [4] get_neighbors (gcrt0.c) [49] is_diazonium (gcrt0.c) [80] safe_malloc
+  [20] get_nextneighbors (gcrt0.c) [68] is_heavyatom (gcrt0.c) [66] strpos2 (gcrt0.c)
+  [67] get_nvalences (gcrt0.c) [71] is_heterocycle (gcrt0.c) [65] strsub (gcrt0.c)
+  [13] hetbond_count (gcrt0.c) [25] is_hydrazino (gcrt0.c) [70] swap_atoms (gcrt0.c)
+  [46] is_C_disubst_amino (gcrt0.c) [43] is_hydroxy (gcrt0.c) [19] update_Htotal (gcrt0.c)
+  [39] is_C_monosubst_amino (gcrt0.c) [40] is_hydroxylamino (gcrt0.c) [8] update_atypes (gcrt0.c)
+  [29] is_acyl (gcrt0.c)      [69] is_metal (gcrt0.c)     [50] update_ringcount (gcrt0.c)
+  [21] is_acyl_gen (gcrt0.c)  [51] is_nitro (gcrt0.c)     [81] write_fg_text (gcrt0.c)
+  [57] is_acylamino (gcrt0.c) [10] is_oxo_C (gcrt0.c)     [82] zap_molecule (gcrt0.c)
+  [32] is_alkenyl (gcrt0.c)    [3] is_ringpath (gcrt0.c)
+  [62] is_alkenyloxy (gcrt0.c) [26] is_subst_acylamino (gcrt0.c)
