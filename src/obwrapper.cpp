@@ -183,7 +183,90 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
         case 26: // Fe
             composition[11]++;
             break;
+        case 5: // B
+            composition[12]++;
+            break;
+        case 34: // Se
+            composition[13]++;
+            break;
+        case 27: // Co
+            composition[14]++;
+            break;
+        case 12: // Mg
+            composition[15]++;
+            break;
+        case 79: // Au
+            composition[16]++;
+            break;
+        case 33: // As
+            composition[17]++;
+            break;
+        case 50: // Sn
+            composition[18]++;
+            break;
+        case 11: // Na
+            composition[19]++;
+            break;
+        case 19: // K
+            composition[20]++;
+            break;
+        case 52: // Te
+            composition[21]++;
+            break;
+        case 30: // Zn
+            composition[22]++;
+            break;
+        case 32: // Ge
+            composition[23]++;
+            break;
+        case 20: // Ca
+            composition[24]++;
+            break;
+        case 51: // Sb
+            composition[25]++;
+            break;
+        case 29: // Cu
+            composition[26]++;
+            break;
+        case 13: // Al
+            composition[27]++;
+            break;
+        case 25: // Mn
+            composition[28]++;
+            break;
+        case 78: // Pt
+            composition[29]++;
+            break;
+        case 64: // Gd
+            composition[30]++;
+            break;
+        case 80: // Hg
+            composition[31]++;
+            break;
+        case 42: // Mo
+            composition[32]++;
+            break;
+        case 38: // Sr
+            composition[33]++;
+            break;
+        case 31: // Ga
+            composition[34]++;
+            break;
+        case 28: // Ni
+            composition[35]++;
+            break;
+        case 82: // Pb
+            composition[36]++;
+            break;
+        case 47: // Ag
+            composition[37]++;
+            break;
+        case 83: // Bi
+            composition[38]++;
+            break;
         default: // Others ignored
+            std::cerr << "Element " << atom->GetAtomicNum() << " not recognized by MERCURY7! Edit libmercury++.h and recompile to add it to the internal isotopes table." << std::endl;
+            return NULL;
             break;
         }
     }
@@ -211,7 +294,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
 
     for(std::vector<double>::iterator it = msa_mz.begin(); it != msa_mz.end(); it++)
     {
-        mass_diff = *it-monoisotopic_mass;
+        mass_diff = *it - monoisotopic_mass;
 
         m.push_back(mass_diff);
 
