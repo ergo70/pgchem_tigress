@@ -264,6 +264,75 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
         case 83: // Bi
             composition[38]++;
             break;
+        case 81: // Tl
+            composition[39]++;
+            break;
+        case 24: // Cr
+            composition[40]++;
+            break;
+        case 37: // Rb
+            composition[41]++;
+            break;
+        case 40: // Zr
+            composition[42]++;
+            break;
+        case 22: // Ti
+            composition[43]++;
+            break;
+        case 74: // W
+            composition[44]++;
+            break;
+        case 4: // Be
+            composition[45]++;
+            break;
+        case 23: // V
+            composition[46]++;
+            break;
+        case 48: // Cd
+            composition[47]++;
+            break;
+        case 56: // Ba
+            composition[48]++;
+            break;
+        case 73: // Ta
+            composition[49]++;
+            break;
+        case 3: // Li
+            composition[50]++;
+            break;
+        case 55: // Cs
+            composition[51]++;
+            break;
+        case 46: // Pd
+            composition[52]++;
+            break;
+        case 58: // Ce
+            composition[53]++;
+            break;
+        case 44: // Ru
+            composition[54]++;
+            break;
+        case 57: // La
+            composition[55]++;
+            break;
+        case 60: // Nd
+            composition[56]++;
+            break;
+        case 75: // Re
+            composition[57]++;
+            break;
+        case 72: // Hf
+            composition[58]++;
+            break;
+        case 90: // Th
+            composition[59]++;
+            break;
+        case 2: // He
+            composition[60]++;
+            break;
+        case 18: // Ar
+            composition[61]++;
+            break;
         default: // Others ignored
             std::cerr << "Element " << atom->GetAtomicNum() << " not recognized by MERCURY7! Edit libmercury++.h and recompile to add it to the internal isotopes table." << std::endl;
             return NULL;
@@ -294,7 +363,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
 
     for(std::vector<double>::iterator it = msa_mz.begin(); it != msa_mz.end(); it++)
     {
-        mass_diff = *it - monoisotopic_mass;
+        mass_diff = *it-monoisotopic_mass;
 
         m.push_back(mass_diff);
 
@@ -1785,7 +1854,7 @@ ob_popcount (const unsigned char *fp, unsigned short size)
     return popcount;
 }
 
-/* Copyright © The International Union of Pure and Applied Chemistry 2005: IUPAC
+/* Copyright Â© The International Union of Pure and Applied Chemistry 2005: IUPAC
   International Chemical Identifier (InChI) (contact: secretariat@iupac.org) */
 
 extern "C" char *
