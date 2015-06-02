@@ -1,7 +1,7 @@
 /************************************************************************
  * obwrapper.cpp OpenBabel wrapper functions
  *
- * Copyright (c) 2004,2012 by Ernst-G. Schmid
+ * Copyright (c) 2004,2015 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -125,8 +125,8 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     OBConversion conv;
     string tmpStr (molfile);
     istringstream molstream (tmpStr);
-    double mass_diff, monoisotopic_mass, scale = 1.0, delta = numeric_limits<double>::max();
-    int i=0;
+    double mass_diff=0.0, monoisotopic_mass=0.0, scale = 1.0, delta = numeric_limits<double>::max();
+    unsigned int j=0;
 
     //Initialize composition vector to all zeroes
     for(unsigned int i=0; i<mercury::MAX_ELEMENTS; i++)
@@ -333,6 +333,36 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
         case 18: // Ar
             composition[61]++;
             break;
+        case 71: // Lu
+            composition[62]++;
+            break;
+        case 92: // U
+            composition[63]++;
+            break;
+        case 36: // Kr
+            composition[64]++;
+            break;
+        case 77: // Ir
+            composition[65]++;
+            break;
+        case 49: // In
+            composition[66]++;
+            break;
+        case 45: // Rh
+            composition[67]++;
+            break;
+        case 67: // Ho
+            composition[68]++;
+            break;
+        case 66: // Dy
+            composition[69]++;
+            break;
+        case 70: // Yb
+            composition[70]++;
+            break;
+        case 63: // Eu
+            composition[71]++;
+            break;
         default: // Others ignored
             std::cerr << "Element " << atom->GetAtomicNum() << " not recognized by MERCURY7! Edit libmercury++.h and recompile to add it to the internal isotopes table." << std::endl;
             return NULL;
@@ -354,7 +384,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     retval->num_entries = msa_mz.size();
     retval->mz=(double*) calloc(msa_mz.size(), sizeof(double));
     retval->intensity=(double*) calloc(msa_abundance.size(), sizeof(double));
-    retval->intensity_normalized=(double*) calloc(msa_abundance.size(), sizeof(double));
+    retval->intensity_normalized=(unsigned int*) calloc(msa_abundance.size(), sizeof(unsigned int));
     retval->md=(unsigned int*) calloc(msa_abundance.size(), sizeof(unsigned int));
 
     copy(msa_mz.begin(), msa_mz.end(), retval->mz);
@@ -363,21 +393,21 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
 
     for(std::vector<double>::iterator it = msa_mz.begin(); it != msa_mz.end(); it++)
     {
-        mass_diff = *it-monoisotopic_mass;
+        mass_diff = (*it)-monoisotopic_mass;
 
         m.push_back(mass_diff);
 
         if(abs(mass_diff) < delta)
         {
             delta = abs(mass_diff);
-            scale = msa_abundance[i];
+            scale = msa_abundance[j];
         }
-        i++;
+        j++;
     }
 
     scale = normal / scale;
 
-    for(i=0; i<retval->num_entries; i++)
+    for(unsigned int i=0; i<retval->num_entries; i++)
     {
         retval->intensity_normalized[i] *= scale;
     }
