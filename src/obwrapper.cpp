@@ -125,8 +125,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     OBConversion conv;
     string tmpStr (molfile);
     istringstream molstream (tmpStr);
-    double mass_diff=0.0, monoisotopic_mass=0.0, scale = 1.0, delta = numeric_limits<double>::max();
-    unsigned int j=0;
+    double mass_diff=0.0, scale = 1.0, maxintensity;
 
     //Initialize composition vector to all zeroes
     for(unsigned int i=0; i<mercury::MAX_ELEMENTS; i++)
@@ -409,8 +408,6 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
         return NULL;
     }
 
-    monoisotopic_mass = mol.GetExactMass();
-
     // Allocate return value and copy values
     retval = (_ISOTOPE_PATTERN*) calloc(1,sizeof(_ISOTOPE_PATTERN));
 
@@ -423,24 +420,15 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     copy(msa_mz.begin(), msa_mz.end(), retval->mz);
     copy(msa_abundance.begin(), msa_abundance.end(), retval->intensity);
     copy(msa_abundance.begin(), msa_abundance.end(), retval->intensity_normalized);
-
-    for(std::vector<double>::iterator it = msa_mz.begin(); it != msa_mz.end(); it++)
+    
+     maxintensity = *max_element(msa_abundance.begin(), msa_abundance.end());
+     
+      if(maxintensity > 0.0)
     {
-        mass_diff = (*it)-monoisotopic_mass;
-
-        m.push_back(mass_diff);
-
-        if(abs(mass_diff) < delta)
-        {
-            delta = abs(mass_diff);
-            scale = msa_abundance[j];
-        }
-        j++;
+        scale = normal / maxintensity;
     }
-
-    scale = normal / scale;
-
-    for(unsigned int i=0; i<retval->num_entries; i++)
+    
+     for(unsigned int i=0; i<retval->num_entries; i++)
     {
         retval->intensity_normalized[i] *= scale;
     }
