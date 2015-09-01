@@ -393,6 +393,9 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
         case 41: // Nb
             composition[81]++;
             break;
+        case 39: // Y
+            composition[82]++;
+            break;
         default: // Others ignored
             std::cerr << "Element " << atom->GetAtomicNum() << " not recognized by MERCURY7! Edit libmercury++.h and recompile to add it to the internal isotopes table." << std::endl;
             return NULL;
