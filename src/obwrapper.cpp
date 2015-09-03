@@ -125,7 +125,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     OBConversion conv;
     string tmpStr (molfile);
     istringstream molstream (tmpStr);
-    double mass_diff=0.0, scale = 1.0, maxintensity;
+    double main_peak_mass=0.0, scale = 1.0, maxintensity;
 
     //Initialize composition vector to all zeroes
     for(unsigned int i=0; i<mercury::MAX_ELEMENTS; i++)
@@ -431,6 +431,12 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
      for(unsigned int i=0; i<retval->num_entries; i++)
     {
         retval->intensity_normalized[i] *= scale;
+        if(retval->intensity_normalized[i] = normal) main_peak_mass = retval->mz[i];
+    }
+    
+    for(unsigned int i=0; i<retval->num_entries; i++)
+    {
+        m.push_back(retval->mz[i]-main_peak_mass);
     }
 
     copy(m.begin(), m.end(), retval->md);
