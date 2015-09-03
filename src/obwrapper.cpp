@@ -431,7 +431,7 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
      for(unsigned int i=0; i<retval->num_entries; i++)
     {
         retval->intensity_normalized[i] *= scale;
-        if(retval->intensity_normalized[i] = normal) main_peak_mass = retval->mz[i];
+        if(retval->intensity_normalized[i] == normal) main_peak_mass = retval->mz[i];
     }
     
     for(unsigned int i=0; i<retval->num_entries; i++)
