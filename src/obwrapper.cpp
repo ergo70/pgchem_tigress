@@ -1,7 +1,7 @@
 /************************************************************************
  * obwrapper.cpp OpenBabel wrapper functions
  *
- * Copyright (c) 2004,2015 by Ernst-G. Schmid
+ * Copyright (c) 2004,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -414,26 +414,26 @@ ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal)
     retval->num_entries = msa_mz.size();
     retval->mz=(double*) calloc(msa_mz.size(), sizeof(double));
     retval->intensity=(double*) calloc(msa_abundance.size(), sizeof(double));
-    retval->intensity_normalized=(unsigned int*) calloc(msa_abundance.size(), sizeof(unsigned int));
+    retval->intensity_normalized=(double*) calloc(msa_abundance.size(), sizeof(double));
     retval->md=(unsigned int*) calloc(msa_abundance.size(), sizeof(unsigned int));
 
     copy(msa_mz.begin(), msa_mz.end(), retval->mz);
     copy(msa_abundance.begin(), msa_abundance.end(), retval->intensity);
     copy(msa_abundance.begin(), msa_abundance.end(), retval->intensity_normalized);
-    
-     maxintensity = *max_element(msa_abundance.begin(), msa_abundance.end());
-     
-      if(maxintensity > 0.0)
+
+    maxintensity = *max_element(msa_abundance.begin(), msa_abundance.end());
+
+    if(maxintensity > 0.0)
     {
         scale = normal / maxintensity;
     }
-    
-     for(unsigned int i=0; i<retval->num_entries; i++)
+
+    for(unsigned int i=0; i<retval->num_entries; i++)
     {
         retval->intensity_normalized[i] *= scale;
         if(retval->intensity_normalized[i] == normal) main_peak_mass = retval->mz[i];
     }
-    
+
     for(unsigned int i=0; i<retval->num_entries; i++)
     {
         m.push_back(retval->mz[i]-main_peak_mass);
@@ -1168,7 +1168,7 @@ ob_3D (char *molfile)
 }
 
 extern "C" char *
-ob_add_hydrogens (char *smiles, int polaronly, int correct4PH)
+ob_add_hydrogens (char *smiles, int polaronly, int correct4PH, double PH)
 {
     OBMol *mol;
     string tmpStr (smiles);
@@ -1177,7 +1177,7 @@ ob_add_hydrogens (char *smiles, int polaronly, int correct4PH)
 
     mol = convertToOBMol(tmpStr, "SMI");
 
-    mol->AddHydrogens((polaronly != 0), (correct4PH != 0));
+    mol->AddHydrogens((polaronly != 0), (correct4PH != 0), PH);
 
     outstring = convertFromOBMol(mol,"SMI");
 
@@ -1409,6 +1409,8 @@ ob_describe_fp2 (char *smiles)
 
     mol = convertToOBMol(tmpStr, "SMI");
 
+    mol->ConvertDativeBonds();
+
     fprint->GetFingerprint (mol, vfp);
 
     desc = fprint->DescribeBits(vfp);
@@ -1487,6 +1489,8 @@ ob_fp3 (char *smiles, unsigned int *fp)
     {
 
         mol = convertToOBMol(tmpStr, "SMI");
+
+        mol->ConvertDativeBonds();
 
         fprint->GetFingerprint (mol, vfp);
 
@@ -1581,6 +1585,8 @@ ob_fp_MACCS (char *smiles, unsigned int *fp)
 
         mol = convertToOBMol(tmpStr,"SMI");
 
+        mol->ConvertDativeBonds();
+
         //cout << mol.NumHvyAtoms() << endl;
 
         //cout << fprint->GetID() << endl;
@@ -1628,6 +1634,8 @@ ob_fp (char *smiles, unsigned int *fp)
     //ob_rehydrate_molecule(&mol, serializedInput);
 
     mol = convertToOBMol(tmpStr,"SMI");
+
+    mol->ConvertDativeBonds();
 
     fprint2->GetFingerprint (mol, vfp);
 
@@ -2793,41 +2801,47 @@ extern "C" char *serializeOBMol(char* smiles) {
 
 extern "C" char *serializeOBMol(char *input, int input_format)
 {
-    OBMol mol;
-    OBConversion conv;
+    OBMol *mol;
+    //OBConversion conv;
+    string format;
     string tmpStr (input);
-    istringstream molstream (tmpStr);
+    //istringstream molstream (tmpStr);
 
     switch (input_format)
     {
-    case FORMAT_V3000:
-        conv.SetInFormat("MOL");
-        break;
     case FORMAT_V2000:
-        conv.SetInFormat("MOL");
+    case FORMAT_V3000:
+        //conv.SetInFormat("MOL");
+        format = "MOL";
         break;
     case FORMAT_INCHI:
-        conv.SetInFormat("INCHI");
+        //conv.SetInFormat("INCHI");
+        format = "INCHI";
         break;
     case FORMAT_SMILES:
-        conv.SetInFormat("SMI");
+        format = "SMI";
+        //conv.SetInFormat("SMI");
         break;
     }
 
-    conv.Read (&mol, &molstream);
+    //conv.Read (&mol, &molstream);
 
-    if (mol.Empty())
+    mol = convertToOBMol(tmpStr, format);
+
+    if (mol->Empty())
     {
         return NULL;
     }
 
-    unsigned int numatoms = mol.NumAtoms();
-    unsigned int numbonds = mol.NumBonds();
+    mol->ConvertDativeBonds();
+
+    unsigned int numatoms = mol->NumAtoms();
+    unsigned int numbonds = mol->NumBonds();
     vector<OBGenericData*>::iterator data;
     vector<OBGenericData*> stereoData;
-    if (mol.HasData(OBGenericDataType::StereoData))
+    if (mol->HasData(OBGenericDataType::StereoData))
     {
-        stereoData = mol.GetAllData(OBGenericDataType::StereoData);
+        stereoData = mol->GetAllData(OBGenericDataType::StereoData);
     }
     unsigned int numstereo = stereoData.size();
     unsigned int totalsize = (numatoms*sizeof(_ATOM))+(numbonds*sizeof(_BOND))+(numstereo*sizeof(_STEREO))+(4*sizeof(unsigned int));
@@ -2837,7 +2851,7 @@ extern "C" char *serializeOBMol(char *input, int input_format)
     _BOND *bondptr;
     _STEREO *stereoptr;
 
-    //mol.Kekulize();
+    //mol->Kekulize();
 
     unsigned int *uintptr = (unsigned int*) retval;
 

@@ -1,7 +1,7 @@
 /************************************************************************
  * functions.c native chemistry handling functions
  *
- * Copyright (c) 2004,2015 by Ernst-G. Schmid
+ * Copyright (c) 2004,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *

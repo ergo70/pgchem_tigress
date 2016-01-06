@@ -1,7 +1,7 @@
 /************************************************************************
  * molecule_io.c molecule input/output support functions
  *
- * Copyright (c) 2007,2013 by Ernst-G. Schmid
+ * Copyright (c) 2007,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -1194,10 +1194,11 @@ pgchem_add_hydrogens (PG_FUNCTION_ARGS)
     MOLECULE *arg_molecule = PG_GETARG_MOLECULE_P (0);
     bool polaronly = PG_GETARG_BOOL (1);
     bool correct4PH = PG_GETARG_BOOL (2);
+    float8 PH = PG_GETARG_FLOAT8 (3);
 
     smiles =
         ob_add_hydrogens (SMIPTR (arg_molecule),
-                          polaronly ? 1 : 0, correct4PH ? 1 : 0);
+                          polaronly ? 1 : 0, correct4PH ? 1 : 0, PH);
 
     molfile = ob_smiles_to_V2000 (smiles);
 

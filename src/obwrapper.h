@@ -114,7 +114,7 @@ extern "C"
     unsigned int ob_num_heavy_atoms (char *smiles);
     unsigned int ob_is_chiral (char *smiles);
     unsigned int ob_is_nostruct (char *molfile);
-    char *ob_add_hydrogens (char *smiles, int polaronly, int correct4PH);
+    char *ob_add_hydrogens (char *smiles, int polaronly, int correct4PH, double PH);
     char *ob_delete_hydrogens (char *smiles, int nonpolaronly);
     char *ob_strip_salts (char *smiles, int neutralize_residue);
     int ob_2D (char *molfile);
