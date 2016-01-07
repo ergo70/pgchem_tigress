@@ -988,7 +988,7 @@ ob_molweight (char *smiles)
 {
     OBMol *mol;
     string tmpStr (smiles);
-    double molweight = 0.0d;
+    double molweight = 0.0;
 
     mol = convertToOBMol(tmpStr,"SMI");
 
@@ -1381,7 +1381,7 @@ ob_exactmass (char *smiles)
 {
     OBMol *mol;
     string tmpStr (smiles);
-    double exactmass = 0.0d;
+    double exactmass = 0.0;
 
     mol = convertToOBMol(tmpStr, "SMI");
 
@@ -2366,7 +2366,7 @@ ob_MR (char *smiles)
     //OBGroupContrib theMR("MR", "mr.txt", "molar refractivity");
     OBDescriptor* pDescr = OBDescriptor::FindType("MR");
     string tmpStr (smiles);
-    double MR = 0.0d;
+    double MR = 0.0;
 
     mol = convertToOBMol(tmpStr,"SMI");
     mol->AddHydrogens (false, false);
@@ -2388,7 +2388,7 @@ ob_TPSA (char *smiles)
     //OBGroupContrib theTPSA("TPSA", "psa.txt", "topological polar surface area");
     OBDescriptor* pDescr = OBDescriptor::FindType("TPSA");
     string tmpStr (smiles);
-    double TPSA = 0.0d;
+    double TPSA = 0.0;
 
     mol = convertToOBMol(tmpStr,"SMI");
 //
@@ -2412,7 +2412,7 @@ ob_logP (char *smiles)
     //OBGroupContrib thelogP("logP", "logp.txt", "octanol/water partition coefficient");
     OBDescriptor* pDescr = OBDescriptor::FindType("logP");
     string tmpStr (smiles);
-    double LOGP = 0.0d;
+    double LOGP = 0.0;
 
     mol = convertToOBMol(tmpStr,"SMI");
     mol->AddHydrogens (false, false);
