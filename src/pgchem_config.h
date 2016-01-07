@@ -1,7 +1,7 @@
 /************************************************************************
  * pgchem_config.h compile-time configuration settings
  *
- * Copyright (c) 2012 by Ernst-G. Schmid
+ * Copyright (c) 2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -16,7 +16,7 @@
  ************************************************************************/
 
 #ifdef WIN32
-#define PGCHEM_VERSION "pgchem_tigress_3.2 GiST WIN32"
+#define PGCHEM_VERSION "pgchem_tigress_3.3 GiST WIN32"
 #else
-#define PGCHEM_VERSION "pgchem_tigress_3.2 GiST POSIX"
+#define PGCHEM_VERSION "pgchem_tigress_3.3 GiST POSIX"
 #endif
