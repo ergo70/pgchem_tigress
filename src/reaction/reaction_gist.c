@@ -1,7 +1,7 @@
 /************************************************************************
  * reaction_gist.c reaction GiST support functions
  *
- * Copyright (c) 2007,2013 by Ernst-G. Schmid
+ * Copyright (c) 2007,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -194,7 +194,7 @@ rxnfp_compress (PG_FUNCTION_ARGS)
 
         memcpy (fp->fp, rxn->fp, 2*OB_FPSIZE2*sizeof(uint32));
 
-        retval = (GISTENTRY *) palloc (sizeof (GISTENTRY));
+        retval = (GISTENTRY *) palloc0 (sizeof (GISTENTRY));
 
         gistentryinit (*retval, PointerGetDatum (fp),
                        entry->rel, entry->page, entry->offset, FALSE);
@@ -257,8 +257,8 @@ rxnfp_picksplit (PG_FUNCTION_ARGS)
 
     v->spl_nright = v->spl_nleft = 0;
 
-    v->spl_left = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-    v->spl_right = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
+    v->spl_left = (OffsetNumber *) palloc0 (len * sizeof (OffsetNumber));
+    v->spl_right = (OffsetNumber *) palloc0 (len * sizeof (OffsetNumber));
 
     datum_l = new_rxnfp ();
     datum_r = new_rxnfp ();

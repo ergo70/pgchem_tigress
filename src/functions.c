@@ -56,7 +56,7 @@ pgchem_barsoi_version (PG_FUNCTION_ARGS)
 {
     char *barsoi_version_buffer;
 
-    barsoi_version_buffer = (char *) palloc (256);
+    barsoi_version_buffer = (char *) palloc0 (256);
 
     xm_version (barsoi_version_buffer);
 
@@ -783,7 +783,7 @@ pgchem_fp_MACCS (PG_FUNCTION_ARGS)
 
     retval = (VarBit *) palloc0 (len + VARBITHDRSZ);
 
-    tmp_maccs = (uint32*) palloc(len);
+    tmp_maccs = (uint32*) palloc0(len);
 
     ob_fp_MACCS(SMIPTR(arg_molecule), tmp_maccs);
 

@@ -1,7 +1,7 @@
 /************************************************************************
  * reaction_io.c reaction input/output support functions
  *
- * Copyright (c) 2007,2013 by Ernst-G. Schmid
+ * Copyright (c) 2007,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -154,7 +154,7 @@ static REACTION *make_reaction(const char *raw_input, const int size)
     rxnfile[maxbuflen-2] = '\n';
     rxnfile[maxbuflen-1] = '\0';
 
-    mols = palloc(mcount*sizeof(MOLECULE*));
+    mols = palloc0(mcount*sizeof(MOLECULE*));
 
     for(i=0; i<mcount; i++)
     {
@@ -164,12 +164,12 @@ static REACTION *make_reaction(const char *raw_input, const int size)
     workptrA = rxnfile;
     workptrB = workptrA;
 
-    tmpbuf=(char*) palloc(maxbuflen);
+    tmpbuf=(char*) palloc0(maxbuflen);
 
     for(i=0; i<r; i++)
     {
 
-        memset(tmpbuf,0x0,maxbuflen);
+        //memset(tmpbuf,0x0,maxbuflen);
 
         if(mode==1)
         {

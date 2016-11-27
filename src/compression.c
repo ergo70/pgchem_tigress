@@ -77,7 +77,7 @@ inline DECOMPRESSED_DATA *decompress_data (const char *data, uint32 compressed_s
         elog (WARNING, "Decompressed size != expected size: %u != %u",(uint32) size_after_decompression, decompressed_size);
     }
 
-    retval = (DECOMPRESSED_DATA*) palloc(sizeof(DECOMPRESSED_DATA));
+    retval = (DECOMPRESSED_DATA*) palloc0(sizeof(DECOMPRESSED_DATA));
 
     retval->decompressed_size=(uint32) size_after_decompression;
     retval->decompressed_data=(char*) decompressed_data;

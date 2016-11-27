@@ -186,7 +186,7 @@ molfp_compress (PG_FUNCTION_ARGS)
 
         memcpy (fp->bytes, mol->fp.bytes, sizeof(MOLFP));
 
-        retval = (GISTENTRY *) palloc (sizeof (GISTENTRY));
+        retval = (GISTENTRY *) palloc0 (sizeof (GISTENTRY));
 
         gistentryinit (*retval, PointerGetDatum (fp),
                        entry->rel, entry->page, entry->offset, FALSE);
@@ -253,8 +253,8 @@ molfp_picksplit (PG_FUNCTION_ARGS)
 
     v->spl_nright = v->spl_nleft = 0;
 
-    v->spl_left = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-    v->spl_right = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
+    v->spl_left = (OffsetNumber *) palloc0 (len * sizeof (OffsetNumber));
+    v->spl_right = (OffsetNumber *) palloc0 (len * sizeof (OffsetNumber));
 
     datum_l = new_molfp ();
     datum_r = new_molfp ();

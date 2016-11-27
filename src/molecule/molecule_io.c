@@ -148,19 +148,19 @@ static MOLECULE *make_molecule(const char *raw_input, int size)
 
     if(strstr (raw_input, "M  END") != NULL)
     {
-        input = palloc (size+sizeof(char));
+        input = palloc0 (size+sizeof(char));
         memcpy (input, raw_input, size);
         endptr = strstr (input, "M  END") + strlen("M  END")*sizeof(char);
         *endptr = 0x0;
         new_len = strlen(input);
         pfree (input);
-        input = palloc (new_len + 1);
+        input = palloc0 (new_len + 1);
         strncpy(input,raw_input,new_len);
         input[new_len] = 0x0;
     }
     else
     {
-        input = palloc (size+1);
+        input = palloc0 (size+1);
         memcpy (input, raw_input, size);
         input[size] = 0x0;
     }
