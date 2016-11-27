@@ -22,10 +22,6 @@
 #include "reaction.h"
 #include "obwrapper.h"
 
-#ifdef BUILD_WITH_INDIGO
-    #error No reaction support when compiling with Indigo!
-#endif
-
 Datum reaction_in (PG_FUNCTION_ARGS);
 Datum reaction_in_text (PG_FUNCTION_ARGS);
 Datum reaction_in_varchar (PG_FUNCTION_ARGS);
@@ -226,7 +222,7 @@ smiles_fail:
 
 //efa_array = ob_efa_array(smiles);
 
-        mols[i]=new_molecule(smiles,tmpbuf,NULL);
+        mols[i]=new_molecule(smiles,tmpbuf);
 
 //free(efa_array);
 
@@ -251,7 +247,7 @@ smiles_fail:
 
 //printf("12");
 
-        memcpy(tmpbuf,workptrA,((int)workptrB-(int)workptrA)*sizeof(char));
+        memcpy(tmpbuf,workptrA,(workptrB-workptrA)*sizeof(char));
 
 //printf("13");
 
@@ -288,7 +284,7 @@ smiles_fail2:
 
 //efa_array = ob_efa_array(smiles);
 
-        mols[i]=new_molecule(smiles,tmpbuf,NULL);
+        mols[i]=new_molecule(smiles,tmpbuf);
 
 //free(efa_array);
 
@@ -525,7 +521,7 @@ pgchem_reaction_mol_strip_rxninfo (PG_FUNCTION_ARGS)
 
     //efa_array = ob_efa_array(smiles);
 
-    retval = new_molecule (smiles, molfile,NULL);
+    retval = new_molecule (smiles, molfile);
 
     //free(efa_array);
 

@@ -15,8 +15,4 @@
  * lesser GNU General Public License for more details.
  ************************************************************************/
 
-#ifdef WIN32
-#define PGCHEM_VERSION "pgchem_tigress_3.3 GiST WIN32"
-#else
-#define PGCHEM_VERSION "pgchem_tigress_3.3 GiST POSIX"
-#endif
+#define PGCHEM_VERSION "pgchem_tigress_4.0 GiST"

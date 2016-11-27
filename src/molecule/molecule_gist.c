@@ -1,7 +1,7 @@
 /************************************************************************
  * molecule_gist.c molecule GiST support functions
  *
- * Copyright (c) 2007,2013 by Ernst-G. Schmid
+ * Copyright (c) 2007,2016 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -21,9 +21,6 @@
 #include "libpq/md5.h"
 #include "obwrapper.h"
 #include "molecule.h"
-#ifdef BUILD_WITH_INDIGO
-#include "mingw/indigo.h"
-#endif
 #include <assert.h>
 
 #define GETENTRY_MOLFP(vec,pos) ((MOLFP *) DatumGetPointer((vec)->vector[(pos)].key))
@@ -83,94 +80,15 @@ new_molfp ()
 inline static void
 union_internal (MOLFP * result, const MOLFP * element)
 {
-    /*#ifdef BUILD_WITH_INDIGO
-        int i=IN_FPSIZE;
-    #else
-        int i=OB_FPSIZE;
-    #endif
-        const uint32 *e =   element->dwords;
-        uint32 *r =  result->dwords;
-
-        while (i--)
-        {
-            *r = (*r | *e);
-            r++;
-            e++;
-        }*/
-
     result->v = result->v | element->v;
 }
 
 inline static float
 soergel_distance (const MOLFP * fp1, const MOLFP * fp2)
 {
-#ifdef BUILD_WITH_INDIGO
-    return 1.0f - ob_tanimoto
-           (fp1->dwords+IN_SIMOFFSET,  fp2->dwords+IN_SIMOFFSET, IN_SIMFPSIZE);
-#else
     return 1.0f - ob_tanimoto
            (fp1->dwords,  fp2->dwords, OB_FPSIZE2);
-#endif
 }
-
-/*
-* Check, if a query molecule is contained in an index entry, i.e. if molecule is substructure or equal to predicate.
-* If entry is a LEAF page an the strategy is RTSame, a equality check is performed, a substructure check in all
-* other valid cases.
-*/
-
-/*Datum
-molfp_consistent (PG_FUNCTION_ARGS)
-{
-    GISTENTRY *entry = (GISTENTRY *) PG_GETARG_POINTER (0);
-    MOLECULE *query = PG_GETARG_MOLECULE_P (1);
-    StrategyNumber strategy = (StrategyNumber) PG_GETARG_UINT16 (2);
-    // Oid subtype = PG_GETARG_OID(3);
-    bool *recheck = (bool *) PG_GETARG_POINTER(4);
-    MOLFP *predicate = (MOLFP *) DatumGetPointer(entry->key);
-#ifdef BUILD_WITH_INDIGO
-    int i = IN_SUBFPSIZE;
-#else
-int i = OB_FPSIZE;
-#endif
-    uint32 *p = predicate->dwords;
-    uint32 *q = query->fp.dwords;
-
-    *recheck = true; //Always lossy
-
-    if(strategy == RTSameStrategyNumber && GIST_LEAF(entry))
-    {
-
-        while(i--)
-        {
-            if (*p != *q)
-            {
-                //elog(INFO,"p=%i q=%i",*p,*q);
-                PG_RETURN_BOOL (false);
-            }
-            p++;
-            q++;
-        }
-
-    }
-    else
-    {
-
-        while(i--)
-        {
-            if ((*p & *q) != *q)
-            {
-                //elog(INFO,"p&q= %i p=%i q=%i",(*p & *q),*p,*q);
-                PG_RETURN_BOOL (false);
-            }
-            p++;
-            q++;
-        }
-    }
-
-    //elog(INFO,"true");
-    PG_RETURN_BOOL (true);
-}*/
 
 Datum
 molfp_consistent (PG_FUNCTION_ARGS)
@@ -183,11 +101,8 @@ molfp_consistent (PG_FUNCTION_ARGS)
     MOLFP *predicate = (MOLFP *) DatumGetPointer(entry->key);
     MOLFP allzero;
     uint64 *zero;
-#ifdef BUILD_WITH_INDIGO
-    int i=IN_SUBFPSIZE/2;
-#else
+
     int i= OB_FPSIZE/2;
-#endif
 
     *recheck = true; //Always recheck except
 
@@ -231,11 +146,8 @@ molfp_same (PG_FUNCTION_ARGS)
     bool  *result = (bool *) PG_GETARG_POINTER(2);
     MOLFP allzero;
     uint64 *zero;
-#ifdef BUILD_WITH_INDIGO
-    int i = IN_SUBFPSIZE/2;
-#else
+
     int i = OB_FPSIZE/2;
-#endif
 
     allzero.v = entry->v ^ query->v;
 
@@ -254,35 +166,6 @@ molfp_same (PG_FUNCTION_ARGS)
     *result = true;
     PG_RETURN_BOOL (result);
 }
-
-/*Datum
-molfp_same (PG_FUNCTION_ARGS)
-{
-    MOLFP *query = (MOLFP *) PG_GETARG_POINTER (0);
-    MOLFP *entry = (MOLFP *) PG_GETARG_POINTER (1);
-    bool  *result = (bool *) PG_GETARG_POINTER(2);
-#ifdef BUILD_WITH_INDIGO
-    int i = IN_SUBFPSIZE;
-#else
-    int i = OB_FPSIZE;
-#endif
-    uint32 *e = entry->dwords;
-    uint32 *q = query->dwords;
-
-    while (i--)
-    {
-        if (*e != *q)
-        {
-            *result = false;
-            PG_RETURN_BOOL (result);
-        }
-        e++;
-        q++;
-    }
-
-    *result = true;
-    PG_RETURN_BOOL (result);
-}*/
 
 /*
 * Compress a molecule of type molecule into an index entry of type molfp.
@@ -346,63 +229,6 @@ molfp_penalty (PG_FUNCTION_ARGS)
 
     PG_RETURN_POINTER (penalty);
 }
-
-
-// Simple Split-By-Half
-/*Datum
-molfp_picksplit (PG_FUNCTION_ARGS)
-{
-  GistEntryVector *entryvec = (GistEntryVector *) PG_GETARG_POINTER (0);
-  GIST_SPLITVEC *v = (GIST_SPLITVEC *) PG_GETARG_POINTER (1);
-  int32 len = entryvec->n;
-  int32 lenhalf = len/2;
-  OffsetNumber i;
-  MOLFP *datum_l, *datum_r;
-
-  v->spl_nright = v->spl_nleft = 0;
-
-  //printf ("picksplit\n");
-
-  v->spl_left = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-  v->spl_right = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-
-  datum_l = new_molfp();
-  datum_r = new_molfp();
-
-  //memset (datum_l, 0, FPSIZE2);
-  //memset (datum_r, 0, FPSIZE2);
-
-  //printf("1\n");
-
-  for (i = FirstOffsetNumber; i < len; i = OffsetNumberNext (i))
-    {
-      if (i < lenhalf)
-		 		  		 		   {
-		 		  		 		     //printf("4\n");
-		 		  		 		     union_internal (datum_l, GETENTRY_MOLFP (entryvec, i));
-
-		 		  		 		     //printf("5\n");
-		 		  		 		     v->spl_left[v->spl_nleft++] = i;
-		 		  		 		   }
-      else
-		 		  		 		   {
-
-		 		  		 		     union_internal (datum_r, GETENTRY_MOLFP (entryvec, i));
-
-		 		  		 		     //printf("7\n");
-		 		  		 		     v->spl_right[v->spl_nright++] = i;
-		 		  		 		   }
-    }
-
-  //printf("8\n");
-  v->spl_ldatum = (Datum) datum_l;
-  //printf("9\n");
-  v->spl_rdatum = (Datum) datum_r;
-
-  //printf("10\n");
-  PG_RETURN_POINTER (v);
-
-}*/
 
 /*
 * Decide which index entries are moved to which page, when a page split becomes neccessary, i.e.

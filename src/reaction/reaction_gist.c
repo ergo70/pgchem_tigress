@@ -234,63 +234,6 @@ rxnfp_penalty (PG_FUNCTION_ARGS)
     PG_RETURN_POINTER (penalty);
 }
 
-
-// Simple Split-By-Half
-/*Datum
-rxnfp_picksplit (PG_FUNCTION_ARGS)
-{
-  GistEntryVector *entryvec = (GistEntryVector *) PG_GETARG_POINTER (0);
-  GIST_SPLITVEC *v = (GIST_SPLITVEC *) PG_GETARG_POINTER (1);
-  int32 len = entryvec->n;
-  int32 lenhalf = len/2;
-  OffsetNumber i;
-  RXNFP *datum_l, *datum_r;
-
-  v->spl_nright = v->spl_nleft = 0;
-
-  //printf ("picksplit\n");
-
-  v->spl_left = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-  v->spl_right = (OffsetNumber *) palloc (len * sizeof (OffsetNumber));
-
-  datum_l = new_rxnfp();
-  datum_r = new_rxnfp();
-
-  //memset (datum_l, 0, RFPSIZE2);
-  //memset (datum_r, 0, RFPSIZE2);
-
-  //printf("1\n");
-
-  for (i = FirstOffsetNumber; i < len; i = OffsetNumberNext (i))
-    {
-      if (i < lenhalf)
-		 		  		 		   {
-		 		  		 		     //printf("4\n");
-		 		  		 		     union_internal (datum_l, GETENTRY (entryvec, i));
-
-		 		  		 		     //printf("5\n");
-		 		  		 		     v->spl_left[v->spl_nleft++] = i;
-		 		  		 		   }
-      else
-		 		  		 		   {
-
-		 		  		 		     union_internal (datum_r, GETENTRY (entryvec, i));
-
-		 		  		 		     //printf("7\n");
-		 		  		 		     v->spl_right[v->spl_nright++] = i;
-		 		  		 		   }
-    }
-
-  //printf("8\n");
-  v->spl_ldatum = (Datum) datum_l;
-  //printf("9\n");
-  v->spl_rdatum = (Datum) datum_r;
-
-  //printf("10\n");
-  PG_RETURN_POINTER (v);
-
-}*/
-
 /*
 * Decide which index entries are moved to which page, when a page split becomes neccessary, i.e.
 * the current page would overflow with the new entry to be inserted.

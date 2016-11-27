@@ -1,0 +1,5 @@
+# pgchem_tigress extension
+comment = 'chemoinformatics extension for handling chemical molecules and reactions'
+default_version = '4.0'
+module_pathname = '$libdir/libpgchem'
+relocatable = true

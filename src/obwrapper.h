@@ -18,63 +18,11 @@
 //#include "molecule/molecule.h"
 #include "molecule/molecule_limits.h"
 
-/*typedef struct
-{
-    unsigned int idx;
-    int hybridization;
-    unsigned char atomicnum;
-    unsigned short isotope;
-    char formalcharge;
-    unsigned char stereo;
-    unsigned char spinmultiplicity;
-    unsigned char aromatic;
-} _ATOM;
-
-typedef struct
-{
-    unsigned int beginidx;
-    unsigned int endidx;
-    unsigned char order;
-    unsigned int stereo;
-    unsigned char aromatic;
-    //int flags;
-} _BOND;*/
-
-typedef struct
-{
-    unsigned int idx;
-    int hybridization;
-    unsigned char atomicnum;
-    unsigned short isotope;
-    char formalcharge;
-    unsigned char stereo;
-    unsigned char spinmultiplicity;
-    unsigned char aromatic;
-} _ATOM;
-
-typedef struct
-{
-    unsigned int beginidx;
-    unsigned int endidx;
-    unsigned char order;
-    unsigned int stereo;
-    unsigned char aromatic;
-} _BOND;
-
-typedef struct
-{
-    size_t num_entries;
-    double *mz;
-    double *intensity;
-    double *intensity_normalized;
-    unsigned int *md;
-} _ISOTOPE_PATTERN;
-
 #ifdef __cplusplus
 extern "C"
 {
 #endif
-    _ISOTOPE_PATTERN *ob_molfile_to_isotope_pattern(char *molfile, int charge, double normal);
+
 
     char *ob_molfile_to_smiles (char *molfile, int omit_iso_and_chiral_markings);
     char *ob_molfile_to_canonical_smiles (char *molfile, int omit_iso_and_chiral_markings);
@@ -131,8 +79,6 @@ extern "C"
     	 		 		 		      char *serializedInput);*/
 
 
-    int ob_SSS_SMARTS_native_bin (const char *smarts_pattern,
-                                  char *serializedInput);
 
     int ob_SSS_SMARTS_native (const char *smarts_pattern,
                               char *smiles);
@@ -144,8 +90,6 @@ extern "C"
 
     int ob_SSS (const char *query_smiles, const char *target_smiles);
 
-    int ob_SSS_bin (const char *query_smiles,  char *serializedInput);
-
     int ob_SSS_count (const char *query_smiles, const char *target_smiles);
 
     double ob_molweight (char *smiles);
@@ -156,7 +100,6 @@ extern "C"
 
     int ob_msp (char *molfile);
 
-    char *serializeOBMol(char *input, int input_format);
 #ifdef __cplusplus
 }
 #endif

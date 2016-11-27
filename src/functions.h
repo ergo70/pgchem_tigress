@@ -19,7 +19,6 @@
 
 Datum pgchem_version (PG_FUNCTION_ARGS);
 Datum pgchem_barsoi_version (PG_FUNCTION_ARGS);
-Datum pgchem_indigo_version (PG_FUNCTION_ARGS);
 
 //Datum pgchem_is_nostruct (PG_FUNCTION_ARGS);
 Datum pgchem_fg_fingerprint (PG_FUNCTION_ARGS);
@@ -83,10 +82,8 @@ Datum pgchem_nbits_set(PG_FUNCTION_ARGS);
 
 Datum pgchem_disconnected(PG_FUNCTION_ARGS);
 
-#ifndef BUILD_WITH_INDIGO
 Datum pgchem_mutate_fp (PG_FUNCTION_ARGS);
 Datum pgchem_blank_fp (PG_FUNCTION_ARGS);
-#endif
 
 Datum pgchem_r_fp_out (PG_FUNCTION_ARGS);
 Datum pgchem_r_num_reactants (PG_FUNCTION_ARGS);
@@ -95,7 +92,7 @@ Datum pgchem_r_molecule_at (PG_FUNCTION_ARGS);
 Datum pgchem_r_reaction_to_smiles (PG_FUNCTION_ARGS);
 Datum pgchem_tversky (PG_FUNCTION_ARGS);
 Datum pgchem_spectrophore (PG_FUNCTION_ARGS);
-Datum pgchem_isotope_pattern (PG_FUNCTION_ARGS);
+
 
 //Datum reversestring(PG_FUNCTION_ARGS);
 
