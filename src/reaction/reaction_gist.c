@@ -18,8 +18,8 @@
 #include "access/skey.h"
 #include "access/gist.h"
 #include "c.h"
-#include "libpq/md5.h" // PostgreSQL 9.x
-//#include "common/md5.h" //PostgreSQL 10.x
+//#include "libpq/md5.h" // PostgreSQL 9.x
+#include "common/md5.h" //PostgreSQL 10.x
 #include "obwrapper.h"
 #include "reaction.h"
 
