@@ -15,7 +15,8 @@
  * lesser GNU General Public License for more details.
  ************************************************************************/
 #include "postgres.h"
-#include "libpq/md5.h"
+#include "libpq/md5.h" // PostgreSQL 9.x
+//#include "common/md5.h" //PostgreSQL 10.x
 #include "fmgr.h"
 #include "libpq/pqformat.h"	/* needed for send/recv functions */
 #include "molecule.h"
