@@ -12,7 +12,7 @@ I will not support Windows anymore. The build process with MinGW is horrible and
 On Linux:
 OpenBabel can be compiled ans installed out of the box as described here: http://openbabel.org/docs/dev/Installation/install.html 
 
-After successful compiliation of OpenBabel you _must_ rename the file openbabel-2.3.2/include/openbabel/locale.h to _locale.h otherwise the compiler will barf when compiling pgchem!
+After successful compiliation of OpenBabel you _must_ rename the file openbabel-x.y.z/include/openbabel/locale.h to _locale.h otherwise the compiler will barf when compiling pgchem!
 
 2.) On Linux copy or link libbarsoi.so, libpgchem.so into the postgresql lib/ directory.
 The PostgreSQL server process must be able to see OpenBabel when running! So LD_LIBRARY_PATH on Linux must point to the OpenBabel lib/ director!
