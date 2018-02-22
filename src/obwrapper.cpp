@@ -1,7 +1,7 @@
 /************************************************************************
  * obwrapper.cpp OpenBabel wrapper functions
  *
- * Copyright (c) 2004,2018 by Ernst-G. Schmid
+ * Copyright (c) 2004, 2018 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -911,25 +911,27 @@ ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int le
     OBMol *mol;
     OBFingerprint *fprint=NULL;
     string tmpStr (smiles);
-    string tmpType = "ECFP4";
     vector < unsigned int >vfp;
 
     switch (type)
     {
     case 0:
-        tmpType = "ECFP0";
+        fprint = OBFingerprint::FindFingerprint ("ECFP0");
         break;
     case 2:
-        tmpType = "ECFP2";
+        fprint = OBFingerprint::FindFingerprint ("ECFP2");
+        break;
+    case 4:
+        fprint = OBFingerprint::FindFingerprint ("ECFP4");
         break;
     case 6:
-        tmpType = "ECFP6";
+        fprint = OBFingerprint::FindFingerprint ("ECFP6");
         break;
     case 8:
-        tmpType = "ECFP8";
+        fprint = OBFingerprint::FindFingerprint ("ECFP8");
         break;
     case 10:
-        tmpType = "ECFP10";
+        fprint = OBFingerprint::FindFingerprint ("ECFP10");
         break;
     }
 
@@ -939,7 +941,6 @@ ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int le
 
     if (fprint != NULL)
     {
-
         mol = convertToOBMol(tmpStr,"SMI");
 
         mol->ConvertDativeBonds();
@@ -952,7 +953,7 @@ ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int le
     }
     else
     {
-        cout << tmpType << " fingerprint not found!" << endl;
+        cout << "ECFP <<" type << " fingerprint not found!" << endl;
     }
 }
 
