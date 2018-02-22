@@ -1,7 +1,7 @@
 /************************************************************************
  * functions.h native chemistry handling functions
  *
- * Copyright (c) 2004,2012 by Ernst-G. Schmid
+ * Copyright (c) 2004,2018 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -75,6 +75,7 @@ Datum pgchem_num_H_donors (PG_FUNCTION_ARGS);
 Datum pgchem_num_H_acceptors (PG_FUNCTION_ARGS);
 
 Datum pgchem_fp_out (PG_FUNCTION_ARGS);
+Datum pgchem_fp_ECFP_n (PG_FUNCTION_ARGS);
 Datum pgchem_fp_MACCS (PG_FUNCTION_ARGS);
 Datum pgchem_describe_fp2 (PG_FUNCTION_ARGS);
 
