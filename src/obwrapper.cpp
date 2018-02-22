@@ -1,7 +1,7 @@
 /************************************************************************
  * obwrapper.cpp OpenBabel wrapper functions
  *
- * Copyright (c) 2004,2016 by Ernst-G. Schmid
+ * Copyright (c) 2004,2018 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -902,6 +902,57 @@ ob_fp3 (char *smiles, unsigned int *fp)
     else
     {
         cout << "FPPC8 fingerprint not found!" << endl;
+    }
+}
+
+extern "C" void
+ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int len)
+{
+    OBMol *mol;
+    OBFingerprint *fprint=NULL;
+    string tmpStr (smiles);
+    string tmpType = "ECFP4";
+    vector < unsigned int >vfp;
+
+    switch (type)
+    {
+    case 0:
+        tmpType = "ECFP0";
+        break;
+    case 2:
+        tmpType = "ECFP2";
+        break;
+    case 6:
+        tmpType = "ECFP6";
+        break;
+    case 8:
+        tmpType = "ECFP8";
+        break;
+    case 10:
+        tmpType = "ECFP10";
+        break;
+    }
+
+    fprint = OBFingerprint::FindFingerprint (tmpType);
+
+    memset(fp,0x0, len);
+
+    if (fprint != NULL)
+    {
+
+        mol = convertToOBMol(tmpStr,"SMI");
+
+        mol->ConvertDativeBonds();
+
+        fprint->GetFingerprint (mol, vfp, len * 8);
+
+        delete mol;
+
+        memcpy (fp, &vfp[0], len);
+    }
+    else
+    {
+        cout << tmpType << " fingerprint not found!" << endl;
     }
 }
 
