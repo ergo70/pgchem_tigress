@@ -1,7 +1,7 @@
 /**********************************************************************
  * pgchem_setup.sql unified type, operator and function setup file for pgchem GiST
  *
- * Copyright (c) 2004,2016 by Ernst-G. Schmid
+ * Copyright (c) 2004,2018 by Ernst-G. Schmid
  *
  * This file is part of the pgchem::tigress project.
  * For more information, see
@@ -863,6 +863,12 @@ END;
 $BODY$
   LANGUAGE 'plpgsql' VOLATILE
   COST 100;
+  
+CREATE OR REPLACE FUNCTION fpecfpstring(molecule, integer, integer DEFAULT 4, integer DEFAULT 4096)
+  RETURNS bit varying AS
+'$libdir/libpgchem', 'pgchem_fp_ECFP_n'
+  LANGUAGE C IMMUTABLE STRICT
+  COST 1;  
 
 CREATE OR REPLACE FUNCTION fpmaccsstring(molecule)
   RETURNS bit varying AS
