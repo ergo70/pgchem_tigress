@@ -203,8 +203,10 @@ static MOLECULE *make_molecule(const char *raw_input, int size)
         break;
     case FORMAT_SMILES:
         //molfile = ob_smiles_to_molfile (input);
-        smiles = input;
+        //smiles = input;
+        smiles = ob_smiles_to_smiles(input,0);
         //freemolfile = true;
+        freesmiles = true;
         break;
     default:
         if (input != NULL)
