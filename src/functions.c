@@ -783,14 +783,11 @@ pgchem_fp_ECFP_n (PG_FUNCTION_ARGS)
     int32 len = bits / 8;
     uint32 *tmp_ecfp;
 
-    if (bits < 1024)
+    if (bits == 1024 || bits == 2048 || bits == 4096 || bits == 8192 || bits == 16384)
     {
-        elog (ERROR, "ECFP_n only can be folded to a minimum of 1024 bits.");
-    }
-
-    if (bits > 16384)
-    {
-        elog (ERROR, "ECFP_n only can be folded to a maximum of 16384 bits.");
+        // OK, pass
+    } else {
+        elog (ERROR, "ECFP_n only can be folded to 1024, 2048, 4096, 8192, or 16384 bits.");
     }
 
     if (type < 0 || type > 10 || type % 2 != 0)
