@@ -953,7 +953,7 @@ ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int le
     }
     else
     {
-        cout << "ECFP <<" type << " fingerprint not found!" << endl;
+        cout << "ECFP "<< type << " fingerprint not found!" << endl;
     }
 }
 
