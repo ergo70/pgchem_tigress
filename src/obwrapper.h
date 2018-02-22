@@ -1,7 +1,7 @@
 /**********************************************************************
  * obwrapper.h OpenBabel wrapper functions
  *
- * Copyright (c) 2004,2012 by Ernst-G. Schmid
+ * Copyright (c) 2004,2018 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -52,6 +52,7 @@ extern "C"
     //void ob_fp3_bin (char *serializedInput, unsigned int *fp);
     void ob_fp3 (char *smiles, unsigned int *fp);
     //void ob_fp_MACCS_bin (char *serializedInput, unsigned int *fp);
+    void ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int len);
     void ob_fp_MACCS (char *smiles, unsigned int *fp);
     void ob_fp (char *smiles, unsigned int *fp);
     //void ob_fp_bin (char *serializedInput, unsigned int *fp);
