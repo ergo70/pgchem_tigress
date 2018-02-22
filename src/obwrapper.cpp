@@ -935,8 +935,6 @@ ob_fp_ECFP_n (char *smiles, unsigned int *fp, unsigned int type, unsigned int le
         break;
     }
 
-    fprint = OBFingerprint::FindFingerprint (tmpType);
-
     memset(fp,0x0, len);
 
     if (fprint != NULL)
