@@ -1,7 +1,7 @@
 /************************************************************************
  * functions.c native chemistry handling functions
  *
- * Copyright (c) 2004,2016 by Ernst-G. Schmid
+ * Copyright (c) 2004,2018 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -767,6 +767,52 @@ pgchem_fp_out (PG_FUNCTION_ARGS)
 
     PG_RETURN_VARBIT_P (retval);
 }
+
+/*
+* Get ECFP_n binary fingerprint as bit varying
+*/
+PG_FUNCTION_INFO_V1 (pgchem_fp_ECFP_n);
+
+Datum
+pgchem_fp_ECFP_n (PG_FUNCTION_ARGS)
+{
+    VarBit *retval;
+    MOLECULE *arg_molecule = PG_GETARG_MOLECULE_P (0);
+    int32 type = PG_GETARG_INT32 (1);
+    int32 bits = PG_GETARG_INT32 (2);
+    int32 len = bits / 8;
+    uint32 *tmp_ecfp;
+
+    if (bits < 1024)
+    {
+        elog (ERROR, "ECFP_n only can be folded to a minimum of 1024 bits.");
+    }
+
+    if (bits > 16384)
+    {
+        elog (ERROR, "ECFP_n only can be folded to a maximum of 16384 bits.");
+    }
+
+    if (type < 0 || type > 10 || type % 2 != 0)
+    {
+        elog (ERROR, "ECFP_n types supported: ECFP_0, ECFP_2, ECFP_4, ECFP_6, ECFP_8, ECFP_10");
+    }
+
+    retval = (VarBit *) palloc0 (len + VARBITHDRSZ);
+
+    tmp_ecfp = (uint32*) palloc0(len);
+
+    ob_fp_ECFP_n(SMIPTR(arg_molecule), tmp_ecfp, type, len);
+
+    memcpy(VARBITS(retval), tmp_ecfp, len);
+
+    VARBITLEN(retval) = bits;
+
+    SET_VARSIZE(retval,(len+VARBITHDRSZ));
+
+    PG_RETURN_VARBIT_P (retval);
+}
+
 
 /*
 * Get MACCS binary fingerprint as bit varying
