@@ -1,7 +1,7 @@
 /**********************************************************************
  * pgchem_setup.sql unified type, operator and function setup file for pgchem GiST
  *
- * Copyright (c) 2004,2018 by Ernst-G. Schmid
+ * Copyright (c) 2004,2019 by Ernst-G. Schmid
  *
  * This file is part of the pgchem::tigress project.
  * For more information, see
@@ -86,12 +86,12 @@ LANGUAGE C;
 CREATE OR REPLACE FUNCTION molfp_penalty(internal,internal,internal)
 RETURNS internal
 AS '$libdir/libpgchem'
-LANGUAGE C WITH (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molfp_picksplit(internal,internal)
 RETURNS internal
 AS '$libdir/libpgchem'
-LANGUAGE C WITH (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molfp_union(internal, internal)
 RETURNS internal
@@ -111,32 +111,32 @@ LANGUAGE C;
 CREATE OR REPLACE FUNCTION molecule_contained_in(molecule,molecule)
 RETURNS bool
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molecule_contains(molecule,molecule)
 RETURNS bool
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molecule_maybe_contained_in(molecule,molecule)
 RETURNS bool
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molecule_maybe_contains(molecule,molecule)
 RETURNS bool
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molecule_equals(molecule,molecule)
 RETURNS bool
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OR REPLACE FUNCTION molecule_similarity(molecule,molecule)
 RETURNS double precision
 AS '$libdir/libpgchem'
-LANGUAGE C with (isstrict);
+LANGUAGE C STRICT;
 
 CREATE OPERATOR < (
 		 LEFTARG = molecule,
@@ -960,4 +960,3 @@ END;
 $BODY$
   LANGUAGE plpgsql IMMUTABLE STRICT
   COST 100;*/
-
