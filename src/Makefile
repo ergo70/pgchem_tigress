@@ -2,6 +2,8 @@
 # Makefile for linux-x64
 # Adjust the locations of OpenBabel according to your system
 #
+override with_llvm=no
+
 OPENBABEL_SOURCE=openbabel-2.4.1
 OPENBABEL_SOURCE_DIR=$(OPENBABEL_SOURCE)/src
 OPENBABEL_INCLUDE_DIRS=-I$(OPENBABEL_SOURCE)/build/include/ -I$(OPENBABEL_SOURCE)/include/ -I$(OPENBABEL_SOURCE)/include/openbabel/ -I$(OPENBABEL_SOURCE)/build/ -I../../../src/backend/
