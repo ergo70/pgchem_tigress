@@ -1,7 +1,7 @@
 /************************************************************************
  * reaction_gist.c reaction GiST support functions
  *
- * Copyright (c) 2007,2016 by Ernst-G. Schmid
+ * Copyright (c) 2007,2019 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -198,7 +198,7 @@ rxnfp_compress (PG_FUNCTION_ARGS)
         retval = (GISTENTRY *) palloc0 (sizeof (GISTENTRY));
 
         gistentryinit (*retval, PointerGetDatum (fp),
-                       entry->rel, entry->page, entry->offset, FALSE);
+                       entry->rel, entry->page, entry->offset, false);
     }
     PG_RETURN_POINTER (retval);
 }
