@@ -867,11 +867,11 @@ $BODY$
   LANGUAGE 'plpgsql' VOLATILE
   COST 100;
   
-CREATE OR REPLACE FUNCTION fpecfpstring(molecule, integer DEFAULT 4, integer DEFAULT 4096)
+/*CREATE OR REPLACE FUNCTION fpecfpstring(molecule, integer DEFAULT 4, integer DEFAULT 4096)
   RETURNS bit varying AS
 '$libdir/libpgchem', 'pgchem_fp_ECFP_n'
   LANGUAGE C IMMUTABLE STRICT
-  COST 1;    
+  COST 1;*/    
 
 CREATE OR REPLACE FUNCTION fpmaccsstring(molecule)
   RETURNS bit varying AS
