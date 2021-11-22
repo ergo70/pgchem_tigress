@@ -1,7 +1,7 @@
 /************************************************************************
  * functions.c native chemistry handling functions
  *
- * Copyright (c) 2004,2018 by Ernst-G. Schmid
+ * Copyright (c) 2004,2021 by Ernst-G. Schmid
  *
  * This file is part of the xchem::tigress project.
  *
@@ -94,6 +94,11 @@ smiles_fail:
     }
 
     len = strlen (tmpSmiles);
+    
+    if (len > 1 && NULL != strchr(tmpSmiles, '\n'))
+    {
+        len--;
+    }
 
     retval = (text *) palloc0 (len + VARHDRSZ);
     //memset(retval,0x0,len + VARHDRSZ);
